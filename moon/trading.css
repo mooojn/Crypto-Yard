@@ -1,0 +1,370 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    color: white;
+}
+
+body {
+    background: linear-gradient(to bottom, #030c13, #051320);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 50px;
+}
+
+.main-cont {
+    display: flex;
+    /* background-color: red; */
+}
+
+/* .mid-cont, .right-cont{ */
+/* flex: 1; */
+/* } */
+/* left container */
+.left-cont {
+    display: flex;
+    flex-direction: column;
+    border: solid 0px;
+    background: linear-gradient(to bottom, #131c25, #121b22);
+    margin-left: 20px;
+    border-radius: 5px;
+    padding: 0px 10px;
+    align-items: center;
+}
+
+.nav {
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+li {
+    width: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#logo {
+    margin-top: 20px;
+    width: 25px;
+    margin-bottom: 60px;
+    cursor: pointer;
+}
+
+.pfp {
+    cursor: pointer;
+}
+
+/* not for now */
+/* li:hover{ */
+/* border-radius: 50%; */
+/* background-color: blue; */
+/* } */
+
+/* mid container */
+.mid-cont {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    /* margin-top: 15px; */
+}
+
+#head {
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #131c25, #121b22);
+    border-radius: 5px;
+    height: 100px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.m-cap,
+.holders,
+.liq {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#ico,
+#p,
+#red-chng,
+#grn-chng {
+    flex: 1;
+}
+
+#p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#id {
+    flex-basis: 100%;
+    font-size: 15px;
+    margin-left: 60px;
+}
+
+#red-chng {
+    color: red;
+}
+
+#grn-chng {
+    color: green;
+}
+
+#ico {
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    border: 1px solid black;
+    background-color: #708090;
+}
+
+/* cullent */
+.prices {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.coin-img {
+    background: linear-gradient(to top, #9fccfa, #0974f1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.coin-att {
+    display: flex;
+    flex-direction: column;
+}
+
+.coin-name,
+.coin-price {
+    display: flex;
+    margin-left: 10px;
+}
+
+.coin-price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.grn-chng-box {
+    color: #AFE1AF;
+    font-weight: bold;
+    background-color: #478778;
+    padding: 3px 12px;
+    border-radius: 5px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.x-nav {
+    display: flex;
+    /* background-color: red; */
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.trans {
+    display: flex;
+    ;
+    align-items: center;
+}
+
+.trans p {
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.R ul {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.R li {
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+/* right container */
+.right-cont {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    background: linear-gradient(to bottom right, #131c25, #121b22);
+    border-radius: 10px;
+    height: 500px;
+}
+
+.right-cont p {
+    margin-top: 20px;
+    margin-left: 10px
+}
+
+.top {
+    margin-bottom: 25px;
+}
+
+#b1,
+#b2,
+#b3 {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: none;
+    border: 1px solid gray;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#b1:hover {
+    background-color: #0096FF;
+}
+
+#b2:hover {
+    background-color: red;
+}
+
+#b3:hover {
+    background-color: #228B22;
+}
+
+.selection-panel {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+    margin-bottom: 40px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    display: flex;
+    align-items: center;
+    background-color: #1f2734;
+    margin-top: 20px;
+    color: white;
+    padding: 16px 60px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#down-arrow {
+    margin-left: 10px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
+/* end of drop down */
+.type-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f2734;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px 5px;
+}
+#type-{
+    font-size: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #6d7582;
+}
+#type-amnt{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+.conversion {
+    margin-bottom: 30px;
+    font-size: 12px;
+}
+
+#xhange {
+    margin-left: 80px;
+    font-weight: bold;
+}
+
+.end button {
+    background-color: #0096FF;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 20px 90px;
+    border-radius: 10px;
+    cursor: pointer;
+    border-style: none;
+}
+
+.end button:hover {
+    background-color: #0080FF;
+}
+
+.end button:active {
+    background-color: #0066FF;
+}
+
+/* @media screen and (max-width: 500px) and (max-height: 800px) {
+    body {
+        background: none;
+        /* background: linear-gradient(to bottom, #030c13, #051320); */
+        /* background-repeat: no-repeat; */
+        /* background-size: cover; */
+        /* height: 100vh; */
+        /* padding-top: 50px; */
+    /* }
+}  */
