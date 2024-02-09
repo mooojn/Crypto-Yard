@@ -3,130 +3,178 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style1.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <title>Page</title>
 </head>
 
 <body>
-    <div class="abbu">
-        <div class="dabba">
-            <div class="heading">
-                <div class="text">Trending</div>
-                <div class="more">More-></div>
-            </div>
-            <div class="details">
-                <div class="text">
-                    <div class="serial">1</div>
-                    <div class="name">BitCoin</div>
-                </div>
-                <div class="coininfo">
-                    <div class="rate">$42,784.2</div>
-                    <div class="changerate">-1.25%</div>
-                </div>
-            </div>
-            <div class="details">
-                <div class="text">
-                    <div class="serial">2</div>
-                    <div class="name">ETH</div>
-                </div>
-                <div class="coininfo">
-                    <div class="rate">$2320.84</div>
-                    <div class="changerate">0.70%</div>
-                </div>
-            </div>
-
+    <!-- Pre loader -->
+    <div id="preloader">
+        <div class="uptext">
+            <div class="logo"><img src="logo_only.png" alt=""></div>
+            <div class="logo_text"><img src="logo_text.png" alt=""></div>
         </div>
-        <div class="dabba">
-            <div class="heading">
-                <div class="text">Top Gainers</div>
-                <div class="more">More-></div>
+        <div class="loading">
+            <div class="text">
+                Loading
             </div>
-            <div class="details">
-                <div class="text">
-                    <div class="serial">1</div>
-                    <div class="name">DMAIL</div>
-                </div>
-                <div class="coininfo">
-                    <div class="rate">$0.638</div>
-                    <div class="changerate">537.40%</div>
-                </div>
-            </div>
-            <div class="details">
-                <div class="text">
-                    <div class="serial">2</div>
-                    <div class="name">AFG</div>
-                </div>
-                <div class="coininfo">
-                    <div class="rate">$0.524</div>
-                    <div class="changerate">0.319%</div>
-                </div>
-            </div>
-
-        </div>
-        <div class="dabba">
-            <div class="heading">
-                <div class="text">Top Lossing</div>
-                <div class="more">More-></div>
-            </div>
-            <div class="details">
-                <div class="text">
-                    <div class="serial">1</div>
-                    <div class="name">WEN</div>
-                </div>
-                <div class="coininfo">
-                    <div class="rate">$0.00007</div>
-                    <div class="changerate">-32.5%</div>
-                </div>
-            </div>
-            <div class="details">
-                <div class="text">
-                    <div class="serial">2</div>
-                    <div class="name">CANDY</div>
-                </div>
-                <div class="coininfo">
-                    <div class="rate">$0.023</div>
-                    <div class="changerate">-18.9%</div>
-                </div>
-            </div>
-
-        </div>
-        <div class="line">
-            <div class="heading">
-                <div class="text">Name</div>
-                <div class="more">Price</div>
-                <div class="time">24h</div>
-                <div class="action">Action</div>
-            </div>
-            <div class="details">
-                <div class="text">
-                    <div class="serial">1</div>
-                    <div class="name">BITCOIN</div>
-                    
-                </div>
-                <div class="coininfo">
-                    <div class="rate">$100</div>
-                    <div class="changerate">10%</div>
-                    <div class="bc">Buy | Sell</div>
-                </div>
-            </div>
-            <div class="details">
-                <div class="text">
-                    <div class="serial">2</div>
-                    <div class="name">UTF</div>
-                </div>
-                <div class="coininfo">
-                    <div class="rate">$100</div>
-                    <div class="changerate">10%</div>
-                    <div class="bc">Buy | Sell</div>
-                </div>
-            </div>
+            <div class="loader"></div>
         </div>
     </div>
+    <div class="bosy">
 
-</body>
+        <header>
+            <div class="logotext">
+                <img src="logo_text.png" alt="" height="70px">
+            </div>
+            <div class="header_nav">
+                <nav class="navbar_header">
+                    <ul>
+                        <li>Buy Crypto</li>
+                        <li>Market</li>
+                        <li>Trade</li>
+                        <li>Assests</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="third_part">
+                <div class="button">Sign up/Login</div>
+                <div class="loggedin"></div>
+            </div>
+        </header>
 
+        <body>
+            <div class="abbu">
+                <div class="dabba">
+                    <div class="heading">
+                        <div class="text">Trending</div>
+                        <div class="more">More-></div>
+                    </div>
+                    <div class="details">
+                        <div class="text">
+                            <div class="serial">1</div>
+                            <div class="name">BitCoin</div>
+                        </div>
+                        <div class="coininfo">
+                            <div class="rate">$42,784.2</div>
+                            <div class="changerate">-1.25%</div>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="text">
+                            <div class="serial">2</div>
+                            <div class="name">ETH</div>
+                        </div>
+                        <div class="coininfo">
+                            <div class="rate">$2320.84</div>
+                            <div class="changerate">0.70%</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="dabba">
+                    <div class="heading">
+                        <div class="text">Top Gainers</div>
+                        <div class="more">More-></div>
+                    </div>
+                    <div class="details">
+                        <div class="text">
+                            <div class="serial">1</div>
+                            <div class="name">DMAIL</div>
+                        </div>
+                        <div class="coininfo">
+                            <div class="rate">$0.638</div>
+                            <div class="changerate">537.40%</div>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="text">
+                            <div class="serial">2</div>
+                            <div class="name">AFG</div>
+                        </div>
+                        <div class="coininfo">
+                            <div class="rate">$0.524</div>
+                            <div class="changerate">0.319%</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="dabba">
+                    <div class="heading">
+                        <div class="text">Top Lossing</div>
+                        <div class="more">More-></div>
+                    </div>
+                    <div class="details">
+                        <div class="text">
+                            <div class="serial">1</div>
+                            <div class="name">WEN</div>
+                        </div>
+                        <div class="coininfo">
+                            <div class="rate">$0.00007</div>
+                            <div class="changerate">-32.5%</div>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="text">
+                            <div class="serial">2</div>
+                            <div class="name">CANDY</div>
+                        </div>
+                        <div class="coininfo">
+                            <div class="rate">$0.023</div>
+                            <div class="changerate">-18.9%</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="line">
+                    <div class="heading">
+                        <div class="text">Name</div>
+                        <div class="more">Price</div>
+                        <div class="time">24h</div>
+                        <div class="action">Action</div>
+                    </div>
+                    <div class="details">
+                        <div class="text">
+                            <div class="serial">1</div>
+                            <div class="name">BITCOIN</div>
+
+                        </div>
+                        <div class="coininfo">
+                            <div class="rate">$100</div>
+                            <div class="changerate">10%</div>
+                            <div class="bc">Buy | Sell</div>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="text">
+                            <div class="serial">2</div>
+                            <div class="name">UTF</div>
+                        </div>
+                        <div class="coininfo">
+                            <div class="rate">$100</div>
+                            <div class="changerate">10%</div>
+                            <div class="bc">Buy | Sell</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                //  Pre loader 
+                window.addEventListener("load", function () {
+                    var preloader = document.getElementById("preloader");
+                    preloader.classList.add("fade-out");
+                    setTimeout(function () {
+                        preloader.style.display = "none";
+                    }
+                        , 1000);
+                });
+            </script>
+        </body>
 </html>
