@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            /* background: #3d3030; */
+            background: #000;
+        }
+
+        /* Pre loader */
+        #preloader {
+            /* background-image: url('bg.jpg'); */
+            background-attachment: fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 999999999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes logo {
+            0% {
+                transform: scale(0);
+            }
+
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: scale(1);
+            }
+
+            10% {
+                transform: scale(0.4);
+            }
+
+            30% {
+                transform: scale(1.1);
+            }
+
+            40% {
+                transform: scale(0.98);
+            }
+
+            60% {
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.98);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .logo,
+        .logo_text,
+        .text {
+            width: fit-content;
+            height: fit-content;
+            animation: logo 1.5s ease-in-out;
+        }
+
+        .uptext {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text {
+            display: flex;
+            margin-top: 20px;
+            font-style: italic;
+            font-weight: bold;
+            font-size: xxx-large;
+            margin-bottom: 50px;
+            color: #04d963;
+        }
+
+        .loader {
+            opacity: 0;
+            display: flex;
+            border: 16px solid #000;
+            border-right: 16px solid #04d963;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            transform: scale(0.4);
+            animation: spin 2s linear infinite 0.5s;
+        }
+
+        @keyframes spin {
+            0% {
+                opacity: 100;
+
+                transform: rotate(0deg);
+            }
+
+            100% {
+                opacity: 100;
+                transform: rotate(360deg);
+            }
+        }
+
+        .fade-out {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        @keyframes moveup {
+            0% {
+                opacity: 0;
+                transform: translateY(2%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                margin-top: 0px;
+            }
+
+            50% {
+                margin-top: 8px;
+            }
+
+            100% {
+                margin-top: 0px;
+            }
+        }
+
+        /* header */
+        header {
+            display: flex;
+            flex-direction: row;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100%;
+            justify-content: space-between;
+            box-shadow: 0px 0px 30px 0px #04bb56;
+            position: sticky;
+            top: 0;
+            z-index: 100000;
+            text-decoration: none;
+        }
+
+        .logotext {
+            display: flex;
+            margin-left: 20px;
+        }
+
+        .header_nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .navbar_header {
+                color: white;
+            }
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            text-decoration: none;
+        }
+
+        li {
+            font-size: large;
+            display: flex;
+            margin: 0px 20px;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .third_part {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0px 20px;
+        }
+
+        .button {
+            display: flex;
+            font-size: large;
+            padding: 10px 15px;
+            border-radius: 12px;
+            color: white;
+            border: 1px solid #fff;
+            transition: 0.5s;
+            font-stretch: 90%;
+        }
+
+        .button:hover {
+            background: #04bb56;
+            border-color: #000;
+            cursor: pointer;
+
+        }
+
+
+        /* hologram */
+        .bitcoins1 {
+            filter: drop-shadow(0 0 10px #04bb56);
+            animation: float 1.5s ease-in-out infinite;
+            position: absolute;
+            transform: rotateZ(-45deg);
+            top: -30px;
+            left: -30px;
+            z-index: 20;
+        }
+
+        .hologram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bitcoins2 {
+            filter: drop-shadow(0 0 10px #04bb56);
+            animation: float 1.5s ease-in-out infinite 0.2s;
+            position: absolute;
+            top: -110px;
+            left: -10px;
+            transform: rotateZ(-25deg);
+            z-index: 20;
+        }
+
+        .bitcoins3 {
+            filter: drop-shadow(0 0 10px #04bb56);
+            animation: float 1.5s ease-in-out infinite 0.4s;
+            top: -50px;
+            left: 40px;
+            position: absolute;
+            justify-content: center;
+            z-index: 20;
+
+        }
+
+        .hollobase {
+            position: absolute;
+            z-index: 10;
+            margin-left: -45px;
+            margin-top: 20px;
+        }
+
+        /* //                      Hologram */
+
+
+
+        @keyframes holographic {
+            from {
+                will-change: box-shadow;
+                box-shadow:
+                    0 -75px 5px rgba(0, 252, 252, 0.15),
+                    0 -1px 2px rgba(0, 252, 252, 0.5),
+                    0 -45px 5px rgba(0, 252, 252, 0.15),
+                    0 -2px 3px rgba(0, 252, 252, 0.5),
+                    0 -3px 4px rgba(0, 252, 252, 0.5),
+                    0 -4px 6px rgba(0, 252, 252, 0.5),
+                    0 -5px 10px rgba(0, 252, 252, 0.75),
+                    0 -7px 20px rgba(0, 252, 252, 0.75),
+                    0 -10px 30px rgba(0, 252, 252, 0.75),
+                    0 -15px 40px rgba(0, 252, 252, 0.75),
+                    0 -25px 50px rgba(0, 252, 252, 0.75),
+                    0 -35px 60px rgba(0, 252, 252, 0.85),
+                    0 -45px 70px rgba(0, 252, 252, 0.95),
+                    0 -65px 80px rgba(0, 252, 252, 1),
+                    0 -75px 90px rgba(0, 252, 252, 1);
+            }
+
+            to {
+                will-change: unset;
+                box-shadow:
+                    0 -1px 5px rgba(0, 252, 252, 0.15),
+                    0 -1px 2px rgba(0, 252, 252, 0.5),
+                    0 -1px 5px rgba(0, 252, 252, 0.15),
+                    0 -2px 3px rgba(0, 252, 252, 0.5),
+                    0 -3px 4px rgba(0, 252, 252, 0.5),
+                    0 -4px 6px rgba(0, 252, 252, 0.5),
+                    0 -5px 7px rgba(0, 252, 252, 0.75),
+                    0 -7px 10px rgba(0, 252, 252, 0.75),
+                    0 -10px 15px rgba(0, 252, 252, 0.75),
+                    0 -15px 20px rgba(0, 252, 252, 0.75),
+                    0 -25px 25px rgba(0, 252, 252, 0.75),
+                    0 -35px 30px rgba(0, 252, 252, 0.85),
+                    0 -45px 35px rgba(0, 252, 252, 0.95),
+                    0 -65px 40px rgba(0, 252, 252, 1),
+                    0 -75px 50px rgba(0, 252, 252, 1);
+            }
+        }
+
+        .holo {
+            position: absolute;
+            z-index: 20000;
+            width: 145px;
+            height: 5px;
+            margin-top: 50px;
+            margin-left: -50px;
+            background-color: rgba(#04bb56, .35);
+            border-radius: 100%;
+            filter: blur(2.5px);
+            transform: perspective(100px) rotateX(-30deg);
+            transform-style: preserve-3d;
+            animation: holographic 1.5s infinite alternate;
+            backface-visibility: hidden;
+        }
+
+        .images {
+            margin-top: 150px;
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .images1 {
+            justify-content: center;
+            display: flex;
+            position: relative;
+            margin-left: -40px;
+
+        }
+
+        /* main */
+        .main {
+            /* background-color: #000; */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .greet {
+            display: flex;
+            font-size: xxx-large;
+            margin: 100px 20px;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+        }
+
+        .dashboard {
+            display: flex;
+            flex-direction: row;
+            height: 700px;
+        }
+
+        .imagetext {
+            display: flex;
+            justify-content: center;
+            color: #fff;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        .mainimage {
+            display: flex;
+            width: 50%;
+            flex-direction: column;
+        }
+
+        #Username {
+            color: #04bb56;
+            padding: 0px 10px;
+        }
+
+        .maintext {
+            display: flex;
+            width: 50%;
+            flex-direction: column;
+            color: #fff;
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 90px 0px 30px 60px;
+        }
+
+        .headings {
+            display: flex;
+            flex-direction: column;
+            font-size: 70px;
+            width: 50%;
+            margin: 10px 0px;
+            text-align: left;
+        }
+
+        .texts {
+            display: flex;
+            font-size: 30px;
+            margin: 30px 0px;
+            text-align: left;
+        }
+        #Join{
+         display: flex;
+         height: 800px;
+         flex-direction: column;   
+        }
+        .joinhead{
+            display: flex;
+            text-align: center;
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0px;
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .join_main{
+            display: flex;
+            margin: 0px 20px;
+            flex-direction: column;
+            background: #2d2d2d;
+            height: 650px;
+            box-shadow: 2px 1px 10px 1px #04bb56;
+        }
+        .join_header{
+            display: flex;
+            flex-direction: row;
+            height: 60px;
+            width: 100%;
+            align-items: center;
+            background: #141414;
+        }
+        .All,.Accepted,.Rejected{
+            display: flex;
+            margin: 20px;
+            justify-content: center;
+            color: #fff;
+            font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .hover:hover{
+            color: #04d963;
+            cursor: pointer;
+        }
+        .Join_Details{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            border-bottom: 1px solid #000;
+            color: white;
+        }
+        .detail{
+            display: flex;
+            width: 25%;
+            align-items: center;
+            margin: 15px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .accept{
+            display: flex;
+            padding: 12px 15px;
+            margin: 0px 10px;
+            background: #015c2a;
+            color: #fff;
+            border-radius: 10px;
+        }
+        .reject{
+            display: flex;
+            padding: 12px 15px;
+            margin: 0px 10px;
+            background: rgb(159, 0, 0);
+            color: #fff;
+            border-radius: 10px;
+        }
+        .bg{
+            background-color: #1a1a1a;
+            color: #fff;
+            font-weight: bold;
+        }
+        .join_requests{
+            background-color: #2d2d2d;
+            border-bottom: 1px solid #fff;
+        }
+        #market{
+            display: flex;
+            flex-direction: column;
+            height: 800px;
+        }
+        .coins{
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+            color: #fff;
+            margin: 25px 50px;
+        }
+        .coinname{
+            display: flex;
+            font-size: 30px;
+            margin: 10px 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .symbolname{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 10%;
+        }
+        .symbol{
+            display: flex;
+            
+        }
+        .individualcoins{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 20px 20px;
+            background: #2d2d2d;
+            border-radius: 10px;
+        }
+        .Price{
+            /* display: flex; */
+            flex-direction: column;
+            width: 15%;
+            padding-left: 50px;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            color: white;
+        }
+        .price{
+           margin-bottom: 20px;
+           font-size: 45px;
+           text-align: left;
+        }
+        .graph{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+        }
+        .marketcap{
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .buttons{
+            display: flex;
+            padding: 10px 15px;
+            border-radius: 12px;
+            font-size: 20px;
+            color: black;
+            border: 1px solid #fff;
+            transition: 0.5s;
+            width: fit-content;
+            font-stretch: 90%;
+        }
+        .buttons:hover{
+            background: #04bb56;
+            border-color: #000;
+            cursor: pointer;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Pre loader -->
+    <div id="preloader">
+        <div class="uptext">
+            <div class="logo"><img src="logo_only.png" alt=""></div>
+            <div class="logo_text"><img src="logo_text.png" alt=""></div>
+        </div>
+        <div class="loading">
+            <div class="text">
+                Loading
+            </div>
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="logotext">
+            <img src="logo_text.png" alt="" height="70px">
+        </div>
+        <div class="header_nav">
+            <nav class="navbar_header">
+                <ul>
+                   <a href="#Join"><li>Join Requests</li></a>
+                   <a href="#market"> <li>Market</li></a>
+                    <li>Manage Users</li>
+                    <li>Loans</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="third_part">
+            <div class="button">Transactions</div>
+            <div class="loggedin"></div>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="greet">Welcome <span id="Username">Username</span>!</div>
+        <div class="dashboard">
+            <div class="maintext">
+                <div class="headings">
+                    <div style="display: flex;">
+                        Crypto<span style="color: #04bb56; padding-right: 15px; display: flex;">Yard</span>
+                    </div>
+                    <span style="display: flex;">Administration</span>
+                </div>
+                <div class="texts">
+                    Streamline your cryptocurrency business operations with ease
+                </div>
+            </div>
+            <div class="mainimage">
+                <div class="hologram">
+
+                    <div class="images">
+                        <img src="bitcoin.png" class="bitcoins1" alt="" height="70px">
+                        <img src="bitcoin.png" class="bitcoins2" alt="" height="50px">
+                        <img src="bitcoin.png" class="bitcoins3" alt="" height="40px">
+                        <div class="holo"></div>
+                        <div class="hollobase">
+                            <img src="button.png" alt="" height="180px">
+                        </div>
+                        <img class="images1" src="base.png" alt="" height="300px" width="300px"
+                            style="transform: rotateX(55deg) rotateY(0deg);">
+                    </div>
+                </div>
+                <div class="imagetext">
+                    Trusted By 10+ Million
+                </div>
+            </div>
+        </div>
+    </div>
+<section id="Join">
+    <div class="join">
+        <div class="joinhead">
+            Join <span style="color: #04bb56; margin: 0px 10px;"> Requests</span>
+        </div>
+        <div class="join_main">
+            <div class="join_header">
+                <div class="hover All">All</div>
+                <div class="hover Accepted">Accepted</div>
+                <div class="hover Rejected">Rejected</div>
+            </div>
+            <div class="Join_Details bg">
+                <div class="detail">Name</div>
+                <div class="detail">CNIC</div>
+                <div class="detail">Password</div>
+                <div class="detail" style="width: 25%; justify-content: center;">
+                <div>Accept/Reject</div>
+                </div>
+            </div>
+            <div class="join_requests Join_Details">
+                <div id="Name" class="detail">XDddd</div>
+                <div id="CNIC" class="detail">100000000000</div>
+                <div id="Password" class="detail">Pshshshs</div>
+                <div class="detail" style="width: 25%; justify-content: center;">
+                <div class="accept">Accept</div>
+                <div class="reject">Reject</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="market">
+    <div class="joinhead">
+        <span style="color: #04bb56; margin: 0px 10px;">Market</span> Management
+    </div>
+    <div class="coins">
+        <div class="individualcoins">
+            <div class="symbolname">
+                <div class="symbol"><img src="bitcoin1.png" alt="" height="100px"></div>
+                <div class="coinname">Bitcoin</div>
+            </div>
+            <div class="Price">
+                <div class="price">Price:</div>
+                <div style="color: #04bb56;">$<span style="color: #fff; padding: 0px 5px;">6500000</span></div>
+            </div>
+            <div class="graph">
+                <canvas id="myChart" width="100" height="20"></canvas>
+            </div>
+            <div class="marketcap">
+                <div class="price">Market Cap: $<span id="priceValue" style="color: #fff; padding: 0px 5px;">6500000</span></div>
+                <button class="buttons" onclick="editPrice()">Edit</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!--               scripts    -->
+    <script>
+        //  Pre loader 
+        window.addEventListener("load", function () {
+            var preloader = document.getElementById("preloader");
+            preloader.classList.add("fade-out");
+            setTimeout(function () {
+                preloader.style.display = "none";
+            }, 1000);
+        });
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+    var initialData = [50]; // Initial data
+
+    // Define the initial data
+    var data = {
+        labels: ['Value 1', 'Value 2'], // Update labels accordingly
+        datasets: [{
+            label: 'Dataset 1',
+            data: initialData.slice(), // Copy of initialData array
+            borderColor: '#04bb56',
+            borderWidth: 2,
+            fill: true,
+            backgroundColor: 'rgba(4, 187, 86, 0.2)', // Add a fill color
+            pointRadius: 0, // Hides data points
+            tension: 0.4, // Adjust tension for smoothness
+        }]
+    };
+
+    var options = {
+        scales: {
+            x: {
+                display: false, // Hides x-axis
+            },
+            y: {
+                display: false, // Hides y-axis
+            }
+        },
+        plugins: {
+            legend: {
+                display: false, // Hides legend
+            }
+        }
+    };
+
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: options
+    });
+    myChart.ctx.shadowColor = '#04bb56';
+        myChart.ctx.shadowBlur = 10;
+    // Function to update the chart
+    function updateChart() {
+        // Generate a random value (replace this with your logic to get new values)
+        var newValue = Math.floor(Math.random() * 100);
+
+        // Add the new value to the dataset
+        myChart.data.datasets[0].data.push(newValue);
+
+        // Add a new label for the new value
+        myChart.data.labels.push('');
+
+        // Maintain a maximum of 6 values
+        if (myChart.data.datasets[0].data.length > 10) {
+            myChart.data.datasets[0].data.shift();
+            myChart.data.labels.shift();
+        }
+
+        // Update the chart
+        myChart.update();
+    }
+
+    // Automatically update the chart every second
+    setInterval(updateChart, 1000);
+
+
+
+     function editPrice() {
+        // Get the existing price element and its value
+        var priceElement = document.getElementById('priceValue');
+        var currentPrice = priceElement.innerText;
+
+        // Create an input field for editing
+        var inputField = document.createElement('input');
+        inputField.type = 'text';
+        inputField.value = currentPrice;
+
+        // Replace the price element with the input field
+        priceElement.parentNode.replaceChild(inputField, priceElement);
+
+        // Focus on the input field
+        inputField.focus();
+
+        // Add an event listener to handle saving the edited price on blur
+        inputField.addEventListener('blur', function () {
+            // Get the edited value
+            var editedPrice = inputField.value;
+
+            // Replace the input field with a new span displaying the edited value
+            var newPriceElement = document.createElement('span');
+            newPriceElement.id = 'priceValue';
+            newPriceElement.style.color = '#fff';
+            newPriceElement.style.padding = '0px 5px';
+            newPriceElement.innerText = editedPrice;
+
+            inputField.parentNode.replaceChild(newPriceElement, inputField);
+        });
+    }
+    </script>
+</body>
+
+</html>
