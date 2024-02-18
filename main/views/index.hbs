@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoYard 🚀: Unleash the Future of Finance! 🌐</title>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <script src="/public/https://kit.fontawesome.com/2882665ba0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bosy {
+            /* background: #3d3030; */
+            background: #000;
+        }
+
+        /* Pre loader */
+        #preloader {
+            /* background-image: url('bg.jpg'); */
+            background-attachment: fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 999999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes logo {
+            0% {
+                transform: scale(0);
+            }
+
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: scale(1);
+            }
+
+            10% {
+                transform: scale(0.4);
+            }
+
+            30% {
+                transform: scale(1.1);
+            }
+
+            40% {
+                transform: scale(0.98);
+            }
+
+            60% {
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.98);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .logo,
+        .logo_text,
+        .text {
+            width: fit-content;
+            height: fit-content;
+            animation: logo 1.5s ease-in-out;
+        }
+
+        .uptext {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text {
+            display: flex;
+            margin-top: 20px;
+            font-style: italic;
+            font-weight: bold;
+            font-size: xxx-large;
+            margin-bottom: 50px;
+            color: #04d963;
+        }
+
+        .loader {
+            opacity: 0;
+            display: flex;
+            border: 16px solid #000;
+            border-right: 16px solid #04d963;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            transform: scale(0.4);
+            animation: spin 2s linear infinite 0.5s;
+        }
+
+        @keyframes spin {
+            0% {
+                opacity: 100;
+
+                transform: rotate(0deg);
+            }
+
+            100% {
+                opacity: 100;
+                transform: rotate(360deg);
+            }
+        }
+
+        .fade-out {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        @keyframes moveup {
+            0% {
+                opacity: 0;
+                transform: translateY(2%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                margin-top: 0px;
+            }
+
+            50% {
+                margin-top: 8px;
+            }
+
+            100% {
+                margin-top: 0px;
+            }
+        }
+
+        /* header */
+        header {
+            display: flex;
+            flex-direction: row;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .logotext {
+            display: flex;
+            margin-left: 20px;
+        }
+
+        .header_nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .navbar_header {
+                color: white;
+            }
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+        }
+
+        li {
+            font-size: large;
+            display: flex;
+            text-decoration: none;
+            margin: 0px 20px;
+        }
+
+        .third_part {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0px 20px;
+        }
+
+        .button {
+            display: flex;
+            font-size: large;
+            padding: 10px 15px;
+            border-radius: 12px;
+            color: white;
+            border: 1px solid #fff;
+            transition: 0.5s;
+            font-stretch: 90%;
+        }
+
+        .button:hover {
+            background: #04bb56;
+            border-color: #000;
+            cursor: pointer;
+
+        }
+
+        /* main text part */
+        .crypto_word {
+            color: #04d963;
+        }
+
+        .text_one {
+            color: #fff;
+            font-size: 60px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .text_two {
+            color: #fff;
+            margin: 30px 0px;
+            font-size: large;
+        }
+
+        .text_three {
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif;
+            flex-direction: row;
+        }
+
+        .getstarted {
+            background: #fff;
+            font-weight: 550;
+            font-stretch: 70%;
+            margin: 10px 10px;
+            padding: 15px 28px;
+            border: 1px solid white;
+            border-radius: 10px;
+            transition: 0.5s;
+
+        }
+
+        .getstarted:hover,
+        .class:hover {
+            background: #04bb56;
+            border-color: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .class {
+            border: 1px solid white;
+            color: white;
+            margin: 10px 10px;
+            padding: 15px 28px;
+            border-radius: 10px;
+            transition: 0.5s;
+
+        }
+
+        /* containers main */
+        .main {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            height: 850px;
+        }
+
+        .main_text {
+            padding: 0px 40px;
+            display: flex;
+            width: 50%;
+            flex-direction: column;
+        }
+
+        .main_images {
+            margin-left: 80px;
+            width: 50%;
+            height: 1000px;
+            position: relative;
+            display: flex;
+        }
+
+        .images {
+            top: 340px;
+            display: flex;
+            position: absolute;
+        }
+
+        .images1 {
+            left: -100px;
+            display: flex;
+            position: absolute;
+        }
+
+        .images2 {
+            position: absolute;
+            margin-top: 0px;
+            margin-left: 230px;
+
+        }
+
+        .images3 {
+            margin-top: 150px;
+            margin-left: 60px;
+            position: absolute;
+
+        }
+
+        .image3step {
+            transform: rotateY(-20deg);
+            position: absolute;
+            margin-left: 120px;
+            z-index: 10;
+        }
+
+        .step1 {
+            opacity: 0;
+            animation: moveup 0.8s ease-in-out 0s forwards;
+        }
+
+        .step2 {
+            opacity: 0;
+            animation: moveup 0.8s ease-in-out 0.7s forwards;
+        }
+
+        .step3 {
+            opacity: 0;
+            animation: moveup 0.8s ease-in-out 1s forwards;
+        }
+
+        .step4 {
+            opacity: 0;
+            animation: moveup 0.8s ease-in-out 1.5s forwards;
+        }
+
+        .bitcoins1 {
+            filter: drop-shadow(0 0 10px #04bb56);
+            animation: float 1.5s ease-in-out infinite;
+            position: absolute;
+            transform: rotateZ(-45deg);
+            top: -30px;
+            left: -30px;
+            z-index: 20;
+        }
+
+        .bitcoins2 {
+            filter: drop-shadow(0 0 10px #04bb56);
+            animation: float 1.5s ease-in-out infinite 0.2s;
+            position: absolute;
+            top: -110px;
+            left: -10px;
+            transform: rotateZ(-25deg);
+            z-index: 20;
+        }
+
+        .bitcoins3 {
+            filter: drop-shadow(0 0 10px #04bb56);
+            animation: float 1.5s ease-in-out infinite 0.4s;
+            top: -50px;
+            left: 40px;
+            position: absolute;
+            z-index: 20;
+
+        }
+
+        .hollobase {
+            position: absolute;
+            z-index: 10;
+            margin-left: -45px;
+            margin-top: 20px;
+        }
+
+        /* //                      Hologram */
+
+
+
+        @keyframes holographic {
+            from {
+                will-change: box-shadow;
+                box-shadow:
+                    0 -75px 5px rgba(0, 252, 252, 0.15),
+                    0 -1px 2px rgba(0, 252, 252, 0.5),
+                    0 -45px 5px rgba(0, 252, 252, 0.15),
+                    0 -2px 3px rgba(0, 252, 252, 0.5),
+                    0 -3px 4px rgba(0, 252, 252, 0.5),
+                    0 -4px 6px rgba(0, 252, 252, 0.5),
+                    0 -5px 10px rgba(0, 252, 252, 0.75),
+                    0 -7px 20px rgba(0, 252, 252, 0.75),
+                    0 -10px 30px rgba(0, 252, 252, 0.75),
+                    0 -15px 40px rgba(0, 252, 252, 0.75),
+                    0 -25px 50px rgba(0, 252, 252, 0.75),
+                    0 -35px 60px rgba(0, 252, 252, 0.85),
+                    0 -45px 70px rgba(0, 252, 252, 0.95),
+                    0 -65px 80px rgba(0, 252, 252, 1),
+                    0 -75px 90px rgba(0, 252, 252, 1);
+            }
+
+            to {
+                will-change: unset;
+                box-shadow:
+                    0 -1px 5px rgba(0, 252, 252, 0.15),
+                    0 -1px 2px rgba(0, 252, 252, 0.5),
+                    0 -1px 5px rgba(0, 252, 252, 0.15),
+                    0 -2px 3px rgba(0, 252, 252, 0.5),
+                    0 -3px 4px rgba(0, 252, 252, 0.5),
+                    0 -4px 6px rgba(0, 252, 252, 0.5),
+                    0 -5px 7px rgba(0, 252, 252, 0.75),
+                    0 -7px 10px rgba(0, 252, 252, 0.75),
+                    0 -10px 15px rgba(0, 252, 252, 0.75),
+                    0 -15px 20px rgba(0, 252, 252, 0.75),
+                    0 -25px 25px rgba(0, 252, 252, 0.75),
+                    0 -35px 30px rgba(0, 252, 252, 0.85),
+                    0 -45px 35px rgba(0, 252, 252, 0.95),
+                    0 -65px 40px rgba(0, 252, 252, 1),
+                    0 -75px 50px rgba(0, 252, 252, 1);
+            }
+        }
+
+        .holo {
+            position: absolute;
+            z-index: 20000;
+            width: 145px;
+            height: 5px;
+            margin-top: 50px;
+            margin-left: -30px;
+            background-color: rgba(#04bb56, .35);
+            border-radius: 100%;
+            filter: blur(2.5px);
+            transform: perspective(100px) rotateX(-30deg);
+            transform-style: preserve-3d;
+            animation: holographic 1.5s infinite alternate;
+            backface-visibility: hidden;
+        }
+
+        .services {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 0px 50px;
+            justify-content: space-around;
+        }
+        .servicesfront{
+            backdrop-filter: brightness(15%); 
+        }
+        .servicesbg{
+    
+            background: url(images/Coinsbg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+        }
+        .serviceshead {
+            color: #fff;
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin: 100px 0px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bars {
+            width: 7%;
+            height: 10px;
+            border-radius: 10px;
+            background-color: #04bb56;
+            display: flex;
+        }
+
+        .servicestext {
+            display: flex;
+            margin: 0px 20px;
+            width: fit-content;
+            justify-content: center;
+        }
+
+        .service {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+            height: fit-content;
+            padding: 20px 0px;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .servicehead {
+            font-size: 30px;
+            font-weight: bolder;
+            margin: 20px 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .serviceexplain {
+            font-size: 20px;
+            line-height: 1.5;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            color: #dadada;
+        }
+
+        .readmore {
+            display: flex;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px 0px;
+            padding: 15px 30px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            background: #686868;
+            color: #fff;
+            transition: 0.5s;
+        }
+
+        .readmore:hover {
+            cursor: pointer;
+            background-color: #00863c;
+        }
+
+        .works {
+            display: flex;
+            justify-content: space-around;
+            padding: 0px 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hovr {
+            transition: 0.5s;
+            height: 230px;
+        }
+
+        .hovr:hover {
+            background-color: #008c3a;
+            /* Change to the desired color on hover */
+        }
+
+        .colr {
+            background-color: #04bb56;
+        }
+
+        .s {
+            height: 550px;
+            overflow: hidden;
+        }
+
+        .facts {
+            background: url('images/features-bg.png');
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            backdrop-filter: brightness(60%);
+            display: flex;
+            padding: 40px;
+            flex-direction: column;
+            align-items: start;
+            width: 100%;
+        }
+
+        .features_text {
+            display: flex;
+            font-size: 25px;
+            padding: 10px 0px;
+        }
+
+        .features_taital {
+            color: #04bb56;
+            display: flex;
+            padding-bottom: 30px;
+        }
+
+        .features_section_2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+        }
+        .icon_4 {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin-bottom: 30px;
+        }
+
+        .padding15 {
+            font-size: 30px;
+            margin: 0px 20px;
+        }
+
+        .project_text {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .hidden_text {
+            font-size: 20px;
+            line-height: 1.3;
+        }
+        .swiper-container {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            margin-bottom: 100px;
+        }
+        
+        .swiper-slide {
+            height: 400px;
+            text-align: center;
+            font-size: 18px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .clientname{
+            display: flex;
+            font-size: 30px;
+            margin: 30px 0px;
+
+        }
+        .comment{
+            display: flex;
+            font-size: 20px;
+            line-height: 1.5;
+            text-align: center;
+            width: 50%;
+        }
+        .swiper-wrapper{
+            display: flex;
+        }
+        footer {
+            display: flex;
+            background: #0f0222;
+            color: white;
+            text-align: center;
+            padding-top: 30px;
+            flex-direction: column;
+        }
+        
+        .upper {
+            display: flex;
+            height: 200px;
+        }
+
+        .baseline {
+            justify-content: center;
+            font-size: small;
+            background: #080014;
+            display: flex;
+            padding: 10px;
+            margin-top: 10px;
+            height: 30px;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .about {
+            width: 30%;
+            text-align: left;
+            line-height: 1.3;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            margin-left: 5vw;
+        }
+
+        .title {
+            font-size: larger;
+            margin-bottom: 1vh;
+            display: flex;
+            align-items: center;
+            font-size: 25px;
+        }
+
+        .logo_align {
+            display: flex;
+            align-items: baseline;
+            width: full;
+            justify-content: center;
+
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        footer li {
+            text-decoration: none;
+            line-height: 2;
+            list-style: none;
+            font-size: large;
+        }
+
+        footer li:hover {
+            color: #3ac4f2;
+            cursor: pointer;
+        }
+
+        .icons {
+            width: full;
+            text-align: left;
+            justify-content: center;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+
+            .title {
+                margin-bottom: 0;
+            }
+        }
+
+        .icons ul {
+            display: flex;
+        }
+
+        .icons ul li {
+            display: flex;
+            margin-left: 1vw;
+            font-size: x-large;
+        }
+
+        .youtube i {
+            border-radius: 8px;
+            justify-content: center;
+            color: #A0AEC0;
+            margin-left: 3px;
+            cursor: pointer;
+        }
+
+        .youtube i:hover {
+            color: #FF0000;
+        }
+
+        .linkedin i {
+            color: #A0AEC0;
+            cursor: pointer;
+        }
+
+        .linkedin i:hover {
+            color: #32CD32;
+        }
+
+        .github i {
+            color: #A0AEC0;
+            border-radius: 50%;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .github i:hover {
+            color: #000000;
+        }
+
+        .facebook i {
+            color: #A0AEC0;
+            cursor: pointer;
+        }
+
+        .facebook i:hover {
+            color: #0000FF;
+        }
+
+        .google {
+            cursor: pointer;
+            margin-bottom: 0.5vh;
+        }
+
+        .google:hover {
+            filter: brightness(80%);
+        }
+
+        .google {
+            width: 100px;
+        }
+
+        .google img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    .footer-img{
+    display: flex;
+    height: 40px;
+    margin-right: 5px;
+    transform: rotateZ(-10deg);
+    }
+    .texts{
+        font-size: 20px;
+    }
+
+    </style>
+</head>
+
+<body>
+    <!-- Pre loader -->
+    <div id="preloader">
+        <div class="uptext">
+            <div class="logo"><img src="/public/images/logo_only.png" alt=""></div>
+            <div class="logo_text"><img src="/public/images/logo_text.png" alt=""></div>
+        </div>
+        <div class="loading">
+            <div class="text">
+                Loading
+            </div>
+            <div class="loader"></div>
+        </div>
+    </div>
+    <div class="bosy">
+
+        <header>
+            <div class="logotext">
+                <img src="/public/images/logo_text.png" alt="" height="70px">
+            </div>
+            <div class="header_nav">
+                <nav class="navbar_header">
+                    <ul>
+                        <li>Buy Crypto</li>
+                        <li>Market</li>
+                        <li>Trade</li>
+                        <li>Assests</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="third_part">
+                <div class="button">Sign up/Login</div>
+                <div class="loggedin"></div>
+            </div>
+        </header>
+        <div class="main">
+            <div class="main_text">
+                <div class="text_one"><span class="crypto_word">Crypto</span> exchange <br> platform for the life</div>
+                <div class="text_two">Your gateway to the world of cryptocurrency - stay informed, trade smarter</div>
+                <div class="text_three">
+                    <div class="getstarted">Get Started</div>
+                    <div class="class">Market</div>
+                </div>
+            </div>
+            <div class="main_images">
+                <!-- first image -->
+                <div class="images">
+                    <img src="/public/images/bitcoin.png" class="bitcoins1" alt="" height="70px">
+                    <img src="/public/images/bitcoin.png" class="bitcoins2" alt="" height="50px">
+                    <img src="/public/images/bitcoin.png" class="bitcoins3" alt="" height="40px">
+                    <div class="holo"></div>
+                    <div class="hollobase">
+                        <img src="/public/images/button.png" alt="" height="180px">
+                    </div>
+                    <img class="images1" src="/public/images/base.png" alt="" height="300px" width="300px"
+                        style="transform: rotateX(55deg) rotateY(0deg);">
+                </div>
+                <!-- second image -->
+                <div class="images">
+                    <img class="image3step step4" src="/public/images/step.png" height="100px" alt=""
+                        style="margin-top: 10px; z-index: 40; margin-left: 290px;">
+                    <img class="image3step step3" src="/public/images/step.png" height="100px" alt=""
+                        style="margin-top: 40px; z-index: 30; margin-left: 290px;">
+                    <img class="image3step step2" src="/public/images/step.png" height="100px" alt=""
+                        style="margin-top: 70px;z-index: 20; margin-left: 290px;">
+                    <img class="image3step step1" src="/public/images/step.png" height="100px" alt=""
+                        style="margin-top: 100px; margin-left: 290px;">
+                    <img class="images2" src="/public/images/base.png" alt="" height="300px" width="300px"
+                        style="transform: rotateX(55deg) rotateY(0deg);">
+                </div>
+                <!--         Third image -->
+                <div class="images">
+                    <img class="image3step step3" src="/public/images/step.png" height="100px" alt=""
+                        style="margin-top: 190px; z-index: 30;">
+                    <img class="image3step step2" src="/public/images/step.png" height="100px" alt=""
+                        style="margin-top: 220px;z-index: 20;">
+                    <img class="image3step step1" src="/public/images/step.png" height="100px" alt=""
+                        style="margin-top: 250px;">
+                    <img class="images3" src="/public/images/base.png" alt="" height="300px" width="300px"
+                        style="transform: rotateX(55deg) rotateY(0deg);">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="servicesbg">
+        <div class="servicesfront">
+    <div class="serviceshead">
+        <div class="bars"></div>
+        <div class="servicestext"> Services We Provide </div>
+        <div class="bars"></div>
+    </div>
+    <div class="services">
+        <div class="service s">
+            <div class="serviceimg">
+                <img src="/public/images/icon-1.png" alt="">
+            </div>
+            <div class="servicehead">Crypto Transactions</div>
+            <div class="serviceexplain">
+                <p>Explore the dynamic world of cryptocurrency transactions. Gain insights into market trends and make
+                    informed decisions. Whether you're buying, selling, or holding, our platform ensures a seamless
+                    experience for your crypto journey</p>
+            </div>
+            <div class="readmore">
+                Read More
+            </div>
+        </div>
+        <div class="service s">
+            <div class="serviceimg">
+                <img src="/public/images/icon-2.png" alt="">
+            </div>
+            <div class="servicehead">Crypto Exchange</div>
+            <div class="serviceexplain">
+                <p>Experience the seamless world of Crypto Exchange. Our platform provides a secure and efficient
+                    environment for buying, selling, and trading various cryptocurrencies Stay ahead in the crypto
+                    market with real-time updates and user-friendly features</p>
+            </div>
+            <div class="readmore colr">
+                Read More
+            </div>
+        </div>
+        <div class="service s">
+            <div class="serviceimg">
+                <img src="/public/images/icon-3.png" alt="">
+            </div>
+            <div class="servicehead">P2P tansfers</div>
+            <div class="serviceexplain">
+                <p>Empower your transactions with P2P transfers. Our platform ensures seamless and secure peer-to-peer
+                    transfers, eliminating the need for intermediaries. Utilizing cutting-edge technology, we provide a
+                    reliable and efficient solution for your needs</p>
+            </div>
+            <div class="readmore">
+                Read More
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+    <div class="serviceshead" style="margin-top: 200px;">
+        <div class="bars"></div>
+        <div class="servicestext"> How It Work </div>
+        <div class="bars"></div>
+    </div>
+    <div class="works">
+        <div class="service hovr" style=" padding: 32px 10px;">
+            <div class="serviceimg">
+                <img src="/public/images/img-1.png" alt="">
+            </div>
+            <div class="servicehead">Make Payments</div>
+            <div class="serviceexplain">
+                <p>Facilitates seamless payments through a variety of payment methods </p>
+            </div>
+        </div>
+        <div class="service hovr" style="background-color: #009242; padding: 30px 10px;">
+            <div class="serviceimg">
+                <img src="/public/images/img-2.png" alt="">
+            </div>
+            <div class="servicehead">Create your offers</div>
+            <div class="serviceexplain">
+                <p>Optimize profits by setting custom prices for sales or purchasing currencies</p>
+            </div>
+        </div>
+        <div class="service hovr" style=" padding: 30px 10px;">
+            <div class="serviceimg">
+                <img src="/public/images/img-3.png" alt="">
+            </div>
+            <div class="servicehead">Buy Or Sell Orders</div>
+            <div class="serviceexplain">
+                <p>Trade cryptocurrencies, capitalize on market movements, and hold for real-time profits</p>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <div class="readmore">
+            Read More
+        </div>
+    </div>
+    <div class="facts">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h6 class="features_text">CryptoYard</h6>
+                    <h1 class="features_taital">AWESOME FACTS</h1>
+                </div>
+            </div>
+            <div class="features_section_2">
+                <div class="row grid">
+                    <div class="col">
+                        <div class="icon_4"><img src="/public/images/icon-4.png" height="60px"><span
+                                class="padding15">1150</span></div>
+                        <h6 class="project_text">TRANSACTIONS COMPLETED</h6>
+                        <p class="hidden_text">Celebrate the successful completion of our latest transactions</p>
+                    </div>
+                    <div class="col">
+                        <div class="icon_4"><img src="/public/images/icon-5.png" height="60px"><span
+                                class="padding15">5223</span></div>
+                        <h6 class="project_text">HAPPY CLIENTS</h6>
+                        <p class="hidden_text">Our clients who have experienced exceptional service</p>
+                    </div>
+                    <div class="col">
+                        <div class="icon_4"><img src="/public/images/icon-6.png" height="60px"><span
+                                class="padding15">522</span></div>
+                        <h6 class="project_text">WORKERS EMPLOYED</h6>
+                        <p class="hidden_text">Discover the strength of our workforce, where transparency is key</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="serviceshead">
+        <div class="bars"></div>
+        <div class="servicestext">What Our Clients Say </div>
+        <div class="bars"></div>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="/public/images/client-img3.png" alt="">
+                <div class="clientname">John Doe</div>
+                <div class="comment">I've been using this website for a few months now, and it has completely transformed my online experience. Highly recommend!
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="/public/images/client-img.png" alt="">
+                <div class="clientname">Jane Smith</div>
+                <div class="comment">The website's functionality is top-notch! Everything is intuitive and efficient. Great job to the development team!
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="/public/images/client-img2.png" alt="">
+                <div class="clientname">Alex Johnson</div>
+                <div class="comment">As a regular visitor, I appreciate the consistent updates and fresh content on this site. It's evident that the team behind it is dedicated to providing value to users.
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="upper">
+            <div class="about">
+                <div class="header">
+                    <div class="title">
+                    <div class="footer-img">
+                        <img src="/public/images/logo_only.png" height="100%" alt="">
+                    </div>
+                        <div style="display: flex;">
+                        CryptoYard
+                        </div>
+                    </div>
+                    <div class="pic logo_align"><img height="20px" src="/public/game.png" alt=""></div>
+                </div>
+                <p class="texts">Cryptoyard is your one-stop destination for all things crypto, offering a user-friendly interface and real-time market data.</p>
+            </div>
+            <div class="about n nav">
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>Games</li>
+                        <li>Terms & Conditions</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="icons nav">
+                <div class="title">Social Media</div>
+                <div class="icons">
+                    <ul>
+                        <li>
+                            <div class="youtube">
+                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="linkedin">
+                                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="github">
+                                <i class="fa fa-github" aria-hidden="true"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="facebook">
+                                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="images">
+                    <div class="google"><img src="/public/google.png" alt=""></div>
+                    <div class="google"><img src="/public/apple.png" alt=""></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="baseline">Copyright © 2024 Crypto Yard - All Rights Reserved</div>
+    </footer>
+
+
+
+
+    <!--               scripts    -->
+    <script src="/public/https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        //  Pre loader 
+        window.addEventListener("load", function () {
+            var preloader = document.getElementById("preloader");
+            preloader.classList.add("fade-out");
+            setTimeout(function () {
+                preloader.style.display = "none";
+            }, 1000);
+        });
+
+        var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoplay: {
+            delay: 5000, 
+        },
+        loop: true,
+    });
+    </script>
+</body>
+
+</html>

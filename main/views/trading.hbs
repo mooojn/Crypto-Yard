@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoYard 🚀: Unleash the Future of Finance! 🌐</title>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/2882665ba0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #222222;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .bosy {
+        /* background: #3d3030; */
+        background: #000;
+    }
+
+    /* Pre loader */
+    #preloader {
+        /* background-image: url('bg.jpg'); */
+        background-attachment: fixed;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 999999;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @keyframes logo {
+        0% {
+            transform: scale(0);
+        }
+
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: scale(1);
+        }
+
+        10% {
+            transform: scale(0.4);
+        }
+
+        30% {
+            transform: scale(1.1);
+        }
+
+        40% {
+            transform: scale(0.98);
+        }
+
+        60% {
+            transform: scale(1.05);
+        }
+
+        70% {
+            transform: scale(0.98);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    .logo,
+    .logo_text,
+    .text {
+        width: fit-content;
+        height: fit-content;
+        animation: logo 1.5s ease-in-out;
+    }
+
+    .uptext {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .loading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text {
+        display: flex;
+        margin-top: 20px;
+        font-style: italic;
+        font-weight: bold;
+        font-size: xxx-large;
+        margin-bottom: 50px;
+        color: #04d963;
+    }
+
+    .loader {
+        opacity: 0;
+        display: flex;
+        border: 16px solid #000;
+        border-right: 16px solid #04d963;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        transform: scale(0.4);
+        animation: spin 2s linear infinite 0.5s;
+    }
+
+    @keyframes spin {
+        0% {
+            opacity: 100;
+
+            transform: rotate(0deg);
+        }
+
+        100% {
+            opacity: 100;
+            transform: rotate(360deg);
+        }
+    }
+
+    .fade-out {
+        transition: opacity 0.5s ease-in-out;
+        opacity: 0;
+    }
+
+    @keyframes moveup {
+        0% {
+            opacity: 0;
+            transform: translateY(2%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+
+    @keyframes float {
+        0% {
+            margin-top: 0px;
+        }
+
+        50% {
+            margin-top: 8px;
+        }
+
+        100% {
+            margin-top: 0px;
+        }
+    }
+
+    /* header */
+    header {
+        display: flex;
+        flex-direction: row;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .logotext {
+        display: flex;
+        margin-left: 20px;
+    }
+
+    .header_nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .navbar_header {
+            color: white;
+        }
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+    }
+
+    li {
+        font-size: large;
+        display: flex;
+        text-decoration: none;
+        margin: 0px 20px;
+    }
+
+    .third_part {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 20px;
+    }
+
+    .button {
+        display: flex;
+        font-size: large;
+        padding: 10px 15px;
+        border-radius: 12px;
+        color: white;
+        border: 1px solid #fff;
+        transition: 0.5s;
+        font-stretch: 90%;
+    }
+
+    .button:hover {
+        background: #04bb56;
+        border-color: #000;
+        cursor: pointer;
+    }
+
+    .detailshead {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 0px;
+        background: #161616;
+        padding: 10px 20px;
+        color: white;
+        font-size: 10px;
+    }
+
+    .coin {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-right: 15px;
+        border-right: 1px solid #626262;
+    }
+
+    .coinlogo img {
+        margin-right: 10px;
+        height: 30px;
+    }
+    .coinprice{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        color: #04d963;
+    }
+    .coinprice span{
+        color: white;
+    }
+    .marketcap{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.3;
+        color: #bcbcbc;
+        font-weight: 200;
+        font-size: 20px;
+    }
+    .marketcap span{
+        color:#04bb56;
+    
+    }
+    .icons{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px 20px;
+        width: 20%;
+        font-size: 20px;
+    }
+    .icons i{
+        transition: 0.5s;
+    }
+    .icons i:hover{
+        color: #04bb56;
+        cursor: pointer;
+    }
+    .halfheader{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 40%;
+    }
+    .fa-wallet,.fa-landmark{
+        border-left: 1px solid #626262;
+        padding-left: 15px;
+    }
+    .chartside{
+        display: flex;
+        flex-direction: column;
+        width: 68%;
+    }
+    .charthead{
+        display: flex;
+        background: #161616;
+        align-items: center;
+        padding: 10px 20px;
+        padding-bottom: 0;
+        border-radius: 5px 5px 0px 0px;
+        color: white;
+        transition: 0.5s;
+        font-stretch: 90%;
+        margin-bottom: 2px;
+    }
+    .charts{
+        border-bottom: 4px solid #04bb56;
+    }
+    .market ,.charts{
+        padding-bottom: 5px;
+        font-size: 18px;
+        margin-right: 40px;
+    }
+    .chart{
+        background: #161616;
+        border-radius: 0px 0px 5px 5px;
+        padding:0px 20px;
+        padding-bottom: 20px;
+    }
+    .stats{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        background: #161616;
+        padding: 40px 40px;
+        color: white;
+        margin-top: 4px;
+        font-size: 20px;
+    }
+    .values{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+    }
+    .prices{
+        margin-left: 10px;
+        color: #04bb56;
+    }
+    .main{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .tradeside{
+        display: flex;
+        flex-direction: column;
+        background: #161616;
+        width: 31.5%;
+    }
+    .buysell{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background: #111111;
+        height: 40px;
+        margin: 30px 20px;
+        border-radius: 25px;
+        font-size: 22px;
+        color: white;
+    }
+    .buy,.sell{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
+        height: 100%;
+        width: 50%;
+        transition: 0.5s;
+        
+    }
+    .buy{
+        background: #04bb56;
+    }
+    .avail{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: bold;
+        padding: 20px 20px;
+        color: rgb(172, 172, 172);
+    }
+    .avail span{
+        color: #04bb56;
+        margin: 0px 4px;
+    }
+    .buysellsection{
+        display: flex;
+        flex-direction: column;
+    }
+    .inputss{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 40px;
+        width: 100%;
+        padding: 8px 20px;
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        background: #111111;
+        margin: 5px 20px;
+        border-radius: 10px;
+    }
+    .inputss:focus{
+    border: 2px solid #04bb56;
+    }
+    .custom-placeholder {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 80px;
+      font-weight: bold;
+      font-stretch: 90%;
+      pointer-events: none;
+      color: #888;
+    }
+    .confirm{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 20px;
+        background: #04bb56;
+        color: white;
+        font-size: 20px;
+        border-radius: 30px;
+        margin: 20px 20px;
+        transition: 0.5s;
+    }
+    p{
+        margin: 10px 0px;
+        margin-left: 30px;
+        font-size: 16px;
+        color: #626262;
+        transition: 0.5s;
+        font-weight: bold;
+    }
+    .confirm:hover{
+        background: #04d963;
+        cursor: pointer;
+    }
+    .amountpercent{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        font-weight: bold;
+        color: #c6c6c6;
+    }
+    .amountpercent div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 0px;
+        border-radius: 10px;
+        width: 24%;
+        transition: 0.5s;
+        background: #111111;
+    }
+    .input-sep{
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        
+    }
+    input[type=number]::-webkit-inner-spin-button {
+      opacity: 0;
+    }
+    input[type=number]::-webkit-outer-spin-button, 
+    input[type=number]::-webkit-inner-spin-button {
+      padding: 30px 10px;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      border-radius: 10px;
+      background: #111111;
+    }
+    .customarrows{
+      z-index: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      justify-content: space-between;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 25px;
+    }
+    .fa-caret-up,.fa-caret-down{
+      color: #616161;
+    }
+    .fa-caret-up{
+      border-radius: 10px 10px 0px 0px;
+    }
+    .fa-caret-down{
+      border-radius: 0px 0px 10px 10px;
+    }
+    .fa-caret-up:hover,.fa-caret-down:hover{
+      color: #04bb56;
+      cursor: pointer;
+      background: #141414;
+    }
+    .customarrows i{
+      align-items: center;
+      display: flex;
+      transition: 0.5s;
+      justify-content: center;
+      padding: 3px 10px;
+      background: #171717;
+      margin: 2px 0px;
+    }
+    .icon{
+      display: flex;
+      align-items: center;
+      position: relative;
+      justify-content: center;
+      transition: 0.5s;
+      flex-direction: column ;
+    }
+    .dropdown{
+      display: none;
+      position: absolute;
+      background: #111111;
+      color: white;
+      width: fit-content;
+      white-space: nowrap;
+      min-width: 50px;
+      font-size: 15px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+    }
+    .icon:hover .dropdown{
+      display: block;
+    }
+</style>
+
+<body>
+    <!-- Pre loader -->
+    <div id="preloader">
+        <div class="uptext">
+            <div class="logo"><img src="/public/images/logo_only.png" alt=""></div>
+            <div class="logo_text"><img src="/public/images/logo_text.png" alt=""></div>
+        </div>
+        <div class="loading">
+            <div class="text">
+                Loading
+            </div>
+            <div class="loader"></div>
+        </div>
+    </div>
+    <div class="bosy">
+
+        <header>
+            <div class="logotext">
+                <img src="/public/images/logo_text.png" alt="" height="70px">
+            </div>
+            <div class="header_nav">
+                <nav class="navbar_header">
+                    <ul>
+                        <li>Buy Crypto</li>
+                        <li>Market</li>
+                        <li>Trade</li>
+                        <li>Assests</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="third_part">
+                <div class="button">Sign up/Login</div>
+                <div class="loggedin"></div>
+            </div>
+        </header>
+    </div>
+    <div class="detailshead">
+        <div class="halfheader">
+
+            <div class="coin">
+                <div class="coinlogo">
+                    <img src="/public/images/bitcoin1.png" alt="">
+                </div>
+                <div class="coinname">
+                    <h1>BTC/USDT</h1>
+                </div>
+            </div>
+            <div class="coinprice">
+                <h1>Price: $ <span>40,000</span></h1>
+            </div>
+            <div class="marketcap">
+                <div><p>Market Cap <br> $ <span>40,000</span></p></div>
+            </div>
+        </div>
+        <div class="icons">
+            <div class="icon">
+              <i class="fa-solid fa-wifi"></i>
+              <div id="ping" class="dropdown">
+              </div>
+            </div>
+            <div class="icon">
+            <i class="fa-solid fa-wallet"></i>
+            <div  class="dropdown">
+              Assests
+            </div>
+            </div>
+            <div class="icon">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+            <div class="dropdown">
+              P2P
+            </div>
+            </div>
+            <div class="icon">
+            <i class="fa-solid fa-landmark"></i>
+            <div class="dropdown">
+              Deposit
+            </div>
+            </div>
+            <div class="icon">
+            <i class="fa-solid fa-shop"></i>
+            <div class="dropdown">
+              Market
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="chartside">
+            <div class="charthead">
+                <div class="charts">Chart</div>
+                <div class="market">Go to Market</div>
+            </div>
+            <div class="stats">
+                <div class="values">O <span class="prices">53,599</span></div>
+                <div class="values">H <span class="prices">53,599</span></div>
+                <div class="values">L <span class="prices">53,599</span></div>
+                <div class="values">C <span class="prices">53,599</span></div>
+            </div>
+            <div id="myChart" class="chart"></div>
+        </div>
+        <div class="tradeside">
+            <div class="charthead" style="border-bottom: 0.2px solid #4b4b4b;">
+                <div class="charts">Spot</div>
+                <div class="market">Go to Peer 2 peer</div>
+            </div>
+            <div class="buysell">
+                <div id="buyButton" class="buy">
+                    <div>Buy</div>
+                </div>
+                <div id="sellButton" class="sell">
+                    <div>Sell</div>
+                </div>
+            </div>
+            <div class="charthead" style="border-bottom: 0.2px solid #4b4b4b;">
+                <div class="charts" style="border: none;">Limit</div>
+                <div class="market">Future (Coming Soon)</div>
+            </div>
+            <div class="buysellsection">
+                <div class="avail">
+                    <div>Available</div>
+                    <div><span>0.00</span><span id="currency" style="color: #888;">USDT</span></div>
+                </div>
+                <div class="input-sep">
+                  <span class="custom-placeholder">USDT</span>
+                  <input class="inputss" placeholder="Price" type="number" name="" id="priceInput" maxlength="10">
+                  <div class="customarrows">
+                    <i class="fa-solid fa-caret-up" ></i>
+                    <i class="fa-solid fa-caret-down" ></i>
+                  </div>
+                </div>
+                <div class="input-sep">
+                  <span class="custom-placeholder">BTC</span>
+                  <input class="inputss" placeholder="Quantity" type="number" name="" id="" maxlength="10">
+                  <div class="customarrows">
+                    <i class="fa-solid fa-caret-up" ></i>
+                    <i class="fa-solid fa-caret-down" ></i>
+                  </div>
+                </div>
+
+
+                <div class="amountpercent">
+                    <div>25%</div>
+                    <div>50%</div>
+                    <div>75%</div>
+                    <div>100%</div>
+                </div>
+                <div class="input-sep">
+                  <span class="custom-placeholder">BTC</span>
+                <input class="inputss" placeholder="Volume" type="number" name="" id="" maxlength="10">
+                <div class="customarrows">
+                  <i class="fa-solid fa-caret-up" ></i>
+                  <i class="fa-solid fa-caret-down" ></i>
+                </div>
+                </div>
+                <p>Confirm</p>
+                <div id="confirm" class="confirm">
+                    Buy BTC
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--               scripts    -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        //  Pre loader 
+        window.addEventListener("load", function () {
+            var preloader = document.getElementById("preloader");
+            preloader.classList.add("fade-out");
+            setTimeout(function () {
+                preloader.style.display = "none";
+            }, 1000);
+        });
+
+
+
+        var options = {
+          series: [{
+          data: [{
+              x: new Date(1538778600000),
+              y: [6629.81, 6650.5, 6623.04, 6633.33]
+            },
+            {
+              x: new Date(1538780400000),
+              y: [6632.01, 6643.59, 6620, 6630.11]
+            },
+            {
+              x: new Date(1538782200000),
+              y: [6630.71, 6648.95, 6623.34, 6635.65]
+            },
+            {
+              x: new Date(1538784000000),
+              y: [6635.65, 6651, 6629.67, 6638.24]
+            },
+            {
+              x: new Date(1538785800000),
+              y: [6638.24, 6640, 6620, 6624.47]
+            },
+            {
+              x: new Date(1538787600000),
+              y: [6624.53, 6636.03, 6621.68, 6624.31]
+            },
+            {
+              x: new Date(1538789400000),
+              y: [6624.61, 6632.2, 6617, 6626.02]
+            },
+            {
+              x: new Date(1538791200000),
+              y: [6627, 6627.62, 6584.22, 6603.02]
+            },
+            {
+              x: new Date(1538793000000),
+              y: [6605, 6608.03, 6598.95, 6604.01]
+            },
+            {
+              x: new Date(1538794800000),
+              y: [6604.5, 6614.4, 6602.26, 6608.02]
+            },
+            {
+              x: new Date(1538796600000),
+              y: [6608.02, 6610.68, 6601.99, 6608.91]
+            },
+            {
+              x: new Date(1538798400000),
+              y: [6608.91, 6618.99, 6608.01, 6612]
+            },
+            {
+              x: new Date(1538800200000),
+              y: [6612, 6615.13, 6605.09, 6612]
+            },
+            {
+              x: new Date(1538802000000),
+              y: [6612, 6624.12, 6608.43, 6622.95]
+            },
+            {
+              x: new Date(1538803800000),
+              y: [6623.91, 6623.91, 6615, 6615.67]
+            },
+            {
+              x: new Date(1538805600000),
+              y: [6618.69, 6618.74, 6610, 6610.4]
+            },
+            {
+              x: new Date(1538807400000),
+              y: [6611, 6622.78, 6610.4, 6614.9]
+            },
+            {
+              x: new Date(1538809200000),
+              y: [6614.9, 6626.2, 6613.33, 6623.45]
+            },
+            {
+              x: new Date(1538811000000),
+              y: [6623.48, 6627, 6618.38, 6620.35]
+            },
+            {
+              x: new Date(1538812800000),
+              y: [6619.43, 6620.35, 6610.05, 6615.53]
+            },
+            {
+              x: new Date(1538814600000),
+              y: [6615.53, 6617.93, 6610, 6615.19]
+            },
+            {
+              x: new Date(1538816400000),
+              y: [6615.19, 6621.6, 6608.2, 6620]
+            },
+            {
+              x: new Date(1538818200000),
+              y: [6619.54, 6625.17, 6614.15, 6620]
+            },
+            {
+              x: new Date(1538820000000),
+              y: [6620.33, 6634.15, 6617.24, 6624.61]
+            },
+            {
+              x: new Date(1538821800000),
+              y: [6625.95, 6626, 6611.66, 6617.58]
+            },
+            {
+              x: new Date(1538823600000),
+              y: [6619, 6625.97, 6595.27, 6598.86]
+            },
+            {
+              x: new Date(1538825400000),
+              y: [6598.86, 6598.88, 6570, 6587.16]
+            },
+            {
+              x: new Date(1538827200000),
+              y: [6588.86, 6600, 6580, 6593.4]
+            },
+            {
+              x: new Date(1538829000000),
+              y: [6593.99, 6598.89, 6585, 6587.81]
+            },
+            {
+              x: new Date(1538830800000),
+              y: [6587.81, 6592.73, 6567.14, 6578]
+            },
+            {
+              x: new Date(1538832600000),
+              y: [6578.35, 6581.72, 6567.39, 6579]
+            },
+            {
+              x: new Date(1538834400000),
+              y: [6579.38, 6580.92, 6566.77, 6575.96]
+            },
+            {
+              x: new Date(1538836200000),
+              y: [6575.96, 6589, 6571.77, 6588.92]
+            },
+            {
+              x: new Date(1538838000000),
+              y: [6588.92, 6594, 6577.55, 6589.22]
+            },
+            {
+              x: new Date(1538839800000),
+              y: [6589.3, 6598.89, 6589.1, 6596.08]
+            },
+            {
+              x: new Date(1538841600000),
+              y: [6597.5, 6600, 6588.39, 6596.25]
+            },
+            {
+              x: new Date(1538843400000),
+              y: [6598.03, 6600, 6588.73, 6595.97]
+            },
+            {
+              x: new Date(1538845200000),
+              y: [6595.97, 6602.01, 6588.17, 6602]
+            },
+            {
+              x: new Date(1538847000000),
+              y: [6602, 6607, 6596.51, 6599.95]
+            },
+            {
+              x: new Date(1538848800000),
+              y: [6600.63, 6601.21, 6590.39, 6591.02]
+            },
+            {
+              x: new Date(1538850600000),
+              y: [6591.02, 6603.08, 6591, 6591]
+            },
+            {
+              x: new Date(1538852400000),
+              y: [6591, 6601.32, 6585, 6592]
+            },
+            {
+              x: new Date(1538854200000),
+              y: [6593.13, 6596.01, 6590, 6593.34]
+            },
+            {
+              x: new Date(1538856000000),
+              y: [6593.34, 6604.76, 6582.63, 6593.86]
+            },
+            {
+              x: new Date(1538857800000),
+              y: [6593.86, 6604.28, 6586.57, 6600.01]
+            },
+            {
+              x: new Date(1538859600000),
+              y: [6601.81, 6603.21, 6592.78, 6596.25]
+            },
+            {
+              x: new Date(1538861400000),
+              y: [6596.25, 6604.2, 6590, 6602.99]
+            },
+            {
+              x: new Date(1538863200000),
+              y: [6602.99, 6606, 6584.99, 6587.81]
+            },
+            {
+              x: new Date(1538865000000),
+              y: [6587.81, 6595, 6583.27, 6591.96]
+            },
+            {
+              x: new Date(1538866800000),
+              y: [6591.97, 6596.07, 6585, 6588.39]
+            },
+            {
+              x: new Date(1538868600000),
+              y: [6587.6, 6598.21, 6587.6, 6594.27]
+            },
+            {
+              x: new Date(1538870400000),
+              y: [6596.44, 6601, 6590, 6596.55]
+            },
+            {
+              x: new Date(1538872200000),
+              y: [6598.91, 6605, 6596.61, 6600.02]
+            },
+            {
+              x: new Date(1538874000000),
+              y: [6600.55, 6605, 6589.14, 6593.01]
+            },
+            {
+              x: new Date(1538875800000),
+              y: [6593.15, 6605, 6592, 6603.06]
+            },
+            {
+              x: new Date(1538877600000),
+              y: [6603.07, 6604.5, 6599.09, 6603.89]
+            },
+            {
+              x: new Date(1538879400000),
+              y: [6604.44, 6604.44, 6600, 6603.5]
+            },
+            {
+              x: new Date(1538881200000),
+              y: [6603.5, 6603.99, 6597.5, 6603.86]
+            },
+            {
+              x: new Date(1538883000000),
+              y: [6603.85, 6605, 6600, 6604.07]
+            },
+            {
+              x: new Date(1538884800000),
+              y: [6604.98, 6606, 6604.07, 6606]
+            },
+          ]
+        }],
+          chart: {
+          type: 'candlestick',
+          height: 550
+        },
+        xaxis: {
+          type: 'datetime'
+        },
+        yaxis: {
+          tooltip: {
+            enabled: true
+          }
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#myChart"), options);
+        chart.render();
+    
+    
+        document.addEventListener("DOMContentLoaded", function () {
+    var buyButton = document.getElementById("buyButton");
+    var sellButton = document.getElementById("sellButton");
+    var currency = document.getElementById("currency");
+    var confirmButton = document.getElementById("confirm");
+
+    buyButton.addEventListener("click", function () {
+        // Reset color for both buttons
+        buyButton.style.backgroundColor = "";
+        sellButton.style.backgroundColor = "";
+        buyButton.style.backgroundColor = "green";
+        confirmButton.style.backgroundColor = "green";
+        currency.innerHTML = "USDT";
+        confirmButton.innerHTML = "Buy BTC";
+    });
+
+    sellButton.addEventListener("click", function () {
+        // Reset color for both buttons
+        buyButton.style.backgroundColor = "#141414";
+        sellButton.style.backgroundColor = "";
+        currency.innerHTML = "BTC";
+        confirmButton.innerHTML = "Sell BTC";
+        confirmButton.style.backgroundColor = "red";
+        sellButton.style.backgroundColor = "red";
+    });
+});
+
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+  // Selecting the quantity input field and the arrows
+  var quantityInputs = document.querySelectorAll(".inputss");
+  var incrementArrows = document.querySelectorAll(".fa-caret-up");
+  var decrementArrows = document.querySelectorAll(".fa-caret-down");
+
+
+  // Adding click event listeners to the arrows
+  incrementArrows.forEach(function (arrow) {
+    arrow.addEventListener("click", function () {
+      updateQuantity(arrow, 1); // Increment by 1
+    });
+  });
+  
+  decrementArrows.forEach(function (arrow) {
+    arrow.addEventListener("click", function () {
+      updateQuantity(arrow, -1); // Decrement by 1
+    });
+  });
+  
+  function updateQuantity(arrow, change) {
+    var parentContainer = arrow.closest('.input-sep');
+    
+    // Check if the parent container exists
+    if (!parentContainer) {
+      console.error('Parent container not found');
+      return;
+    }
+    
+    var quantityInput = parentContainer.querySelector('.inputss');
+
+  // Check if the quantity input exists
+  if (!quantityInput) {
+    console.error('Quantity input not found');
+    return;
+  }
+  var currentQuantity = parseInt(quantityInput.value, 10) || 0;
+  var newQuantity = currentQuantity + change;
+
+  // Ensure the quantity is not negative
+  if (newQuantity >= 0) {
+    quantityInput.value = newQuantity;
+  }
+}
+});
+var ping = document.getElementById("ping");
+
+// Define the function to perform the speed test
+function performSpeedTest() {
+    const startTime = new Date().getTime();
+    const image = new Image();
+
+    image.onload = function () {
+        const endTime = new Date().getTime();
+        const duration = endTime - startTime;
+        ping.innerHTML = `Ping: ${duration+20} ms`;
+    };
+    image.src = "https://assets.staticimg.com/g-biz/externals/2022-06-01/9bfcd9feaf2b8bed.svg";
+}
+
+// Call the function initially
+performSpeedTest();
+
+setInterval(performSpeedTest, 200);
+// https://www.youtube.com/watch?v=zQC2C3g_j2Q
+    </script>
+</body>
+
+</html>
