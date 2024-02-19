@@ -1,0 +1,4 @@
+Bitcoin price ,$52,098.04
+Ethereum price ,$2,892.36
+Tether USDt price ,$1.00
+Dogecoin price ,$0.08597
