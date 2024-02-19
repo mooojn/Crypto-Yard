@@ -1,6 +1,6 @@
 const express = require("express");
 const hbs = require('hbs');
-
+const btc = require('./price.js');
 const app = express();
 
 app.set('view engine', 'hbs');
@@ -45,13 +45,13 @@ app.get('/p2p', async (req, res) => {
 });
 // trading page
 app.get('/trading', async (req, res) => {
-    res.render('trading');
+    res.render('trading', { btc });
 });
 // 404 page (invalid url)
 app.get('*', async (req, res) => {
     res.status(404).send("<h1>404 page not found</h1>");
 });
-/// ----------------------------------------------- ROUTING END ------------------------------------------------ ///
 
+/// ----------------------------------------------- ROUTING END ------------------------------------------------ ///
 // server port
 app.listen(4500, () => console.log("Server is running..."));
