@@ -621,10 +621,10 @@
                 </div>
             </div>
             <div class="coinprice">
-                <h1>Price: $ <span>40,000</span></h1>
+                <h1>Price: $ <span id="testingPHASE">{{btc}}</span></h1>
             </div>
             <div class="marketcap">
-                <div><p>Market Cap <br> $ <span>40,000</span></p></div>
+                <div><p>Market Cap <br> $ <span>{{btc}}</span></p></div>
             </div>
         </div>
         <div class="icons">
@@ -750,7 +750,7 @@
             }, 1000);
         });
 
-
+        
 
         var options = {
           series: [{
