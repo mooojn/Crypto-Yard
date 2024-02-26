@@ -1,6 +1,6 @@
 const express = require("express");
 const hbs = require('hbs');
-const btc = require('./price.js');
+const getPricesOfCoins = require('./crypto_scrap.js');
 const app = express();
 
 app.set('view engine', 'hbs');
@@ -45,7 +45,8 @@ app.get('/p2p', async (req, res) => {
 });
 // trading page
 app.get('/trading', async (req, res) => {
-    res.render('trading', { btc });
+    const prices = await getPricesOfCoins();
+    res.render('trading', { btc: prices[0] });
 });
 // 404 page (invalid url)
 app.get('*', async (req, res) => {
