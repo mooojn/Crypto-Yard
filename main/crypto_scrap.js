@@ -1,8 +1,9 @@
 // loading modules
 const axios = require('axios');
 const cheerio = require('cheerio');
+const { Console } = require('console');
 const fs = require('fs');
-let data = "";
+let prices = [];
 // scraping function
 async function get_info(url) 
 {
@@ -12,7 +13,7 @@ async function get_info(url)
     const name = $("span.sc-f70bb44c-0.jltoa").text();
     const price = $("span.sc-f70bb44c-0.jxpCgO.base-text").text();
 
-    data += `${name},${price}\n`;
+    prices.push(price);
 }
 // urls to scrape
 const urls =
@@ -22,12 +23,10 @@ const urls =
     "https://coinmarketcap.com/currencies/tether/",
     "https://coinmarketcap.com/currencies/dogecoin/"
 ];
-// loop through urls and getting info
-(async function() 
-{
-    for (const url of urls) 
-    {
+// Export a function that returns a Promise
+module.exports = async function() {
+    for (const url of urls) {
         await get_info(url);
     }
-    fs.writeFileSync("crypto_prices.txt", data);
-})();
+    return prices;
+};
