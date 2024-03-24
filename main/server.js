@@ -1,6 +1,6 @@
 const express = require("express");
 const hbs = require('hbs');
-const getPricesOfCoins = require('./crypto_scrap.js');
+const getPricesOfCoins = require('./utils/crypto_scrap.js');
 const app = express();
 
 app.set('view engine', 'hbs');
@@ -50,7 +50,8 @@ app.get('/trading', async (req, res) => {
 });
 // 404 page (invalid url)
 app.get('*', async (req, res) => {
-    res.status(404).send("<h1>404 page not found</h1>");
+    // res.status(404).send("<h1>404 page not found</h1>");
+    res.render('404');
 });
 
 /// ----------------------------------------------- ROUTING END ------------------------------------------------ ///
