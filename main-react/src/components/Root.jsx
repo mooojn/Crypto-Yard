@@ -13,10 +13,11 @@ import icon6 from './assets/icon-6.png'
 import img1 from './assets/img-1.png'
 import img2 from './assets/img-2.png'
 import img3 from './assets/img-3.png'
+
+
 import './styles/Root.css'
 
-
-function App(){
+function Root(){
   
   return(
   <>
@@ -314,4 +315,4 @@ function App(){
   );
 }
 
-export default App;
+export default Root;
