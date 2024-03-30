@@ -20,6 +20,8 @@ function App(){
   
   return(
   <>
+  <body>
+    
   {/* <div id="preloader">
       <div className="uptext">
           <div className="logo"><img src={logo} alt=""/></div>
@@ -307,7 +309,7 @@ function App(){
       </div> 
       <div className="baseline">Copyright © 2024 Crypto Yard - All Rights Reserved</div>
   </footer> 
-
+  </body>
   </>
   );
 }
