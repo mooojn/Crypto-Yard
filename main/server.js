@@ -2,6 +2,7 @@ const express = require("express");
 const hbs = require('hbs');
 const getPricesOfCoins = require('./utils/crypto_scrap.js');
 const app = express();
+const color = require('colors');
 
 app.set('view engine', 'hbs');
 app.use('/public', express.static('public'));
@@ -56,4 +57,6 @@ app.get('*', async (req, res) => {
 
 /// ----------------------------------------------- ROUTING END ------------------------------------------------ ///
 // server port
-app.listen(4500, () => console.log("Server is running..."));
+const msg = "--> ".green.bold+ "Local: ".bold + "http://localhost:4500/".blue
+console.clear()
+app.listen(4500, () => console.log(msg));
