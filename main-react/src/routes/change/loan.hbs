@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoYard 🚀: Unleash the Future of Finance! 🌐</title>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/2882665ba0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .bosy {
+        /* background: #3d3030; */
+        background: #000;
+    }
+
+    /* Pre loader */
+    #preloader {
+        /* background-image: url('bg.jpg'); */
+        background-attachment: fixed;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 999999;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @keyframes logo {
+        0% {
+            transform: scale(0);
+        }
+
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: scale(1);
+        }
+
+        10% {
+            transform: scale(0.4);
+        }
+
+        30% {
+            transform: scale(1.1);
+        }
+
+        40% {
+            transform: scale(0.98);
+        }
+
+        60% {
+            transform: scale(1.05);
+        }
+
+        70% {
+            transform: scale(0.98);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    .logo,
+    .logo_text,
+    .text {
+        width: fit-content;
+        height: fit-content;
+        animation: logo 1.5s ease-in-out;
+    }
+
+    .uptext {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .loading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text {
+        display: flex;
+        margin-top: 20px;
+        font-style: italic;
+        font-weight: bold;
+        font-size: xxx-large;
+        margin-bottom: 50px;
+        color: #04d963;
+    }
+
+    .loader {
+        opacity: 0;
+        display: flex;
+        border: 16px solid #000;
+        border-right: 16px solid #04d963;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        transform: scale(0.4);
+        animation: spin 2s linear infinite 0.5s;
+    }
+
+    @keyframes spin {
+        0% {
+            opacity: 100;
+
+            transform: rotate(0deg);
+        }
+
+        100% {
+            opacity: 100;
+            transform: rotate(360deg);
+        }
+    }
+
+    .fade-out {
+        transition: opacity 0.5s ease-in-out;
+        opacity: 0;
+    }
+
+    @keyframes moveup {
+        0% {
+            opacity: 0;
+            transform: translateY(2%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+
+    @keyframes float {
+        0% {
+            margin-top: 0px;
+        }
+
+        50% {
+            margin-top: 8px;
+        }
+
+        100% {
+            margin-top: 0px;
+        }
+    }
+
+    /* header */
+    header {
+        display: flex;
+        flex-direction: row;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .logotext {
+        display: flex;
+        margin-left: 20px;
+    }
+
+    .header_nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .navbar_header {
+            color: white;
+        }
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+    }
+
+    li {
+        font-size: large;
+        display: flex;
+        text-decoration: none;
+        margin: 0px 20px;
+    }
+
+    .third_part {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 20px;
+    }
+
+    .button {
+        display: flex;
+        font-size: large;
+        padding: 10px 15px;
+        border-radius: 12px;
+        color: white;
+        border: 1px solid #fff;
+        transition: 0.5s;
+        font-stretch: 90%;
+    }
+
+    .button:hover {
+        background: #04bb56;
+        border-color: #000;
+        cursor: pointer;
+
+    }
+
+    .main {
+        display: flex;
+        flex-direction: row;
+        background-color: #1a1a1a;
+        justify-content: space-around;
+        padding-left: 80px;
+        padding-right: 20px;
+        padding-top: 90px;
+        height: fit-content;
+        padding-bottom: 30px;
+    }
+
+    .loanstext {
+        display: flex;
+        font-family: Arial, Helvetica, sans-serif;
+        flex-direction: column;
+        width: 40%;
+        color: rgb(240, 240, 240);
+        justify-content: center;
+        align-items: start;
+    }
+
+    .headings {
+        font-size: 60px;
+        font-weight: bold;
+    }
+
+    .lines {
+        font-size: 25px;
+        margin-top: 20px;
+        line-height: 1.3;
+        color: #dcdcdc;
+    }
+
+    .loanbutton {
+        display: flex;
+        font-size: large;
+        padding: 10px 30px;
+        border-radius: 6px;
+        color: white;
+        border: 1px solid #01612c;
+        background-color: #01612c;
+        transition: 0.5s;
+        font-size: 20px;
+        font-stretch: 90%;
+        margin-top: 30px;
+    }
+
+    .loanbutton:hover {
+        background: #04bb56;
+        border-color: #000;
+        cursor: pointer;
+    }
+
+    .points {
+        display: flex;
+        flex-direction: column;
+        margin-top: 60px;
+        font-size: 20px;
+        line-height: 1.3;
+    }
+
+    .points i {
+        color: #04bb56;
+        font-size: 40px;
+        display: flex;
+        margin-right: 20px;
+    }
+
+    .point {
+        display: flex;
+        margin-bottom: 30px;
+        width: 70%;
+        font-style: italic;
+        color: #cccccc;
+    }
+
+    .table {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin: 0px 40px;
+        box-shadow: 0px 0px 10px 0px #000;
+        border-radius: 3px;
+        height: fit-content;
+        background-color: #222222;
+        width: 50%;
+    }
+
+    .Ltv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        color: #dcdcdc;
+    }
+
+    .ltvhead {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .ltvoffers {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .offer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #282a28;
+        box-shadow: 0px 0px 5px 0px #000;
+        transition: 0.5s;
+        color: #00a349;
+    }
+
+    .offer:hover {
+        background-color: #008e40;
+        color: #fff;
+        box-shadow: 0px 0px 10px 0px #007623;
+        cursor: pointer;
+    }
+
+    .percent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: bolder;
+        font-size: 25px;
+        margin-bottom: 3px;
+    }
+
+    .duration {
+        display: flex;
+        font-size: 13px;
+        color: #dcdcdc;
+    }
+
+    .duration i {
+        margin-right: 5px;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        color: #dcdcdc;
+    }
+
+    .detail {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 10px;
+        width: 45%;
+        transition: 0.5s;
+        color: white;
+    }
+
+    .detailhead {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px 0px;
+    }
+
+    .detailinfo {
+        display: flex;
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #01ae4f;
+    }
+
+    .detailinfo span {
+        font-weight: bold;
+        margin-left: 5px;
+        color: #dcdcdc;
+    }
+
+    .detaillines {
+        line-height: 1.3;
+        font-size: 15px;
+        color: #c3c2c2;
+        font-style: italic;
+    }
+
+    .confirm {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        margin: 0px 20px;
+    }
+
+    .amount {
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #dcdcdc;
+    }
+
+    .amounts {
+        display: flex;
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #01ae4f;
+    }
+
+    .amounts span {
+        font-weight: bold;
+        color: #dcdcdc;
+    }
+
+    .confirmline {
+        font-size: 15px;
+        color: #c3c2c2;
+        font-style: italic;
+    }
+
+    .confirmbutton {
+        display: flex;
+        padding: 10px 35px;
+        border-radius: 6px;
+        color: white;
+        border: 1px solid #01612c;
+        background-color: #01612c;
+        transition: 0.5s;
+        font-size: 20px;
+        font-stretch: 90%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .confirmbutton:hover {
+        background: #00a149;
+        box-shadow: 0px 0px 10px 0px #007623;
+        cursor: pointer;
+    }
+    .head{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        transition: 0.5s;
+        color: white;
+    }
+    .coins{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0px;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        transition: 0.5s;
+        color: white;
+    }
+    .coin{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 0px;
+        font-size: 18px;
+        border: 1px solid #b4b4b4;
+        padding: 5px 10px;
+        border-radius: 5px;
+        width: 100%;
+        transition: 0.5s;
+        width: 45%;
+        color: white;
+    }
+    .image{
+        margin-right: 5px;
+    }
+    .image img{
+        width: 30px;
+    }
+    .image-text{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        transition: all ease-in-out 0.3s;
+    }
+    a:hover{
+        color: #04bb56;
+    }
+</style>
+
+<body>
+    <!-- Pre loader -->
+    <div id="preloader">
+        <div class="uptext">
+            <div class="logo"><img src="/public/images/logo_only.png" alt=""></div>
+            <div class="logo_text"><img src="/public/images/logo_text.png" alt=""></div>
+        </div>
+        <div class="loading">
+            <div class="text">
+                Loading
+            </div>
+            <div class="loader"></div>
+        </div>
+    </div>
+    <div class="bosy">
+
+        <header>
+            <div class="logotext">
+                <img src="/public/images/logo_text.png" alt="" height="70px">
+            </div>
+            <div class="header_nav">
+                <nav class="navbar_header">
+                    <ul>
+                        <li><a href="/fast-trade">Buy Crypto</a></li>
+                        <li><a href="/market">Market</a></li>
+                        <li><a href="/trading">Trade</a></li>
+                        <li><a href="/assets">Assets</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="third_part">
+                <div class="button">Sign up/Login</div>
+                <div class="loggedin"></div>
+            </div>
+        </header>
+
+        <div class="main">
+            <div class="loanstext">
+                <div class="headings">Get Instant</div>
+                <div class="headings">
+                    <p>Crytpo <span style="color: #04bb56;">Loans</span></p>
+                </div>
+                <div class="lines">
+                    <p>Leverage the value of top 5 cryptocurrencies as collateral to secure quick and flexible crypto
+                        loans, empowering you to access funds without selling your digital assets.</p>
+                </div>
+                <div class="loanbutton">No Loan</div>
+                <div class="points">
+                    <div class="point">
+                        <i class="far fa-check-circle"></i>
+                        <p>Optimize your digital asset management with our system, offering leverage through <span
+                                style="color: #04bb56;">USDT</span></p>
+                    </div>
+                    <div class="point">
+                        <i class="far fa-check-circle"></i>
+                        <p>Instant Loans using our Fiat service Not need to find a lender like in P2P</p>
+                    </div>
+                    <div class="point">
+                        <i class="far fa-check-circle"></i>
+                        <p>Flexible loan repayment date and loan-to-value options</p>
+                    </div>
+                </div>
+            </div>
+            <div class="table">
+                <div class="swap">
+                    <div class="head">
+                        <p>
+                            Crytpo Collateral
+                        </p>
+                        <p>
+                            Amount in USD Tether
+                        </p>
+                    </div>
+                    <div class="coins">
+                        <div class="coin">
+                            <div class="image-text">
+                                <div class="image"><img src="/public/images/bitcoin1.png"  alt=""></div>
+                                <div class="name">BTC</div>
+                            </div>
+                                <div class="Amount">1</div>
+                        </div>
+                        <div class="coin">
+                            <div class="image-text">
+                            <div class="image"><img src="/public/images/USDT.png" alt=""></div>
+                            <div class="name">USD</div>
+                            </div>
+                            <div class="Amount">32987</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Ltv">
+                    <div class="ltvhead">Loan-to-Value (LTV)</div>
+                    <div class="ltvoffers">
+                        <div class="offer">
+                            <div class="offerpercent">
+                                <div class="percent">85.00%</div>
+                                <div class="duration"><i class="fa-solid fa-star"></i>30 DAYS</div>
+                            </div>
+                        </div>
+                        <div class="offer">
+                            <div class="offerpercent">
+                                <div class="percent">90.00%</div>
+                                <div class="duration">35 DAYS</div>
+                            </div>
+                        </div>
+                        <div class="offer">
+                            <div class="offerpercent">
+                                <div class="percent">70.00%</div>
+                                <div class="duration">41 DAYS</div>
+                            </div>
+                        </div>
+                        <div class="offer">
+                            <div class="offerpercent">
+                                <div class="percent">50.00%</div>
+                                <div class="duration">180 DAYS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail">
+                        <div class="detailhead">Loan Duration</div>
+                        <div class="detailinfo">
+                            <p><span>30</span> Days</p>
+                        </div>
+                        <div class="detaillines">After duration an automated deduction will be initiated from the
+                            designated account</div>
+                    </div>
+                    <div class="detail">
+                        <div class="detailhead">Price Down limit</div>
+                        <div class="detailinfo">
+                            <p><span>4783</span> USD/BTC</p>
+                        </div>
+                        <div class="detaillines">Price fluctuations are limited within a specified maximum threshold
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <div class="detailhead">Repayment</div>
+                        <div class="detailinfo">
+                            <p><span>240</span> USD</p>
+                        </div>
+                        <div class="detaillines">Full repayment of the loan is required partial payments will not be
+                            accepted.</div>
+                    </div>
+                </div>
+                <div class="confirm">
+                    <div class="amount">
+                        <div class="amounts">
+                            <p><span>424200
+                                </span> USD</p>
+                        </div>
+                        <div class="confirmline">Read rules before confirming</div>
+                    </div>
+                    <div class="confirmbutton">Get Loan</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--               scripts    -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        //  Pre loader 
+        window.addEventListener("load", function () {
+            var preloader = document.getElementById("preloader");
+            preloader.classList.add("fade-out");
+            setTimeout(function () {
+                preloader.style.display = "none";
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>
