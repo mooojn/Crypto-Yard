@@ -4,7 +4,7 @@ import { useState } from 'react'
 // import P2P from './components/P2P';
 // import Trading from './components/Trading';
 
-// import FastTrade from './components/FastTrade';
+import FastTrade from './components/FastTrade';
 // import LogInSignUp from './components/LogInSignUp';
 // import CreateOffer from './components/CreateOffer';
 // import MarketDetail from './components/MarketDetail'
@@ -19,7 +19,7 @@ function App() {
       {/* <Loan /> */}
       {/* <P2P /> */}
       {/* < Trading/> */}
-      {/* <FastTrade /> */}
+      <FastTrade />
       {/* <LogInSignUp /> */}
       {/* <CreateOffer /> */}
       {/* <MarketDetail /> */}
