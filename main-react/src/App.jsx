@@ -11,6 +11,7 @@ import FastTrade from './components/FastTrade';
 // import ErrorPage from './components/ErrorPage';
 // import Asset from './components/Assets'
 
+// zaeem made these changes
 
 function App() {
   return (
