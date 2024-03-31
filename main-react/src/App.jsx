@@ -7,7 +7,7 @@ import { useState } from 'react'
 // import FastTrade from './components/FastTrade';
 // import LogInSignUp from './components/LogInSignUp';
 // import CreateOffer from './components/CreateOffer';
-
+// import MarketDetail from './components/MarketDetail'
 // import ErrorPage from './components/ErrorPage';
 
 
@@ -22,6 +22,7 @@ function App() {
       {/* <FastTrade /> */}
       {/* <LogInSignUp /> */}
       {/* <CreateOffer /> */}
+      {/* <MarketDetail /> */}
       {/* <ErrorPage /> */}
     </>
   )
