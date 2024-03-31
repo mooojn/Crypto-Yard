@@ -9,7 +9,7 @@ import { useState } from 'react'
 // import CreateOffer from './components/CreateOffer';
 // import MarketDetail from './components/MarketDetail'
 // import ErrorPage from './components/ErrorPage';
-
+// import Asset from './components/Assets'
 
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
       {/* <LogInSignUp /> */}
       {/* <CreateOffer /> */}
       {/* <MarketDetail /> */}
+      {/* <Asset /> */}
       {/* <ErrorPage /> */}
     </>
   )
