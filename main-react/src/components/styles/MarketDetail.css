@@ -1,0 +1,444 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.bosy {
+    /* background: #3d3030; */
+    background: #000;
+}
+
+/* Pre loader */
+#preloader {
+    /* background-image: url('bg.jpg'); */
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes logo {
+    0% {
+        transform: scale(0);
+    }
+
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(0.4);
+    }
+
+    30% {
+        transform: scale(1.1);
+    }
+
+    40% {
+        transform: scale(0.98);
+    }
+
+    60% {
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.98);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.logo,
+.logo_text,
+.text {
+    width: fit-content;
+    height: fit-content;
+    animation: logo 1.5s ease-in-out;
+}
+
+.uptext {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    display: flex;
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: xxx-large;
+    margin-bottom: 50px;
+    color: #04d963;
+}
+
+.loader {
+    opacity: 0;
+    display: flex;
+    border: 16px solid #000;
+    border-right: 16px solid #04d963;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    transform: scale(0.4);
+    animation: spin 2s linear infinite 0.5s;
+}
+
+@keyframes spin {
+    0% {
+        opacity: 100;
+
+        transform: rotate(0deg);
+    }
+
+    100% {
+        opacity: 100;
+        transform: rotate(360deg);
+    }
+}
+
+.fade-out {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+@keyframes moveup {
+    0% {
+        opacity: 0;
+        transform: translateY(2%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes float {
+    0% {
+        margin-top: 0px;
+    }
+
+    50% {
+        margin-top: 8px;
+    }
+
+    100% {
+        margin-top: 0px;
+    }
+}
+
+/* header */
+header {
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logotext {
+    display: flex;
+    margin-left: 20px;
+}
+
+.header_nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .navbar_header {
+        color: white;
+    }
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    font-size: large;
+    display: flex;
+    text-decoration: none;
+    margin: 0px 20px;
+}
+
+.third_part {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 20px;
+}
+
+.button {
+    display: flex;
+    font-size: large;
+    padding: 10px 15px;
+    border-radius: 12px;
+    color: white;
+    border: 1px solid #fff;
+    transition: 0.5s;
+    font-stretch: 90%;
+}
+
+.button:hover {
+    background: #04bb56;
+    border-color: #000;
+    cursor: pointer;
+
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: fit-content;
+    background: #1a1a1a;
+    padding-top: 80px;
+}
+
+.grpahside {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100%;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.coininfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.coinlogo img {
+    width: 70px;
+    height: 70px;
+}
+
+.coinlogo {
+    display: flex;
+    margin-right: 10px;
+}
+
+.coinname {
+    display: flex;
+    font-size: 40px;
+    color: white;
+}
+
+.usd {
+    display: flex;
+    font-size: 20px;
+    color: white;
+    border: 1px solid #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.priceinfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0px;
+    padding: 0px 30px;
+}
+
+.overview {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.price {
+    display: flex;
+    font-size: 50px;
+    color: #04bb56;
+}
+
+.change {
+    display: flex;
+    font-size: 25px;
+    color: white;
+}
+
+.changeprice {
+    margin-left: 5px;
+}
+
+.heed {
+    display: flex;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    margin: 20px 0px;
+}
+
+.textover {
+    display: flex;
+    font-size: 20px;
+    line-height: 1.4;
+    color: rgb(178, 178, 178);
+}
+
+.tradeside {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    background: #141414;
+    border: 1px solid #fff;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 30px 30px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.title {
+    display: flex;
+    font-size: 30px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.line {
+    display: flex;
+    font-size: 18px;
+    color: rgb(178, 178, 178);
+    margin-bottom: 20px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -90px;
+}
+
+.number {
+    display: flex;
+    font-size: 40px;
+    color: #04bb56;
+    margin-bottom: 10px;
+}
+
+.comment {
+    display: flex;
+    font-size: 20px;
+    color: white;
+}
+
+.recommend {
+    display: flex;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tradings {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    color: white;
+
+}
+
+.title {
+    display: flex;
+    font-size: 19px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.trading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons:hover {
+    color: #04bb56;
+    cursor: pointer;
+}
+
+.suugest {
+    display: flex;
+    font-size: 15px;
+    margin-top: 20px;
+    color: rgb(178, 178, 178);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: all ease-in-out 0.3s;
+}
+
+a:hover {
+    color: #04bb56;
+}
