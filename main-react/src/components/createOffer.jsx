@@ -1,16 +1,16 @@
 import logo from './assets/logo_only.png' 
-import picture from './assets/logo_text.png'
-import pic from './assets/logo_text.png'
-import './styles/createOffer.css'
+import logoText from './assets/logo_text.png'
+
+import './styles/CreateOffer.css'
 function createOffer()
 {
     return(
         <>
         <body>
-        <div id="preloader">
+        {/* <div id="preloader">
             <div class="uptext">
                 <div class="logo"><img src={logo} alt=""/></div>
-                <div class="logo_text"><img src={picture} alt=""/></div>
+                <div class="logo_text"><img src={logoText} alt=""/></div>
             </div>
             <div class="loading">
                 <div class="text">
@@ -18,12 +18,12 @@ function createOffer()
                 </div>
                 <div class="loader"></div>
             </div>
-        </div>
-        {/*<div class="bosy">*/}
+        </div> */}
+        <div class="bosy">
     
             <header>
                 <div class="logotext">
-                    <img src={pic} alt="" style={{height:"70px"}}/>
+                    <img src={logoText} alt="" style={{height:"70px"}}/>
                 </div>
                 <div class="header_nav">
                     <nav class="navbar_header">
@@ -76,6 +76,7 @@ function createOffer()
                 </div>
                 <div class="createbutton">Create Offer</div>
             </div>
+        </div>
             {/* <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script>
             //  Pre loader 
