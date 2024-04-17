@@ -16,36 +16,36 @@ function Loan(){
 <Preloader />
 <Header />
     
-        <div class="main">
-            <div class="loanstext">
-                <div class="headings">Get Instant</div>
-                <div class="headings">
+        <div className="main2">
+            <div className="loanstext2">
+                <div className="headings2">Get Instant</div>
+                <div className="headings2">
                     <p>Crytpo <span style={{color: '#04bb56'}}>Loans</span></p>
                 </div>
-                <div class="lines">
+                <div className="lines2">
                     <p>Leverage the value of top 5 cryptocurrencies as collateral to secure quick and flexible crypto
                         loans, empowering you to access funds without selling your digital assets.</p>
                 </div>
-                <div class="loanbutton">No Loan</div>
-                <div class="points">
-                    <div class="point">
-                        <i class="far fa-check-circle"></i>
+                <div className="loanbutton2">No Loan</div>
+                <div className="points2">
+                    <div className="point2">
+                        <i className="far fa-check-circle"></i>
                         <p>Optimize your digital asset management with our system, offering leverage through <span
                                 style={{color: '#04bb56'}}>USDT</span></p>
                     </div>
-                    <div class="point">
-                        <i class="far fa-check-circle"></i>
+                    <div className="point2">
+                        <i className="far2 fa-check-circle"></i>
                         <p>Instant Loans using our Fiat service Not need to find a lender like in P2P</p>
                     </div>
-                    <div class="point">
-                        <i class="far fa-check-circle"></i>
+                    <div className="point2">
+                        <i className="far2 fa-check-circle"></i>
                         <p>Flexible loan repayment date and loan-to-value options</p>
                     </div>
                 </div>
             </div>
-            <div class="table">
-                <div class="swap">
-                    <div class="head">
+            <div className="table2">
+                <div className="swap2">
+                    <div className="head2">
                         <p>
                             Crytpo Collateral
                         </p>
@@ -53,87 +53,87 @@ function Loan(){
                             Amount in USD Tether
                         </p>
                     </div>
-                    <div class="coins">
-                        <div class="coin">
-                            <div class="image-text">
-                                <div class="image"><img src={btc1}  alt="" /></div>
-                                <div class="name">BTC</div>
+                    <div className="coins2">
+                        <div className="coin2">
+                            <div className="image2-text">
+                                <div className="image2"><img src={btc1}  alt="" /></div>
+                                <div className="name2">BTC</div>
                             </div>
-                                <div class="Amount">1</div>
+                                <div className="Amount2">1</div>
                         </div>
-                        <div class="coin">
-                            <div class="image-text">
-                            <div class="image"><img src={usdt} alt="" /></div>
-                            <div class="name">USD</div>
+                        <div className="coin2">
+                            <div className="image2-text">
+                            <div className="image2"><img src={usdt} alt="" /></div>
+                            <div className="name2">USD</div>
                             </div>
-                            <div class="Amount">32987</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="Ltv">
-                    <div class="ltvhead">Loan-to-Value (LTV)</div>
-                    <div class="ltvoffers">
-                        <div class="offer">
-                            <div class="offerpercent">
-                                <div class="percent">85.00%</div>
-                                <div class="duration"><i class="fa-solid fa-star"></i>30 DAYS</div>
-                            </div>
-                        </div>
-                        <div class="offer">
-                            <div class="offerpercent">
-                                <div class="percent">90.00%</div>
-                                <div class="duration">35 DAYS</div>
-                            </div>
-                        </div>
-                        <div class="offer">
-                            <div class="offerpercent">
-                                <div class="percent">70.00%</div>
-                                <div class="duration">41 DAYS</div>
-                            </div>
-                        </div>
-                        <div class="offer">
-                            <div class="offerpercent">
-                                <div class="percent">50.00%</div>
-                                <div class="duration">180 DAYS</div>
-                            </div>
+                            <div className="Amount2">32987</div>
                         </div>
                     </div>
                 </div>
-                <div class="details">
-                    <div class="detail">
-                        <div class="detailhead">Loan Duration</div>
-                        <div class="detailinfo">
+                <div className="Ltv2">
+                    <div className="ltvhead2">Loan-to-Value (LTV)</div>
+                    <div className="ltvoffers2">
+                        <div className="offer2">
+                            <div className="offerpercent2">
+                                <div className="percent2">85.00%</div>
+                                <div className="duration2"><i className="fa2-solid fa-star"></i>30 DAYS</div>
+                            </div>
+                        </div>
+                        <div className="offer2">
+                            <div className="offerpercent2">
+                                <div className="percent2">90.00%</div>
+                                <div className="duration2">35 DAYS</div>
+                            </div>
+                        </div>
+                        <div className="offer2">
+                            <div className="offerpercent2">
+                                <div className="percent2">70.00%</div>
+                                <div className="duration2">41 DAYS</div>
+                            </div>
+                        </div>
+                        <div className="offer2">
+                            <div className="offerpercent2">
+                                <div className="percent2">50.00%</div>
+                                <div className="duration2">180 DAYS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="details2">
+                    <div className="detail2">
+                        <div className="detailhead2">Loan Duration</div>
+                        <div className="detailinfo2">
                             <p><span>30</span> Days</p>
                         </div>
-                        <div class="detaillines">After duration an automated deduction will be initiated from the
+                        <div className="detaillines2">After duration an automated deduction will be initiated from the
                             designated account</div>
                     </div>
-                    <div class="detail">
-                        <div class="detailhead">Price Down limit</div>
-                        <div class="detailinfo">
+                    <div className="detail2">
+                        <div className="detailhead2">Price Down limit</div>
+                        <div className="detailinfo2">
                             <p><span>4783</span> USD/BTC</p>
                         </div>
-                        <div class="detaillines">Price fluctuations are limited within a specified maximum threshold
+                        <div className="detaillines2">Price fluctuations are limited within a specified maximum threshold
                         </div>
                     </div>
-                    <div class="detail">
-                        <div class="detailhead">Repayment</div>
-                        <div class="detailinfo">
+                    <div className="detail2">
+                        <div className="detailhead2">Repayment</div>
+                        <div className="detailinfo2">
                             <p><span>240</span> USD</p>
                         </div>
-                        <div class="detaillines">Full repayment of the loan is required partial payments will not be
+                        <div className="detaillines2">Full repayment of the loan is required partial payments will not be
                             accepted.</div>
                     </div>
                 </div>
-                <div class="confirm">
-                    <div class="amount">
-                        <div class="amounts">
+                <div className="confirm2">
+                    <div className="amount2">
+                        <div className="amounts2">
                             <p><span>424200
                                 </span> USD</p>
                         </div>
-                        <div class="confirmline">Read rules before confirming</div>
+                        <div className="confirmline2">Read rules before confirming</div>
                     </div>
-                    <div class="confirmbutton">Get Loan</div>
+                    <div className="confirmbutton2">Get Loan</div>
                 </div>
             </div>
         </div>
@@ -147,7 +147,7 @@ function Loan(){
         //  Pre loader 
         window.addEventListener("load", function () {
             var preloader = document.getElementById("preloader");
-            preloader.classList.add("fade-out");
+            preloader.classNameList.add2("fade-out");
             setTimeout(function () {
                 preloader.style.display = "none";
             }, 1000);

@@ -1,14 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-}
 
-body {
-  background: url(../assets/loginbg.jpg);
+.body11 {
+  background: url(../assets/loginbg.jpg11);
   background-position: center;
 }
 
-.container {
+.container11 {
   height: 800px;
   display: flex;
   justify-content: center;
@@ -20,10 +16,10 @@ body {
   box-shadow: 0px 0px 10px 10px #1d5e14;
 }
 
-.image {
+.image11 {
   display: flex;
   width: 50%;
-  background: url(../assets/imagebg.jpg);
+  background: url(../assets/imagebg.jpg11);
   z-index: 10;
   height: 100%;
   background-position: center;
@@ -32,7 +28,7 @@ body {
   border-radius: 8px 0px 0px 6px;
 }
 
-.images {
+.images11 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +40,7 @@ body {
   border-radius: 20px;
 }
 
-.footer {
+.footer11 {
   display: flex;
   color: white;
   align-items: last baseline;
@@ -55,12 +51,12 @@ body {
   font-size: 20px;
 }
 
-.form {
+.form11 {
   display: flex;
   width: 50%;
 }
 
-.table {
+.table11 {
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -72,7 +68,7 @@ body {
   border-radius: 20px;
 }
 
-.header {
+.header11 {
   border-radius: 18px 18px 0px 0px;
   background: #000;
   display: flex;
@@ -81,7 +77,7 @@ body {
   height: fit-content;
 }
 
-.dots {
+.dots11 {
   display: flex;
   width: 20px;
   height: 20px;
@@ -90,7 +86,7 @@ body {
   margin: 10px;
 }
 
-.text {
+.text11 {
   display: flex;
   color: #000;
   font-family: Arial, Helvetica, sans-serif;
@@ -101,7 +97,7 @@ body {
   font-weight: bold;
 }
 
-.symbol {
+.symbol11 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,7 +108,7 @@ body {
   font-weight: bold;
 }
 
-.coins {
+.coins11 {
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -121,7 +117,7 @@ body {
   justify-content: center;
 }
 
-.shortform {
+.shortform11 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,7 +128,7 @@ body {
   font-weight: bold;
 }
 
-.coin {
+.coin11 {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -145,7 +141,7 @@ body {
   border: 1px solid grey;
 }
 
-.form {
+.form11 {
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -155,7 +151,7 @@ body {
   width: 50%;
 }
 
-.pages {
+.pages11 {
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -164,14 +160,14 @@ body {
   width: 100%;
 }
 
-.container {
+.container11 {
 
   display: flex;
   border-radius: 7px;
 }
 
-.login,
-.registration {
+.login11,
+.registration11 {
   display: flex;
   width: 80%;
   flex-direction: column;
@@ -180,58 +176,58 @@ body {
   justify-content: center;
 }
 
-.container .registration {
+.container11 .registration11 {
   display: none;
 }
 
-#check:checked~.registration {
+#check11:checked~.registration11 {
   display: block;
 }
 
-#check:checked~.login {
+#check11:checked~.login11 {
   display: none;
 }
 
-#check {
+#check11 {
   display: none;
 }
 
-.container .form {
+.container11 .form11 {
   padding: 2rem;
 }
 
-.form header {
+.form11 header {
   font-size: 3rem;
   font-weight: 500;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem11;
 }
 
-.form input {
+.form11 input {
   height: 50px;
   width: 100%;
   padding: 0 15px;
   font-size: 17px;
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.3rem11;
   border: 1px solid #ddd;
   border-radius: 6px;
   outline: none;
 }
 
-.form input:focus {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+.form11 input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.211);
 }
 
-.form a {
+.form11 a {
   font-size: 16px;
   text-decoration: none;
 }
 
-.form a:hover {
+.form11 a:hover {
   text-decoration: underline;
 }
 
-.form input.button {
+.form11 input.button11 {
   color: #fff;
   width: fit-content;
   padding: 15px 30px;
@@ -245,31 +241,31 @@ body {
   justify-content: center;
   font-weight: 500;
   letter-spacing: 1px;
-  margin-top: 1.7rem;
+  margin-top: 1.7rem11;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.2rem11;
 
 }
 
-.form input.button:hover {
+.form11 input.button11:hover {
   background: rgb(3, 171, 3);
   cursor: pointer;
 }
 
-.signup {
+.signup11 {
   font-size: 17px;
   text-align: center;
 }
 
-.signup label {
+.signup11 label {
   cursor: pointer;
 }
 
-.signup label:hover {
+.signup11 label:hover {
   text-decoration: underline;
 }
 
-.one {
+.one11 {
   background: #ddd;
   width: 50px;
   height: 50px;
@@ -277,11 +273,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.5rem11;
   font-weight: 500;
 }
 
-.progressbar {
+.progressbar11 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -289,14 +285,14 @@ body {
   margin: 80px 20px;
 }
 
-.bar {
+.bar11 {
   height: 2px;
   display: flex;
   width: 100px;
   background: #ddd;
 }
 
-.otp-screen {
+.otp11-screen {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -305,14 +301,14 @@ body {
   text-align: center;
 }
 
-.otp-input {
+.otp11-input {
   display: flex;
   margin: 10px;
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1.2rem11;
 }
 
-.verify-button {
+.verify11-button {
   margin-top: 20px;
   padding: 15px 30px;
   font-size: x-large;
@@ -324,5 +320,5 @@ body {
   font-weight: 500;
   letter-spacing: 1px;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.2rem11;
 }

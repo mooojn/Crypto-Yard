@@ -15,45 +15,45 @@ function P2P() {
             <Preloader />
                 <Header />
 
-                    <div class="link">
-                        <div class="fasttade">Fast Trade</div>
-                        <div class="p2p">P2P</div>
-                        <div class="create">Create Offer</div>
+                    <div className="link3">
+                        <div className="fasttade3">Fast Trade</div>
+                        <div className="p2p3">P2P</div>
+                        <div className="create3">Create Offer</div>
                     </div>
-                    <div class="headstext">
+                    <div className="headstext3">
                         <p>
                             Buy/Sell with <span style={{color: '#04bb56'}}> Zero Fees</span> on the Peer to Peer (P2P) Marketplace</p>
                     </div>
-                    <div class="explaination">
-                        <p id="buytext" class="explain">Buy USDT using PKR at the best prices, no matter your location. Choose from
+                    <div className="explaination3">
+                        <p id="buytext" className="explain3">Buy USDT using PKR at the best prices, no matter your location. Choose from
                             a variety of flexible payment methods, including credit and debit cards, bank transfers, and more. P2P
                             trading on CryptoYard is both secure and free.</p>
-                        <p id="selltext" class="explain" style={{display: 'none'}}>Sell USDT and cash out in PKR at the best prices,
+                        <p id="selltext" className="explain3" style={{display: 'none'}}>Sell USDT and cash out in PKR at the best prices,
                             wherever you may be in the world. Choose from a variety of flexible payment methods, including credit
                             and debit cards, bank transfers, and more. P2P trading on CrytpoYard is both secure and free.</p>
                     </div>
 
-                    <div class="link linkv2">
-                        <div id="buyButton" class="p2p">Buy</div>
-                        <div id="sellButton" class="create">Sell</div>
+                    <div className="link3 linkv2">
+                        <div id="buyButton" className="p2p3">Buy</div>
+                        <div id="sellButton" className="create3">Sell</div>
                     </div>
-                    <div class="offers">
-                        <div class="offer">
-                            <div class="data">
-                                <div class="sellername">XD GAMING</div>
-                                <div class="pricedollar">
+                    <div className="offers3">
+                        <div className="offer3">
+                            <div className="data3">
+                                <div className="sellername3">XD GAMING</div>
+                                <div className="pricedollar3">
                                     <p><span style={{color: '#e9e9e9'}}>280</span> PKR</p>
                                 </div>
-                                <div class="Availble">Available :<span >
+                                <div className="Availble3">Available :<span >
                                     55.891225</span> USDT</div>
-                                <div class="Orders Limit">Order Limit :
+                                <div className="Orders3 Limit">Order Limit :
                                     <span>15,700 - 10,000,000</span> PKR
                                 </div>
-                                <div class="paymentsmethod">
+                                <div className="paymentsmethod3">
                                     <img src={jazz} alt="" />
                                 </div>
                             </div>
-                            <div class="buysellbutton">Buy</div>
+                            <div className="buysellbutton3">Buy</div>
                         </div>
                     </div>
 
@@ -75,9 +75,9 @@ function P2P() {
 var sellButton = document.getElementById('sellButton');
 var buytext = document.getElementById('buytext');
 var selltext = document.getElementById('selltext');
-var buttons = document.querySelectorAll('.buysellbutton'); // Add '.' to select by class
+var buttons = document.querySelectorAll('.buysellbutton'); // Add '.' to select by className
 
-buyButton.addEventListener('click', function () {
+buyButton3.addEventListener('click', function () {
     buyButton.style.borderBottom = '4px solid #04d963';
     sellButton.style.borderBottom = 'none';
     buytext.style.display = 'block';

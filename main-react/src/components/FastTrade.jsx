@@ -15,64 +15,64 @@ function FastTrade() {
             <Preloader />
             <Header />
             
-                <div className="link">
-                    <div className="fasttade">Fast Trade</div>
-                    <div className="p2p">P2P</div>
-                    <div className="p2p">Create Offer</div>
+                <div className="link5">
+                    <div className="fasttade5">Fast Trade</div>
+                    <div className="p2p5">P2P</div>
+                    <div className="p2p5">Create Offer</div>
                 </div>
-                <div className="main">
-                    <div className="textside">
-                        <div id="headong" className="fasthead">Buy Crytpo Instantly</div>
-                        <div className="p"><span id="buy">Buy</span> Bitcoin and other 4 currenices on CryptoYard with the help of Jazzcash payment transfer</div>
-                        <div className="acceptedmethods">
+                <div className="main5">
+                    <div className="textside5">
+                        <div id="headong" className="fasthead5">Buy Crytpo Instantly</div>
+                        <div className="p5"><span id="buy">Buy</span> Bitcoin and other 4 currenices on CryptoYard with the help of Jazzcash payment transfer</div>
+                        <div className="acceptedmethods5">
                             Accepted payment methods:
                         </div>
-                        <div className="imagespay">
+                        <div className="imagespay5">
                             <img src={jazzCashPng} alt="" />
                         </div>
                     </div>
-                    <div className="table">
-                        <div className="buysellsection">
-                            <div className="buysell">
-                                <div id="buyButton" className="buy">
+                    <div className="table5">
+                        <div className="buysellsection5">
+                            <div className="buysell5">
+                                <div id="buyButton" className="buy5">
                                     <div>Buy</div>
                                 </div>
-                                <div id="sellButton" className="sell">
+                                <div id="sellButton" className="sell5">
                                     <div>Sell</div>
                                 </div>
                             </div>
-                            <div className="avail">
+                            <div className="avail5">
                                 <div>I want to spend</div>
                             </div>
-                            <div className="input-sep">
-                                <span className="custom-placeholder">USDT</span>
-                                <input className="inputss" placeholder="Price" type="number" name="" id="priceInput" maxLength="10" />
-                                <div className="customarrows">
+                            <div className="input5-sep">
+                                <span className="custom5-placeholder">USDT</span>
+                                <input className="inputss5" placeholder="Price" type="number" name="" id="priceInput" maxLength="10" />
+                                <div className="customarrows5">
                                     <i className="fa-solid fa-caret-up"></i>
                                     <i className="fa-solid fa-caret-down"></i>
                                 </div>
                             </div>
-                            <div className="avail">
+                            <div className="avail5">
                                 <div>I will Recieve</div>
                             </div>
-                            <div className="input-sep">
-                                <span className="custom-placeholder jazz">BTC</span>
-                                <input className="inputss" placeholder="Quantity" type="number" name="" id="" maxLength="10" />
-                                <div className="customarrows">
+                            <div className="input5-sep">
+                                <span className="custom5-placeholder jazz">BTC</span>
+                                <input className="inputss5" placeholder="Quantity" type="number" name="" id="" maxLength="10" />
+                                <div className="customarrows5">
                                     <i className="fa-solid fa-caret-up"></i>
                                     <i className="fa-solid fa-caret-down"></i>
                                 </div>
                             </div>
-                            <div className="avail">
+                            <div className="avail5">
                                 <div id="currency">Pay With</div>
                             </div>
-                            <div className="input-sep">
-                                <span className="custom-placeholder"><img className="img" src={jazzPng} alt="" />
-                                    <img className="card" src={img1} alt="" /></span>
-                                <input className="inputss" placeholder="Jazz Cash" type="number" name="" id="" maxLength="10" readOnly />
+                            <div className="input5-sep">
+                                <span className="custom5-placeholder"><img className="img5" src={jazzPng} alt="" />
+                                    <img className="card5" src={img1} alt="" /></span>
+                                <input className="inputss5" placeholder="Jazz Cash" type="number" name="" id="" maxLength="10" readOnly />
                             </div>
-                            <div><p>1 <span style={{ color: '#04bb56' }}>USDT</span> = 1.05 <span style={{ color: '#04bb56' }}>USD</span></p></div>
-                            <div id="confirm" className="confirm">
+                            <div><p id="test5">1 <span style={{ color: '#04bb56' }}>USDT</span> = 1.05 <span style={{ color: '#04bb56' }}>USD</span></p></div>
+                            <div id="confirm" className="confirm5">
                                 Buy BTC
                             </div>
                         </div>

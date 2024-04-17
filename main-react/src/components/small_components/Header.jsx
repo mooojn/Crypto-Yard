@@ -12,7 +12,7 @@ const Header = () => {
     <div className="bosy">
       <header>
           <div className="logotext">
-          <img src={logoText} alt="h" style={{ maxHeight: '70px' }} />
+          <a href="/home"><img src={logoText} alt="h" style={{ maxHeight: '70px' }} /></a>
           </div>
           <div className="header_nav">
               <nav className="navbar_header">

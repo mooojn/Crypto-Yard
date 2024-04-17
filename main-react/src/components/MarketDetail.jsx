@@ -17,28 +17,28 @@ function MarketDetail() {
                 <Preloader />
                 <Header />
 
-                    <div class="main">
-                        <div class="grpahside">
-                            <div class="coininfo">
-                                <div class="coin">
-                                    <div class="coinlogo"><img src={btcImg} alt="" /></div>
-                                    <div class="coinname">Bitcoin</div>
+                    <div className="main7">
+                        <div className="grpahside7">
+                            <div className="coininfo7">
+                                <div className="coin7">
+                                    <div className="coinlogo7"><img src={btcImg} alt="" /></div>
+                                    <div className="coinname7">Bitcoin</div>
                                 </div>
-                                <div class="usd">In USD ($)</div>
+                                <div className="usd7">In USD ($)</div>
                             </div>
-                            <div class="priceinfo">
-                                <div class="price">
+                            <div className="priceinfo7">
+                                <div className="price7">
                                     <p>$<span style={{color: '#fff'}}>50,000</span></p>
                                 </div>
-                                <div class="change">Change:<p><span class="changeprice">5</span>%</p>
+                                <div className="change7">Change:<p><span className="changeprice7">5</span>%</p>
                                 </div>
                             </div>
                             <canvas id="myChart" style={{height: '70', width: '100'}}></canvas>
-                            <div class="overview">
-                                <div class="heed">
+                            <div className="overview7">
+                                <div className="heed7">
                                     Overview
                                 </div>
-                                <div class="textover">
+                                <div className="textover7">
                                     <p>
                                         Bitcoin, created in 2009, is a decentralized digital currency operating on a capped supply
                                         of 21 million. Its blockchain ensures secure and transparent transactions, validated through
@@ -48,8 +48,8 @@ function MarketDetail() {
                                         concerns and regulatory uncertainties, Bitcoin has gained global adoption, impacting
                                         financial landscapes and fostering the development of alternative cryptocurrencies</p>
                                 </div>
-                                <div class="heed">About Coin</div>
-                                <div class="textover">
+                                <div className="heed7">About Coin</div>
+                                <div className="textover7">
                                     <p>
                                         Bitcoin is the world's first cryptocurrency designed to operate decentralized over a
                                         blockchain. Unlike traditional currencies, it can be used as a store of value and for making
@@ -87,25 +87,25 @@ function MarketDetail() {
                                 </div>
                             </div>
                         </div>
-                        <div class="tradeside">
-                            <div class="box">
-                                <div class="title">Fear & Greed Index</div>
-                                <div class="line">Note: Data is for reference only.</div>
-                                <div class="image"><img src={scoreImg} alt="" /></div>
-                                <div class="texts">
-                                    <div class="number">90</div>
-                                    <div class="comment">Very Good</div>
+                        <div className="tradeside7">
+                            <div className="box7">
+                                <div className="title7">Fear & Greed Index</div>
+                                <div className="line7">Note: Data is for reference only.</div>
+                                <div className="image7"><img src={scoreImg} alt="" /></div>
+                                <div className="texts7">
+                                    <div className="number7">90</div>
+                                    <div className="comment7">Very Good</div>
                                 </div>
                             </div>
-                            <div class="box">
-                                <div class="recommend">Recommendations <i class="fas fa-angle-right"></i></div>
-                                <div class="tradings">
-                                    <div class="title">Spot Trading</div>
-                                    <div class="trading">
-                                        <div class="line">Trade BTC/USDT</div>
-                                        <div class="buttons line">Trade</div>
+                            <div className="box7">
+                                <div className="recommend7">Recommendations <i className="fas7 fa-angle-right"></i></div>
+                                <div className="tradings7">
+                                    <div className="title7">Spot Trading</div>
+                                    <div className="trading7">
+                                        <div className="line7">Trade BTC/USDT</div>
+                                        <div className="buttons7 line">Trade</div>
                                     </div>
-                                    <div class="suugest">Buy low and sell high</div>
+                                    <div className="suugest7">Buy low and sell high</div>
                                 </div>
                             </div>
                         </div>

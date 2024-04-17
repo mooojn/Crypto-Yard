@@ -3,15 +3,15 @@ import Root from './components/Root';
 import Loan from './components/Loan';
 import P2P from './components/P2P';
 import Trading from './components/Trading';
-
 import FastTrade from './components/FastTrade';
-import LogInSignUp from './components/LogInSignUp';
 import CreateOffer from './components/CreateOffer';
 import MarketDetail from './components/MarketDetail'
-import ErrorPage from './components/ErrorPage';
+
 import Asset from './components/Assets'
 
 import Market from './components/Market'
+import ErrorPage from './components/ErrorPage';
+// import LogInSignUp from './components/LogInSignUp';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
@@ -23,16 +23,16 @@ function App() {
         <Routes>
           <Route index element={<Root />} />
           <Route path="/home" element={<Root />} />
-          <Route path="/market" element={<Market />} />
           <Route path="/loan" element={<Loan />} />
           <Route path="/p2p" element={<P2P />} />
           <Route path="/trading" element={<Trading />} />
           <Route path="/fast-trade" element={<FastTrade />} />
-          <Route path="/login-signup" element={<LogInSignUp />} />
           <Route path="/create-offer" element={<CreateOffer />} />
           <Route path="/market-detail" element={<MarketDetail />} />
           <Route path="/assets" element={<Asset />} />
-          <Route path="*" element={<ErrorPage />} />
+          <Route path="/market" element={<Market />} />
+          {/* <Route path="/login-signup" element={<LogInSignUp />} /> */}
+          <Route path="*" element={<ErrorPage />} />   
         </Routes>
       </BrowserRouter>
 

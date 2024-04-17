@@ -34,199 +34,199 @@ function market() {
 
         <Preloader />
         <Header />
-        <div class="overviewhead">Market Overview</div>
+        <div className="overviewhead9">Market Overview</div>
 
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
+        <div className="swiper9-container">
+            <div className="swiper9-wrapper">
  
 
-                <div class="swiper-slide">
-                    <div class="marketoverviews">
-                        <div class="overviewtop">
-                            <div class="type">
-                                <div class="over_icon"><img src={a4} alt="" /></div>
-                                <div class="over_text">Trending</div>
+                <div className="swiper9-slide">
+                    <div className="marketoverviews9">
+                        <div className="overviewtop9">
+                            <div className="type9">
+                                <div className="over_icon9"><img src={a4} alt="" /></div>
+                                <div className="over_text9">Trending</div>
                             </div>
-                            <div class="over_change">Change</div>
+                            <div className="over_change9">Change</div>
                         </div>
-                        <div class="overviewdata">
-                            <div class="serial">1</div>
-                            <div class="over_image"><img src={a5} alt="" /></div>
-                            <div class="over-name">Bitcoin</div>
-                            <div class="over_rate">$<span class="price">200</span></div>
-                            <div class="over_percentage"><span class="percentage">20</span>%</div>
+                        <div className="overviewdata9">
+                            <div className="serial9">1</div>
+                            <div className="over_image9"><img src={a5} alt="" /></div>
+                            <div className="over9-name">Bitcoin</div>
+                            <div className="over_rate9">$<span className="price9">200</span></div>
+                            <div className="over_percentage9"><span className="percentage9">20</span>%</div>
                         </div>
-                        <div class="overviewdata">
-                            <div class="serial">2</div>
-                            <div class="over_image"><img src={a6} alt="" /></div>
-                            <div class="over-name">Litecoin</div>
-                            <div class="over_rate">$<span class="price">300</span></div>
-                            <div class="over_percentage"><span class="percentage">43</span>%</div>
+                        <div className="overviewdata9">
+                            <div className="serial9">2</div>
+                            <div className="over_image9"><img src={a6} alt="" /></div>
+                            <div className="over9-name">Litecoin</div>
+                            <div className="over_rate9">$<span className="price9">300</span></div>
+                            <div className="over_percentage9"><span className="percentage9">43</span>%</div>
                         </div>
-                        <div class="overviewdata">
-                            <div class="serial">3</div>
-                            <div class="over_image"><img src={a7} alt="" /></div>
-                            <div class="over-name">XRP</div>
-                            <div class="over_rate">$<span class="price">2787</span></div>
-                            <div class="over_percentage"><span class="percentage">2</span>%</div>
+                        <div className="overviewdata9">
+                            <div className="serial9">3</div>
+                            <div className="over_image9"><img src={a7} alt="" /></div>
+                            <div className="over9-name">XRP</div>
+                            <div className="over_rate9">$<span className="price9">2787</span></div>
+                            <div className="over_percentage9"><span className="percentage9">2</span>%</div>
                         </div>
                     </div>
                     
                 </div>
         
                 
-                <div class="swiper-slide">
-                    <div class="marketoverviews">
-                        <div class="overviewtop">
-                            <div class="type">
-                                <div class="over_icon"><img src={a8} alt="" /></div>
-                                <div class="over_text">Top Gainers</div>
+                <div className="swiper9-slide">
+                    <div className="marketoverviews9">
+                        <div className="overviewtop9">
+                            <div className="type9">
+                                <div className="over_icon9"><img src={a8} alt="" /></div>
+                                <div className="over_text9">Top Gainers</div>
                             </div>
-                            <div class="over_change">Change</div>
+                            <div className="over_change9">Change</div>
                         </div>
-                        <div class="overviewdata">
-                            <div class="serial">1</div>
-                            <div class="over_image"><img src={a9} alt="" /></div>
-                            <div class="over-name">Bitcoin</div>
-                            <div class="over_rate">$<span class="price">200</span></div>
-                            <div class="over_percentage"><span class="percentage">20</span>%</div>
+                        <div className="overviewdata9">
+                            <div className="serial9">1</div>
+                            <div className="over_image9"><img src={a9} alt="" /></div>
+                            <div className="over9-name">Bitcoin</div>
+                            <div className="over_rate9">$<span className="price9">200</span></div>
+                            <div className="over_percentage9"><span className="percentage9">20</span>%</div>
                         </div>
-                        <div class="overviewdata">
-                            <div class="serial">2</div>
-                            <div class="over_image"><img src={a10} alt="" /></div>
-                            <div class="over-name">Litecoin</div>
-                            <div class="over_rate">$<span class="price">300</span></div>
-                            <div class="over_percentage"><span class="percentage">43</span>%</div>
+                        <div className="overviewdata9">
+                            <div className="serial9">2</div>
+                            <div className="over_image9"><img src={a10} alt="" /></div>
+                            <div className="over9-name">Litecoin</div>
+                            <div className="over_rate9">$<span className="price9">300</span></div>
+                            <div className="over_percentage9"><span className="percentage9">43</span>%</div>
                         </div>
-                        <div class="overviewdata">
-                            <div class="serial">3</div>
-                            <div class="over_image"><img src={a11} alt="" /></div>
-                            <div class="over-name">XRP</div>
-                            <div class="over_rate">$<span class="price">2787</span></div>
-                            <div class="over_percentage"><span class="percentage">2</span>%</div>
+                        <div className="overviewdata9">
+                            <div className="serial9">3</div>
+                            <div className="over_image9"><img src={a11} alt="" /></div>
+                            <div className="over9-name">XRP</div>
+                            <div className="over_rate9">$<span className="price9">2787</span></div>
+                            <div className="over_percentage9"><span className="percentage9">2</span>%</div>
                         </div>
                     </div>
                     
                 </div>
         
     
-                <div class="swiper-slide">
-                    <div class="marketoverviews">
-                        <div class="overviewtop">
-                            <div class="type">
-                                <div class="over_icon"><img src={a12} alt="" /></div>
-                                <div class="over_text">Top Losers</div>
+                <div className="swiper9-slide">
+                    <div className="marketoverviews9">
+                        <div className="overviewtop9">
+                            <div className="type9">
+                                <div className="over_icon9"><img src={a12} alt="" /></div>
+                                <div className="over_text9">Top Losers</div>
                             </div>
-                            <div class="over_change">Change</div>
+                            <div className="over_change9">Change</div>
                         </div>
-                        <div class="overviewdata">
-                            <div class="serial">1</div>
-                            <div class="over_image"><img src={a13} alt="" /></div>
-                            <div class="over-name">Bitcoin</div>
-                            <div class="over_rate">$<span class="price">200</span></div>
-                            <div class="over_percentage"><span class="percentage">20</span>%</div>
+                        <div className="overviewdata9">
+                            <div className="serial9">1</div>
+                            <div className="over_image9"><img src={a13} alt="" /></div>
+                            <div className="over9-name">Bitcoin</div>
+                            <div className="over_rate9">$<span className="price9">200</span></div>
+                            <div className="over_percentage9"><span className="percentage9">20</span>%</div>
                         </div>
-                        <div class="overviewdata">
-                            <div class="serial">2</div>
-                            <div class="over_image"><img src={a14} alt="" /></div>
-                            <div class="over-name">Litecoin</div>
-                            <div class="over_rate">$<span class="price">300</span></div>
-                            <div class="over_percentage"><span class="percentage">43</span>%</div>
+                        <div className="overviewdata9">
+                            <div className="serial9">2</div>
+                            <div className="over_image9"><img src={a14} alt="" /></div>
+                            <div className="over9-name">Litecoin</div>
+                            <div className="over_rate9">$<span className="price9">300</span></div>
+                            <div className="over_percentage9"><span className="percentage9">43</span>%</div>
                         </div>
-                        <div class="overviewdata">
-                            <div class="serial">3</div>
-                            <div class="over_image"><img src={a15} alt="" /></div>
-                            <div class="over-name">XRP</div>
-                            <div class="over_rate">$<span class="price">2787</span></div>
-                            <div class="over_percentage"><span class="percentage">2</span>%</div>
+                        <div className="overviewdata9">
+                            <div className="serial9">3</div>
+                            <div className="over_image9"><img src={a15} alt="" /></div>
+                            <div className="over9-name">XRP</div>
+                            <div className="over_rate9">$<span className="price9">2787</span></div>
+                            <div className="over_percentage9"><span className="percentage9">2</span>%</div>
                         </div>
                     </div>
                     
                 </div>
             </div>
         </div>
-        <div class="overviewhead">CrytpoYard Market Watch</div>
-        <div class="explain">Find promising coins and great opportunities!</div>
-        <div class="coinsheader">
-            <div class="Products">Products</div>
-            <div class="Price">Price</div>
-            <div class="Change">Change</div>
-            <div class="action" style={{color: '#fff' , fontSize: '20px'}}>Action</div>
+        <div className="overviewhead9">CrytpoYard Market Watch</div>
+        <div className="explain9">Find promising coins and great opportunities!</div>
+        <div className="coinsheader9">
+            <div className="Products9">Products</div>
+            <div className="Price9">Price</div>
+            <div className="Change9">Change</div>
+            <div className="action9" style={{color: '#fff' , fontSize: '20px'}}>Action</div>
         </div>
-        <div class="coins">
-            <div class="individualcoin">
-                <div class="coinname">
-                    <div class="iconcoin"><img src={a16} alt="" /></div>
-                    <div class="names">
-                        <div class="symbol">BTC</div>
-                        <div class="coin">Bitcoin</div>
+        <div className="coins9">
+            <div className="individualcoin9">
+                <div className="coinname9">
+                    <div className="iconcoin9"><img src={a16} alt="" /></div>
+                    <div className="names9">
+                        <div className="symbol9">BTC</div>
+                        <div className="coin9">Bitcoin</div>
                     </div>
                 </div>
-                <div class="coinprice">$<span class="price">200</span></div>
-                <div class="coinpercentage"><span class="percentage">20</span>%</div>
-                <div class="action">
-                    <div class="details">Details</div>
-                    <div class="trades">Trades</div>
+                <div className="coinprice9">$<span className="price9">200</span></div>
+                <div className="coinpercentage9"><span className="percentage9">20</span>%</div>
+                <div className="action9">
+                    <div className="details9">Details</div>
+                    <div className="trades9">Trades</div>
                 </div>
             </div>
-            <div class="individualcoin">
-                <div class="coinname">
-                    <div class="iconcoin"><img src={a17} alt="" /></div>
-                    <div class="names">
-                        <div class="symbol">ETH</div>
-                        <div class="coin">Ethereum</div>
+            <div className="individualcoin9">
+                <div className="coinname9">
+                    <div className="iconcoin9"><img src={a17} alt="" /></div>
+                    <div className="names9">
+                        <div className="symbol9">ETH</div>
+                        <div className="coin9">Ethereum</div>
                     </div>
                 </div>
-                <div class="coinprice">$<span class="price">254500</span></div>
-                <div class="coinpercentage"><span class="percentage">2</span>%</div>
-                <div class="action">
-                    <div class="details">Details</div>
-                    <div class="trades">Trades</div>
+                <div className="coinprice9">$<span className="price9">254500</span></div>
+                <div className="coinpercentage9"><span className="percentage9">2</span>%</div>
+                <div className="action9">
+                    <div className="details9">Details</div>
+                    <div className="trades9">Trades</div>
                 </div>
             </div>
-            <div class="individualcoin">
-                <div class="coinname">
-                    <div class="iconcoin"><img src={a18} alt="" /></div>
-                    <div class="names">
-                        <div class="symbol">XRP</div>
-                        <div class="coin">XRP</div>
+            <div className="individualcoin9">
+                <div className="coinname9">
+                    <div className="iconcoin9"><img src={a18} alt="" /></div>
+                    <div className="names9">
+                        <div className="symbol9">XRP</div>
+                        <div className="coin9">XRP</div>
                     </div>
                 </div>
-                <div class="coinprice">$<span class="price">230</span></div>
-                <div class="coinpercentage"><span class="percentage">10</span>%</div>
-                <div class="action">
-                    <div class="details">Details</div>
-                    <div class="trades">Trades</div>
+                <div className="coinprice9">$<span className="price9">230</span></div>
+                <div className="coinpercentage9"><span className="percentage9">10</span>%</div>
+                <div className="action9">
+                    <div className="details9">Details</div>
+                    <div className="trades9">Trades</div>
                 </div>
             </div>
-            <div class="individualcoin">
-                <div class="coinname">
-                    <div class="iconcoin"><img src={a19} alt="" /></div>
-                    <div class="names">
-                        <div class="symbol">USDT</div>
-                        <div class="coin">USD Tether</div>
+            <div className="individualcoin9">
+                <div className="coinname9">
+                    <div className="iconcoin9"><img src={a19} alt="" /></div>
+                    <div className="names9">
+                        <div className="symbol9">USDT</div>
+                        <div className="coin9">USD Tether</div>
                     </div>
                 </div>
-                <div class="coinprice">$<span class="price">1</span></div>
-                <div class="coinpercentage"><span class="percentage">20</span>%</div>
-                <div class="action">
-                    <div class="details">Details</div>
-                    <div class="trades">Trades</div>
+                <div className="coinprice9">$<span className="price9">1</span></div>
+                <div className="coinpercentage9"><span className="percentage9">20</span>%</div>
+                <div className="action9">
+                    <div className="details9">Details</div>
+                    <div className="trades9">Trades</div>
                 </div>
             </div>
-            <div class="individualcoin">
-                <div class="coinname">
-                    <div class="iconcoin"><img src={a20} alt="" /></div>
-                    <div class="names">
-                        <div class="symbol">Doge</div>
-                        <div class="coin">Dogecoin</div>
+            <div className="individualcoin9">
+                <div className="coinname9">
+                    <div className="iconcoin9"><img src={a20} alt="" /></div>
+                    <div className="names9">
+                        <div className="symbol9">Doge</div>
+                        <div className="coin9">Dogecoin</div>
                     </div>
                 </div>
-                <div class="coinprice">$<span class="price">0.0043</span></div>
-                <div class="coinpercentage"><span class="percentage">4</span>%</div>
-                <div class="action">
-                    <div class="details">Details</div>
-                    <div class="trades">Trades</div>
+                <div className="coinprice9">$<span className="price9">0.0043</span></div>
+                <div className="coinpercentage9"><span className="percentage9">4</span>%</div>
+                <div className="action9">
+                    <div className="details9">Details</div>
+                    <div className="trades9">Trades</div>
                 </div>
             </div>
         </div>

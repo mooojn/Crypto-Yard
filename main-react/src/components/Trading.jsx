@@ -391,124 +391,124 @@ function Trading() {
             <body>
                 <Preloader />
                 <Header/>    
-                <div className="detailshead">
-                    <div className="halfheader">
+                <div className="detailshead4">
+                    <div className="halfheader4">
 
-                        <div className="coin">
-                            <div className="coinlogo">
+                        <div className="coin4">
+                            <div className="coinlogo4">
                                 <img src={btcImg} alt="" />
                             </div>
-                            <div className="coinname">
+                            <div className="coinname4">
                                 <h1>BTC/USDT</h1>
                             </div>
                         </div>
-                        <div className="coinprice">
+                        <div className="coinprice4">
                             <h1>Price: $ <span id="testingPHASE">1</span></h1>
                         </div>
-                        <div className="marketcap">
-                            <div><p>Market Cap $ <span>1</span></p></div>
+                        <div className="marketcap4">
+                            <div><p id="test4">Market Cap $ <span>1</span></p></div>
                         </div>
                     </div>
-                    <div className="icons">
-                        <div className="icon">
+                    <div className="icons4">
+                        <div className="icon4">
                             <i className="fa-solid fa-wifi"></i>
-                            <div id="ping" className="dropdown">
+                            <div id="ping" className="dropdown4">
                             </div>
                         </div>
-                        <div className="icon">
+                        <div className="icon4">
                             <i className="fa-solid fa-wallet"></i>
-                            <div className="dropdown">
+                            <div className="dropdown4">
                                 Assests
                             </div>
                         </div>
-                        <div className="icon">
+                        <div className="icon4">
                             <i className="fa-solid fa-money-bill-transfer"></i>
-                            <div className="dropdown">
+                            <div className="dropdown4">
                                 P2P
                             </div>
                         </div>
-                        <div className="icon">
+                        <div className="icon4">
                             <i className="fa-solid fa-landmark"></i>
-                            <div className="dropdown">
+                            <div className="dropdown4">
                                 Deposit
                             </div>
                         </div>
-                        <div className="icon">
+                        <div className="icon4">
                             <i className="fa-solid fa-shop"></i>
-                            <div className="dropdown">
+                            <div className="dropdown4">
                                 Market
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="main">
-                    <div className="chartside">
-                        <div className="charthead">
-                            <div className="charts">Chart</div>
-                            <div className="market">Go to Market</div>
+                <div className="main4">
+                    <div className="chartside4">
+                        <div className="charthead4">
+                            <div className="charts4">Chart</div>
+                            <div className="market4">Go to Market</div>
                         </div>
-                        <div className="stats">
-                            <div className="values">O <span className="prices">53,599</span></div>
-                            <div className="values">H <span className="prices">53,599</span></div>
-                            <div className="values">L <span className="prices">53,599</span></div>
-                            <div className="values">C <span className="prices">53,599</span></div>
+                        <div className="stats4">
+                            <div className="values4">O <span className="prices4">53,599</span></div>
+                            <div className="values4">H <span className="prices4">53,599</span></div>
+                            <div className="values4">L <span className="prices4">53,599</span></div>
+                            <div className="values4">C <span className="prices4">53,599</span></div>
                         </div>
-                        <div id="myChart" className="chart"></div>
+                        <div id="myChart" className="chart4"></div>
                     </div>
-                    <div className="tradeside">
-                        <div className="charthead" style={{ borderBottom: '0.2px', solid: '#4b4b4b' }}>
-                            <div className="charts">Spot</div>
-                            <div className="market">Go to Peer 2 peer</div>
+                    <div className="tradeside4">
+                        <div className="charthead4" style={{ borderBottom: '0.2px', solid: '#4b4b4b' }}>
+                            <div className="charts4">Spot</div>
+                            <div className="market4">Go to Peer 2 peer</div>
                         </div>
-                        <div className="buysell">
-                            <div id="buyButton" className="buy">
+                        <div className="buysell4">
+                            <div id="buyButton" className="buy4">
                                 <div>Buy</div>
                             </div>
-                            <div id="sellButton" className="sell">
+                            <div id="sellButton" className="sell4">
                                 <div>Sell</div>
                             </div>
                         </div>
-                        <div className="charthead" style={{ borderBottom: '0.2px', solid: '#4b4b4b' }}>
-                            <div className="charts" style={{ border: 'none' }}>Limit</div>
-                            <div className="market">Future Coming Soon</div>
+                        <div className="charthead4" style={{ borderBottom: '0.2px', solid: '#4b4b4b' }}>
+                            <div className="charts4" style={{ border: 'none' }}>Limit</div>
+                            <div className="market4">Future Coming Soon</div>
                         </div>
-                        <div className="buysellsection">
-                            <div className="avail">
+                        <div className="buysellsection4">
+                            <div className="avail4">
                                 <div>Available</div>
                                 <div><span>0.00</span><span id="currency" style={{ color: '#888' }}>USDT</span></div>
                             </div>
-                            <div className="input-sep">
-                                <span className="custom-placeholder">USDT</span>
-                                <input className="inputss" placeholder="Price" type="number" name="" id="priceInput" maxlength="10" />
-                                <div className="customarrows">
+                            <div className="input4-sep">
+                                <span className="custom4-placeholder">USDT</span>
+                                <input className="inputss4" placeholder="Price" type="number" name="" id="priceInput" maxlength="10" />
+                                <div className="customarrows4">
                                     <i className="fa-solid fa-caret-up" ></i>
                                     <i className="fa-solid fa-caret-down" ></i>
                                 </div>
                             </div>
-                            <div className="input-sep">
-                                <span className="custom-placeholder">BTC</span>
-                                <input className="inputss" placeholder="Quantity" type="number" name="" id="" maxlength="10" />
-                                <div className="customarrows">
+                            <div className="input4-sep">
+                                <span className="custom4-placeholder">BTC</span>
+                                <input className="inputss4" placeholder="Quantity" type="number" name="" id="" maxlength="10" />
+                                <div className="customarrows4">
                                     <i className="fa-solid fa-caret-up" ></i>
                                     <i className="fa-solid fa-caret-down" ></i>
                                 </div>
                             </div>
-                            <div className="amountpercent">
+                            <div className="amountpercent4">
                                 <div>25%</div>
                                 <div>50%</div>
                                 <div>75%</div>
                                 <div>100%</div>
                             </div>
-                            <div className="input-sep">
-                                <span className="custom-placeholder">BTC</span>
-                                <input className="inputss" placeholder="Volume" type="number" name="" id="" maxlength="10" />
-                                <div className="customarrows">
+                            <div className="input4-sep">
+                                <span className="custom4-placeholder">BTC</span>
+                                <input className="inputss4" placeholder="Volume" type="number" name="" id="" maxlength="10" />
+                                <div className="customarrows4">
                                     <i className="fa-solid fa-caret-up" ></i>
                                     <i className="fa-solid fa-caret-down" ></i>
                                 </div>
                             </div>
                             <p>Confirm</p>
-                            <div id="confirm" className="confirm">
+                            <div id="confirm" className="confirm4">
                                 Buy BTC
                             </div>
                         </div>

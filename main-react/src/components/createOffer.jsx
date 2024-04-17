@@ -13,42 +13,42 @@ function createOffer()
         <Preloader />
         <Header />
         
-            <div class="link">
-                <div class="fasttade">Fast Trade</div>
-                <div class="p2p">P2P</div>
-                <div class="create">Create Offer</div>
+            <div className="link6">
+                <div className="fasttade6">Fast Trade</div>
+                <div className="p2p6">P2P</div>
+                <div className="create6">Create Offer</div>
             </div>
 
-            <div class="createoffer">
-                <div class="head">Create Offer</div>
-                <div class="Name">
-                    <div class="namehead">Name:</div>
-                    <input type="text" class="name" placeholder="Enter your name"/>
+            <div className="createoffer6">
+                <div className="head6">Create Offer</div>
+                <div className="Name6">
+                    <div className="namehead6">Name:</div>
+                    <input type="text" className="name6" placeholder="Enter your name"/>
                 </div>
-                <div class="Name">
-                    <div class="namehead">Price per Dollar (PKR):</div>
-                    <input type="text" class="name" placeholder="Enter dollar rate"/>
+                <div className="Name6">
+                    <div className="namehead6">Price per Dollar (PKR):</div>
+                    <input type="text" className="name6" placeholder="Enter dollar rate"/>
                 </div>
-                <div class="Name">
-                    <div class="namehead">Transfer Limit:</div>
-                    <input type="text" class="name" placeholder="Enter Limit"/>
+                <div className="Name6">
+                    <div className="namehead6">Transfer Limit:</div>
+                    <input type="text" className="name6" placeholder="Enter Limit"/>
                 </div>
-                <div class="payby">
-                     <div class="paymenthead">Payment Method:</div>
+                <div className="payby6">
+                     <div className="paymenthead6">Payment Method:</div>
                     <select name="" id="">
                         <option value="">EasyPaisa</option>
                         <option value="">JazzCash</option>
                         <option value="">Bank Transfer</option>
                     </select>
                 </div>
-                <div class="category">
-                    <div class="categoryhead">Category:</div>
+                <div className="category6">
+                    <div className="categoryhead6">Category:</div>
                     <select name="" id="">
                         <option value="">Buy</option>
                         <option value="">Sell</option>
                     </select>
                 </div>
-                <div class="createbutton">Create Offer</div>
+                <div className="createbutton6">Create Offer</div>
             </div>
             {/* <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script>
