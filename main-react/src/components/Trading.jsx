@@ -5,8 +5,10 @@ import ApexCharts from 'apexcharts';
 import logo from './assets/logo_only.png'
 import logoText from './assets/logo_text.png'
 import btcImg from './assets/bitcoin1.png'
+import Preloader from './small_components/PreLoader';
 
 import './styles/Trading.css'
+import Header from './small_components/Header';
 
 
 
@@ -387,40 +389,8 @@ function Trading() {
     return (
         <>
             <body>
-                <div id="preloader">
-                    <div className="uptext">
-                        <div className="logo"><img src={logo} alt="" /></div>
-                        <div className="logo_text"><img src={logoText} alt="" /></div>
-                    </div>
-                    <div className="loading">
-                        <div className="text">
-                            Loading
-                        </div>
-                        <div className="loader"></div>
-                    </div>
-                </div>
-                <div className="bosy">
-
-                    <header>
-                        <div className="logotext">
-                            <img src={logoText} alt="" style={{ height: '70px' }} />
-                        </div>
-                        <div className="header_nav">
-                            <nav className="navbar_header">
-                                <ul>
-                                    <li><a href="/fast-trade">Buy Crypto</a></li>
-                                    <li><a href="/market">Market</a></li>
-                                    <li><a href="/trading">Trade</a></li>
-                                    <li><a href="/assets">Assets</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div className="third_part">
-                            <div className="button">Sign up/Login</div>
-                            <div className="loggedin"></div>
-                        </div>
-                    </header>
-                </div>
+                <Preloader />
+                <Header/>    
                 <div className="detailshead">
                     <div className="halfheader">
 

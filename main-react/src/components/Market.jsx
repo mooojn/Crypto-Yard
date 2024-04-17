@@ -19,6 +19,9 @@ import a19 from "./assets/USDT.png"
 import a20 from "./assets/Doge.png"
 
 
+import Preloader from './small_components/PreLoader'
+import Header from './small_components/Header'
+
 
 import "./styles/Market.css"
 
@@ -29,39 +32,8 @@ function market() {
         <>
         <body>
 
-    {/* <div id="preloader">
-        <div class="uptext">
-            <div class="logo"><img src={logo} alt="" /></div>
-            <div class="logo_text"><img src={logoText} alt=""/></div>
-        </div>
-        <div class="loading">
-            <div class="text">
-                Loading
-            </div>
-            <div class="loader"></div>
-        </div>
-    </div> */}
-    <div class="bosy">
-        <header>
-            <div class="logotext">
-                <img src={logoText} alt="" style={{height: "70px"}}  />
-            </div>
-            <div class="header_nav">
-                <nav class="navbar_header">
-                    <ul>
-                        <li><a href="/fast-trade">Buy Crypto</a></li>
-                        <li><a href="/market">Market</a></li>
-                        <li><a href="/trading">Trade</a></li>
-                        <li><a href="/assets">Assets</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="third_part">
-                <div class="button">Sign up/Login</div>
-                <div class="loggedin"></div>
-            </div>
-        </header>
-
+        <Preloader />
+        <Header />
         <div class="overviewhead">Market Overview</div>
 
         <div class="swiper-container">
@@ -259,7 +231,6 @@ function market() {
             </div>
         </div>
 
-</div>
 
 
 

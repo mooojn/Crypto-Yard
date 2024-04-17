@@ -3,6 +3,10 @@ import logoText from './assets/logo_text.png'
 import btcImg from './assets/bitcoin1.png'
 import scoreImg from './assets/Score.png'
 
+import Header from './small_components/Header'
+import Preloader from './small_components/PreLoader'
+
+
 import './styles/MarketDetail.css'
 
 
@@ -10,39 +14,9 @@ function MarketDetail() {
     return (
         <>
             <body>
-                {/* <div id="preloader">
-                    <div class="uptext">
-                        <div class="logo"><img src={logo} alt="" /></div>
-                        <div class="logo_text"><img src={logoText} alt="" /></div>
-                    </div>
-                    <div class="loading">
-                        <div class="text">
-                            Loading
-                        </div>
-                        <div class="loader"></div>
-                    </div>
-                </div> */}
-                <div class="bosy">
+                <Preloader />
+                <Header />
 
-                    <header>
-                        <div class="logotext">
-                            <img src={logoText} alt="" style={{height: '70px'}} />
-                        </div>
-                        <div class="header_nav">
-                            <nav class="navbar_header">
-                                <ul>
-                                    <li><a href="/fast-trade">Buy Crypto</a></li>
-                                    <li><a href="/market">Market</a></li>
-                                    <li><a href="/trading">Trade</a></li>
-                                    <li><a href="/assets">Assets</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="third_part">
-                            <div class="button">Sign up/Login</div>
-                            <div class="loggedin"></div>
-                        </div>
-                    </header>
                     <div class="main">
                         <div class="grpahside">
                             <div class="coininfo">
@@ -136,7 +110,6 @@ function MarketDetail() {
                             </div>
                         </div>
                     </div>
-                </div>
 
 
 

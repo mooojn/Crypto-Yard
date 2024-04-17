@@ -2,6 +2,9 @@ import logo from './assets/logo_only.png'
 import logoText from './assets/logo_text.png'
 import jazz from './assets/jazzz.jpeg'
 
+import Preloader from './small_components/PreLoader'
+import Header from './small_components/Header';
+
 import './styles/P2P.css'
 
 function P2P() {
@@ -9,38 +12,8 @@ function P2P() {
     return (
         <>
             <body>
-                {/* <div id="preloader">
-                    <div class="uptext">
-                        <div class="logo"><img src={logo} alt="" /></div>
-                        <div class="logo_text"><img src={logoText} alt="" /></div>
-                    </div>
-                    <div class="loading">
-                        <div class="text">
-                            Loading
-                        </div>
-                        <div class="loader"></div>
-                    </div>
-                </div> */}
-                <div class="bosy">
-                    <header>
-                        <div class="logotext">
-                            <img src={logoText} alt="" style={{height: '70px'}} />
-                        </div>
-                        <div class="header_nav">
-                            <nav class="navbar_header">
-                                <ul>
-                                    <li><a href="/fast-trade">Buy Crypto</a></li>
-                                    <li><a href="/market">Market</a></li>
-                                    <li><a href="/trading">Trade</a></li>
-                                    <li><a href="/assets">Assets</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="third_part">
-                            <div class="button">Sign up/Login</div>
-                            <div class="loggedin"></div>
-                        </div>
-                    </header>
+            <Preloader />
+                <Header />
 
                     <div class="link">
                         <div class="fasttade">Fast Trade</div>
@@ -83,7 +56,6 @@ function P2P() {
                             <div class="buysellbutton">Buy</div>
                         </div>
                     </div>
-                </div>
 
 
 

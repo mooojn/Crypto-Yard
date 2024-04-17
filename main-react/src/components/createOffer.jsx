@@ -1,44 +1,18 @@
 import logo from './assets/logo_only.png' 
 import logoText from './assets/logo_text.png'
 
+import Preloader from './small_components/PreLoader';
+import Header from './small_components/Header';
+
 import './styles/CreateOffer.css'
 function createOffer()
 {
     return(
         <>
         <body>
-        {/* <div id="preloader">
-            <div class="uptext">
-                <div class="logo"><img src={logo} alt=""/></div>
-                <div class="logo_text"><img src={logoText} alt=""/></div>
-            </div>
-            <div class="loading">
-                <div class="text">
-                    Loading
-                </div>
-                <div class="loader"></div>
-            </div>
-        </div> */}
-        <div class="bosy">
-    
-            <header>
-                <div class="logotext">
-                    <img src={logoText} alt="" style={{height:"70px"}}/>
-                </div>
-                <div class="header_nav">
-                    <nav class="navbar_header">
-                        <ul>
-                            <li><a href="/fast-trade">Buy Crypto</a></li>
-                        <li><a href="/market">Market</a></li>
-                        <li><a href="/trading">Trade</a></li>
-                        <li><a href="/assets">Assets</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="third_part">
-                    <div class="button">Sign up/Login</div>
-                </div>
-            </header>
+        <Preloader />
+        <Header />
+        
             <div class="link">
                 <div class="fasttade">Fast Trade</div>
                 <div class="p2p">P2P</div>
@@ -76,7 +50,6 @@ function createOffer()
                 </div>
                 <div class="createbutton">Create Offer</div>
             </div>
-        </div>
             {/* <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script>
             //  Pre loader 

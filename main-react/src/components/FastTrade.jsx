@@ -4,43 +4,17 @@ import jazzCashPng from './assets/Jazzcash.png';
 import jazzPng from './assets/jazz.jpeg';
 import img1 from './assets/img-1.png';
 
+import Preloader from './small_components/PreLoader';
+import Header from './small_components/Header';
+
+
 import './styles/FastTrade.css';
 function FastTrade() {
     return (
         <body>
-            {/* <!-- Pre loader --> */}
-            {/* <div id="preloader">
-                <div className="uptext">
-                    <div className="logo"><img src={logo} alt="" /></div>
-                    <div className="logo_text"><img src={logoText} alt="" /></div>
-                </div>
-                <div className="loading">
-                    <div className="text">
-                        Loading
-                    </div>
-                    <div className="loader"></div>
-                </div>
-            </div> */}
-            <div className="bosy">
-                <header>
-                    <div className="logotext">
-                        <img src={logoText} alt="" height="70px" />
-                    </div>
-                    <div className="header_nav">
-                        <nav className="navbar_header">
-                            <ul>
-                                <li><a href="/fast-trade">Buy Crypto</a></li>
-                                <li><a href="/market">Market</a></li>
-                                <li><a href="/trading">Trade</a></li>
-                                <li><a href="/assets">Assets</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div className="third_part">
-                        <div className="button">Sign up/Login</div>
-                        <div className="loggedin"></div>
-                    </div>
-                </header>
+            <Preloader />
+            <Header />
+            
                 <div className="link">
                     <div className="fasttade">Fast Trade</div>
                     <div className="p2p">P2P</div>
@@ -104,7 +78,6 @@ function FastTrade() {
                         </div>
                     </div>
                 </div>
-            </div>
         </body>
     );
 }

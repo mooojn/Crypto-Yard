@@ -14,6 +14,9 @@ import img1 from './assets/img-1.png'
 import img2 from './assets/img-2.png'
 import img3 from './assets/img-3.png'
 
+import Preloader from './small_components/PreLoader'
+import Header from './small_components/Header'
+import Footer from './small_components/Footer'
 
 import './styles/Root.css'
 
@@ -23,40 +26,8 @@ function Root(){
   <>
   <body>
     
-  {/* <div id="preloader">
-      <div className="uptext">
-          <div className="logo"><img src={logo} alt=""/></div>
-          <div className="logo_text"><img src={logoText} alt=""/></div>
-      </div>
-      <div className="loading">
-          <div className="text">
-              Loading
-          </div>
-          <div className="loader"></div>
-      </div>
-  </div> */}
-  <div className="bosy">
-
-      <header>
-          <div className="logotext">
-          <img src={logoText} alt="h" style={{ maxHeight: '70px' }} />
-          </div>
-          <div className="header_nav">
-              <nav className="navbar_header">
-                  <ul>
-                      <li><a href="/fast-trade">Buy Crypto</a></li>
-                      <li><a href="/market">Market</a></li>
-                      <li><a href="/trading">Trade</a></li>
-                      <li><a href="/assets">Assets</a></li>
-                  </ul>
-              </nav>
-          </div>
-          <div className="third_part">
-              <div className="button">Sign up/Login</div>
-              <div className="loggedin"></div>
-          </div>
-      </header> 
-      
+  <Preloader />
+  <Header/>    
       <div className="main">
           <div className="main_text">
               <div className="text_one"><span className="crypto_word">Crypto</span> exchange  platform for the life</div>
@@ -92,7 +63,6 @@ function Root(){
               </div>
           </div>
       </div>
-  </div>
   
 
 
@@ -253,63 +223,7 @@ function Root(){
       </div>
   </div>
    
-  <footer>
-      <div className="upper">
-          <div className="about">
-              <div className="header">
-                  <div className="title">
-                  <div className="footer-img">
-                      <img src={logo} style={{height: '100%'}} alt=""/>
-                  </div>
-                      <div style={{display: 'flex'}}>
-                      CryptoYard
-                      </div>
-                  </div>
-                  <div className="pic logo_align"><img style={{height: '20px'}} src="/public/game.png" alt=""/></div>
-              </div>
-              <p className="texts">Cryptoyard is your one-stop destination for all things crypto, offering a user-friendly interface and real-time market data.</p>
-          </div>
-          <div className="about n nav">
-              <nav>
-                  <ul>
-                      <li>Home</li>
-                      <li>Games</li>
-                      <li>Terms & Conditions</li>
-                      <li>Contact Us</li>
-                  </ul>
-              </nav>
-          </div>
-          
-          <div className="icons nav">
-              <div className="title">Social Media</div>
-              <div className="icons">
-                  <ul>
-                      <li>
-                          <div className="youtube">
-                              <i className="fa fa-youtube-play" aria-hidden="true"></i>
-                          </div>
-                      </li>
-                      <li>
-                          <div className="linkedin">
-                              <i className="fa fa-linkedin-square" aria-hidden="true"></i>
-                          </div>
-                      </li>
-                      <li>
-                          <div className="github">
-                              <i className="fa fa-github" aria-hidden="true"></i>
-                          </div>
-                      </li>
-                      <li>
-                          <div className="facebook">
-                              <i className="fa fa-facebook-square" aria-hidden="true"></i>
-                          </div>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </div> 
-      <div className="baseline">Copyright © 2024 Crypto Yard - All Rights Reserved</div>
-  </footer> 
+   <Footer/>
   </body>
   </>
   );

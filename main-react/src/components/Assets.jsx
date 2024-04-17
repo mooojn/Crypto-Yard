@@ -3,45 +3,20 @@ import btc from './assets/bitcoin1.png'
 import eth from './assets/eth.png'
 import logotext from './assets/logo_text.png'
 
+
+import Preloader from './small_components/PreLoader'
+import Header from './small_components/Header'
+
+
 import './styles/Assets.css'
 
 function Asset() {
     return (
         <>
             <div className="body">
-                {/* <div id="preloader">
-                    <div className="uptext">
-                        <div className="logo"><img src="/assests/logo_only.png" alt="" /></div>
-                        <div className="logo_text"><img src="/assests/logo_text.png" alt="" /></div>
-                    </div>
-                    <div className="loading">
-                        <div className="text">
-                            Loading
-                        </div>
-                        <div className="loader"></div>
-                    </div>
-                </div> */}
-                <div className="bosy">
-
-                    <header>
-                        <div className="logotext">
-                            <img src={logotext} alt="" height="70px" />
-                        </div>
-                        <div className="header_nav">
-                            <nav className="navbar_header">
-                                <ul>
-                                    <li><a href="/fast-trade">Buy Crypto</a></li>
-                                    <li><a href="/market">Market</a></li>
-                                    <li><a href="/trading">Trade</a></li>
-                                    <li><a href="/assets">Assets</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div className="third_part">
-                            <div className="button">Sign up/Login</div>
-                            <div className="loggedin"></div>
-                        </div>
-                    </header>
+            <Preloader />
+            <Header />
+                
                     <div className="main">
                         <div className="sidebar">
                             <nav className="nav">
@@ -192,7 +167,6 @@ function Asset() {
 
 
                 </div>
-            </div>
         </>
     );
 }
