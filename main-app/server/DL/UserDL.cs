@@ -6,15 +6,12 @@ namespace Server.DL
 {
     public class UserDL
     {
-        public static string connectionString = "Server=localhost;Database=CryptoYard;Trusted_Connection=True;Encrypt=False";
-        public static SqlConnection conn = new SqlConnection(connectionString);
-
         public static List<User> GetAllUsers()
         {
-            conn.Open();
+            Database.OpenConnection();
             string query = "SELECT * FROM Users";
             List<User> users = new List<User>();
-            SqlCommand command = new SqlCommand(query, conn);
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -22,37 +19,37 @@ namespace Server.DL
                 string pass = reader["password"].ToString();
                 users.Add(new User(name, pass));
             }
-            conn.Close();
+            Database.CloseConnection();
             return users;
         }
         public static bool ValidateLogin(User u)
         {
-            conn.Open();
+            Database.OpenConnection();
             string query = $"SELECT * FROM Users WHERE UserName = '{u.Name}' AND UserPassword = '{u.Password}'";
-            SqlCommand command = new SqlCommand(query, conn);
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
             SqlDataReader reader = command.ExecuteReader();
             bool result = false;
             while (reader.Read())
             {
                 result = true;
             }
-            conn.Close();
+            Database.CloseConnection();
             return result;
         }
         public static void AddUser(User u)
         {
-            conn.Open();
+            Database.OpenConnection();
             string query = $"INSERT INTO Users VALUES ('{u.Name}', '{u.Password}', '{"N/A"}', '{u.Cnic}', @Date)";
-            SqlCommand command = new SqlCommand(query, conn);
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
             command.Parameters.AddWithValue("@Date", u.DateCreated);
             command.ExecuteNonQuery();
-            conn.Close();
+            Database.CloseConnection();
         }
         public static User FindUser(string name)
         {
-            conn.Open();
+            Database.OpenConnection();
             string query = $"SELECT * FROM Users WHERE UserName = '{name}'";
-            SqlCommand command = new SqlCommand(query, conn);
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
             SqlDataReader reader = command.ExecuteReader();
             User u = null;
             while (reader.Read())
@@ -61,7 +58,7 @@ namespace Server.DL
                 string p = reader["UserPassword"].ToString();
                 u = new User(n, p);
             }
-            conn.Close();
+            Database.CloseConnection();
             return u;
         }
     }

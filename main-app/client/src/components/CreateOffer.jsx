@@ -14,8 +14,8 @@ function createOffer()
         <Header />
         
             <div className="link6">
-                <div className="fasttade6">Fast Trade</div>
-                <div className="p2p6">P2P</div>
+                <a href="/fast-trade"><div className="fasttade6">Fast Trade</div></a>
+                <a href="/p2p"><div className="p2p6">P2P</div></a>
                 <div className="create6">Create Offer</div>
             </div>
 

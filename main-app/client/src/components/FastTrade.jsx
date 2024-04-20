@@ -17,8 +17,8 @@ function FastTrade() {
             
                 <div className="link5">
                     <div className="fasttade5">Fast Trade</div>
-                    <div className="p2p5">P2P</div>
-                    <div className="p2p5">Create Offer</div>
+                    <a href="/p2p"><div className="p2p5">P2P</div></a>
+                    <a href="/create-offer"> <div className="p2p5">Create Offer</div></a>
                 </div>
                 <div className="main5">
                     <div className="textside5">

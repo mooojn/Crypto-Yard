@@ -16,9 +16,9 @@ function P2P() {
                 <Header />
 
                     <div className="link3">
-                        <div className="fasttade3">Fast Trade</div>
+                        <a href="\fast-trade"><div className="fasttade3">Fast Trade</div> </a>
                         <div className="p2p3">P2P</div>
-                        <div className="create3">Create Offer</div>
+                        <a href="\create-offer"><div className="create3">Create Offer</div> </a>
                     </div>
                     <div className="headstext3">
                         <p>

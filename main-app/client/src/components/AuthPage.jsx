@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 import './styles/AuthPage.css';
 import Header from './small_components/Header';
@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 function AuthPage() {
+  const navigate = useNavigate();
   const API_URL = "http://localhost:5182/api"
 
 
@@ -25,7 +26,6 @@ function AuthPage() {
   const handleLogin = (e) => {
 
     e.preventDefault();
-    // const navigate = useNavigate(); // Move useNavigate inside the function component
     if (name == "" || password == "") {
       toast.error("Please fill all the fields");
       return;
@@ -40,6 +40,7 @@ function AuthPage() {
       .then(response => {
         if (response.data) {
           toast.success('Authentication successful');
+          // navigate('/home')
 
         } else {
           toast.error("Incorrect username or password");

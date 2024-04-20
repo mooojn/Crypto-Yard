@@ -9,8 +9,13 @@ import Header from './small_components/Header'
 
 
 import './styles/Assets.css'
+import { useEffect } from 'react'
 
 function Asset() {
+   
+
+
+
     return (
         <>
             <div className="body8">
@@ -70,7 +75,7 @@ function Asset() {
                                 <div className="assesttext8">
                                     <div className="overall8">
                                         <div className="overalltext8">Total Assests</div>
-                                        <div className="overallvalue8"><span className="value8">0.00000000</span> BTC</div>
+                                        <div className="overallvalue8"><span className="value8">0.0000</span> BTC</div>
                                     </div>
                                     <div className="headerss8">
                                         <div className="ASSESTS8">Account</div>
