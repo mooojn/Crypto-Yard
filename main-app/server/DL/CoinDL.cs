@@ -18,8 +18,9 @@ namespace Server.DL
                 string sym = reader["Symbol"].ToString();
                 string name = reader["Name"].ToString();
                 string desc = reader["Coin_Details"].ToString();
+                float amount = Convert.ToSingle(reader["Amount"]);
 
-                coins.Add(new Coin(sym, name, desc));
+                coins.Add(new Coin(sym, name, desc, amount));
             }
             Database.CloseConnection();
             return coins;

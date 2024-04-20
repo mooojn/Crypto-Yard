@@ -28,8 +28,11 @@ import Header from './small_components/Header'
 import "./styles/Market.css"
 
 function market() {
-    const [btc, setBtc] = useState({ Name: '', Symbol: '' });
-    const [eth, setEth] = useState({ Name: '', Symbol: '' });
+    const [btc, setBtc] = useState({ Name: '', Symbol: '', Price:'' });
+    const [eth, setEth] = useState({ Name: '', Symbol: '', Price:'' });
+    const [xrp, setXrp] = useState({ Name: '', Symbol: '', Price:'' });
+    const [usdt, setUsdt] = useState({ Name: '', Symbol: '', Price:'' });
+    const [doge, setDoge] = useState({ Name: '', Symbol: '', Price:'' });
 
     useEffect(() => {
         fetch('http://localhost:5182/api/coinInfo')
@@ -40,11 +43,14 @@ function market() {
                 const ETH = data[1];
                 const XRP = data[2];
                 const USDT = data[3];   
-                const Doge = data[4];
+                const DOGE = data[4];
                 
 
-                setBtc({ Name: BTC.Name, Symbol: BTC.Symbol });
-                setEth({ Name: ETH.Name, Symbol: ETH.Symbol });
+                setBtc({ Name: BTC.Name, Symbol: BTC.Symbol, Price: BTC.Amount });
+                setEth({ Name: ETH.Name, Symbol: ETH.Symbol, Price: ETH.Amount });
+                setXrp({ Name: XRP.Name, Symbol: XRP.Symbol, Price: XRP.Amount });
+                setUsdt({ Name: USDT.Name, Symbol: USDT.Symbol, Price: USDT.Amount });
+                setDoge({ Name: DOGE.Name, Symbol: DOGE.Symbol, Price: DOGE.Amount });
             })
             .catch(error => console.error('Error fetching data:', error));
     }, []);
@@ -185,7 +191,7 @@ function market() {
                                 <div className="coin9">{btc.Name}</div>
                             </div>
                         </div>
-                        <div className="coinprice9">$<span className="price9">200</span></div>
+                        <div className="coinprice9">$<span className="price9">{btc.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">20</span>%</div>
                         <div className="action9">
                             <div className="details9">Details</div>
@@ -200,7 +206,7 @@ function market() {
                                 <div className="coin9">{eth.Name}</div>
                             </div>
                         </div>
-                        <div className="coinprice9">$<span className="price9">254500</span></div>
+                        <div className="coinprice9">$<span className="price9">{eth.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">2</span>%</div>
                         <div className="action9">
                             <div className="details9">Details</div>
@@ -211,11 +217,11 @@ function market() {
                         <div className="coinname9">
                             <div className="iconcoin9"><img src={a18} alt="" /></div>
                             <div className="names9">
-                                <div className="symbol9">XRP</div>
-                                <div className="coin9">XRP</div>
+                                <div className="symbol9">{xrp.Symbol}</div>
+                                <div className="coin9">{xrp.Name}</div>
                             </div>
                         </div>
-                        <div className="coinprice9">$<span className="price9">230</span></div>
+                        <div className="coinprice9">$<span className="price9">{xrp.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">10</span>%</div>
                         <div className="action9">
                             <div className="details9">Details</div>
@@ -226,11 +232,11 @@ function market() {
                         <div className="coinname9">
                             <div className="iconcoin9"><img src={a19} alt="" /></div>
                             <div className="names9">
-                                <div className="symbol9">USDT</div>
-                                <div className="coin9">USD Tether</div>
+                                <div className="symbol9">{usdt.Symbol}</div>
+                                <div className="coin9">{usdt.Name}</div>
                             </div>
                         </div>
-                        <div className="coinprice9">$<span className="price9">1</span></div>
+                        <div className="coinprice9">$<span className="price9">{usdt.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">20</span>%</div>
                         <div className="action9">
                             <div className="details9">Details</div>
@@ -241,11 +247,11 @@ function market() {
                         <div className="coinname9">
                             <div className="iconcoin9"><img src={a20} alt="" /></div>
                             <div className="names9">
-                                <div className="symbol9">Doge</div>
-                                <div className="coin9">Dogecoin</div>
+                                <div className="symbol9">{doge.Symbol}</div>
+                                <div className="coin9">{doge.Name}</div>
                             </div>
                         </div>
-                        <div className="coinprice9">$<span className="price9">0.0043</span></div>
+                        <div className="coinprice9">$<span className="price9">{doge.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">4</span>%</div>
                         <div className="action9">
                             <div className="details9">Details</div>
@@ -260,53 +266,9 @@ function market() {
 
 
 
-                {/* 
 
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        //  Pre loader 
-        window.addEventListener("load", function () {
-            var preloader = document.getElementById("preloader");
-            preloader.classList.add("fade-out");
-            setTimeout(function () {
-                preloader.style.display = "none";
-            }, 1000);
-        });
-
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            autoplay: {
-            delay: 5000, 
-        },
-        loop: true,
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-
-            breakpoints: {
-                768: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                },
-                1024: {
-                    slidesPerView: 2,
-                    spaceBetween: 40,
-                },
-                2000: {
-                    slidesPerView: 3,
-                    spaceBetween: 60,
-                },
-            },
-        });
-    </script> */}
+    
             </body>
         </>
     );

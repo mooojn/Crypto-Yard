@@ -13,6 +13,13 @@
             Name = name;
             Description = description;
         }
+        public Coin(string symbol, string name, string description, float price)
+        {
+            Symbol = symbol;
+            Name = name;
+            Description = description;
+            Amount = price;
+        }
         public Coin(int id, string name, string description, double amount, string symbol)
         {
             Id = id;
