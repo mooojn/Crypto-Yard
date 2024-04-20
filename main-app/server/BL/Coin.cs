@@ -5,8 +5,17 @@
         public int Id { get; set; }
         public string Name {get; set;}
         public string Description {get; set;}
-        public double Amount {get; set;}
+        public double Price {get; set;}
         public string Symbol {get; set;}
+        public Coin()
+        {
+
+        }
+        public Coin (string name, double amount)
+        {
+            Name = name;
+            Price = amount;
+        }
         public Coin(string symbol, string name, string description)
         {
             Symbol = symbol;
@@ -18,14 +27,14 @@
             Symbol = symbol;
             Name = name;
             Description = description;
-            Amount = price;
+            Price = price;
         }
         public Coin(int id, string name, string description, double amount, string symbol)
         {
             Id = id;
             Name = name;
             Description = description;
-            Amount = amount;
+            Price = amount;
             Symbol = symbol;
         }
 
@@ -59,14 +68,14 @@
             Description = description;
         }
 
-        public double GetAmount()
+        public double GetPrice()
         {
-            return Amount;
+            return Price;
         }
 
-        public void SetAmount(double amount)
+        public void SetPrice(double amount)
         {
-            Amount = amount;
+            Price = amount;
         }
 
         public string GetSymbol()
@@ -86,7 +95,7 @@
                 Id = this.Id,
                 Name = this.Name,
                 Description = this.Description,
-                Amount = this.Amount,
+                Price = this.Price,
                 Symbol = this.Symbol
             };
         }
@@ -95,7 +104,7 @@
             Id = updatedCoins.Id;
             Name = updatedCoins.Name;
             Description = updatedCoins.Description;
-            Amount = updatedCoins.Amount;
+            Price = updatedCoins.Price;
             Symbol = updatedCoins.Symbol;
         }
     }

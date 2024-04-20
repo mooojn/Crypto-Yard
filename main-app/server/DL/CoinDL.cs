@@ -25,5 +25,13 @@ namespace Server.DL
             Database.CloseConnection();
             return coins;
         }
+        public static void UpdatePrices(Coin coin)
+        {
+            Database.OpenConnection();
+            string query = $"UPDATE Coins SET Amount = '{coin.Price}' WHERE Name = '{coin.Name}' OR Symbol = '{coin.Name}'";
+            SqlCommand cmd = new SqlCommand(query, Database.GetConnection());
+            cmd.ExecuteNonQuery();
+            Database.CloseConnection();
+        }
     }
 }

@@ -279,4 +279,6 @@ D:\repos\crypto-yard\main-app\server\obj\Debug\net8.0\WebApplication1.genruntime
 D:\repos\crypto-yard\main-app\server\obj\Debug\net8.0\ref\WebApplication1.dll
 D:\repos\crypto-yard\main-app\server\bin\Debug\net8.0\CryptoYard.dll
 D:\repos\crypto-yard\main-app\server\bin\Debug\net8.0\CryptoYard.pdb
-D:\repos\crypto-yard\main-app\server\obj\Debug\net8.0\WebAppli.7D14BD69.Up2Date
+D:\repos\crypto-yard\main-app\server\obj\Debug\net8.0\WebApplication1.csproj.CopyComplete
+D:\repos\crypto-yard\main-app\server\bin\Debug\net8.0\package-lock.json
+D:\repos\crypto-yard\main-app\server\bin\Debug\net8.0\package.json
