@@ -1,3 +1,4 @@
 @echo off
-cd /d "D:\repos\crypto-yard\main-app\server"
+cd /d "server"
 dotnet run
+pause

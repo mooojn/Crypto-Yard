@@ -1,4 +1,4 @@
 @echo off
-cd /d "D:\repos\crypto-yard\main-app\client"  
+cd /d "client"  
 npm run dev
 pause
