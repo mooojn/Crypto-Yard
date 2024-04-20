@@ -23,11 +23,63 @@ import React, { useState, useEffect } from 'react';
 
 import Preloader from './small_components/PreLoader'
 import Header from './small_components/Header'
+import Swiper from 'swiper'; // Assuming Swiper is installed
+
 
 
 import "./styles/Market.css"
 
 function market() {
+
+    useEffect(() => {
+        // Function to initialize Swiper
+        const initializeSwiper = () => {
+            new Swiper('.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                autoplay: {
+                    delay: 5000,
+                },
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    1024: {
+                        slidesPerView: 2,
+                        spaceBetween: 40,
+                    },
+                    2000: {
+                        slidesPerView: 3,
+                        spaceBetween: 60,
+                    },
+                },
+            });
+        };
+
+        // Initialize Swiper when the component mounts
+        initializeSwiper();
+
+        // Clean up Swiper instance when the component unmounts
+        return () => {
+            const swiperInstance = document.querySelector('.swiper-container').swiper;
+            if (swiperInstance) {
+                swiperInstance.destroy(true, true);
+            }
+        };
+    }, []);
+
+
+    // backend data
     const [btc, setBtc] = useState({ Name: '', Symbol: '', Price:'' });
     const [eth, setEth] = useState({ Name: '', Symbol: '', Price:'' });
     const [xrp, setXrp] = useState({ Name: '', Symbol: '', Price:'' });
@@ -55,6 +107,7 @@ function market() {
             .catch(error => console.error('Error fetching data:', error));
     }, []);
 
+    // main app
     return (
 
         <>
@@ -64,11 +117,11 @@ function market() {
                 <Header />
                 <div className="overviewhead9">Market Overview</div>
 
-                <div className="swiper9-container">
-                    <div className="swiper9-wrapper">
+                <div className="swiper-container">
+                    <div className="swiper-wrapper">
 
 
-                        <div className="swiper9-slide">
+                        <div className="swiper-slide">
                             <div className="marketoverviews9">
                                 <div className="overviewtop9">
                                     <div className="type9">
@@ -103,7 +156,7 @@ function market() {
                         </div>
 
 
-                        <div className="swiper9-slide">
+                        <div className="swiper-slide">
                             <div className="marketoverviews9">
                                 <div className="overviewtop9">
                                     <div className="type9">
@@ -138,7 +191,7 @@ function market() {
                         </div>
 
 
-                        <div className="swiper9-slide">
+                        <div className="swiper-slide">
                             <div className="marketoverviews9">
                                 <div className="overviewtop9">
                                     <div className="type9">
@@ -259,16 +312,6 @@ function market() {
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-    
             </body>
         </>
     );
