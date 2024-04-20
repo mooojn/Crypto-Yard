@@ -1,5 +1,4 @@
-﻿using CryptoConsole.BL;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Server.BL;
 using Server.DL;

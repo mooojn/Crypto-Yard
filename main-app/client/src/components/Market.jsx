@@ -38,6 +38,10 @@ function market() {
                 // Extracting the first item from the data array
                 const BTC = data[0];
                 const ETH = data[1];
+                const XRP = data[2];
+                const USDT = data[3];   
+                const Doge = data[4];
+                
 
                 setBtc({ Name: BTC.Name, Symbol: BTC.Symbol });
                 setEth({ Name: ETH.Name, Symbol: ETH.Symbol });
