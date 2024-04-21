@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\repos\\crypto-yard\\main-app\\Server\\Server.csproj": {}
+    "D:\\repos\\crypto-yard\\main-app\\server\\Server.csproj": {}
   },
   "projects": {
-    "D:\\repos\\crypto-yard\\main-app\\Server\\Server.csproj": {
+    "D:\\repos\\crypto-yard\\main-app\\server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\repos\\crypto-yard\\main-app\\Server\\Server.csproj",
+        "projectUniqueName": "D:\\repos\\crypto-yard\\main-app\\server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "D:\\repos\\crypto-yard\\main-app\\Server\\Server.csproj",
+        "projectPath": "D:\\repos\\crypto-yard\\main-app\\server\\Server.csproj",
         "packagesPath": "C:\\Users\\moon\\.nuget\\packages\\",
-        "outputPath": "D:\\repos\\crypto-yard\\main-app\\Server\\obj\\",
+        "outputPath": "D:\\repos\\crypto-yard\\main-app\\server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\moon\\AppData\\Roaming\\NuGet\\NuGet.Config",

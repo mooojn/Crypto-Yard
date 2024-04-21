@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7RZzmS++CBbrbpFFks06jbk1lPF7MuFeJALM/6mv9mjAYC/KpipBV6Y53Al9ldX3pYlGjbvtmWP4XrhM/xjo9Q==",
+  "dgSpecHash": "osIb2rSCiJzNsDudMQQdug6lg2Di++zE7YA1kwmTsDgx+OeT3j4CU8y8VVsEd3MiYUqdRmIOrmnoSbtl3UgF2g==",
   "success": true,
-  "projectFilePath": "D:\\repos\\crypto-yard\\main-app\\Server\\Server.csproj",
+  "projectFilePath": "D:\\repos\\crypto-yard\\main-app\\server\\Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\moon\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\moon\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

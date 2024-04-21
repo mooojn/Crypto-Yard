@@ -66,4 +66,4 @@ D:\repos\crypto-yard\main-app\Server\obj\Debug\net8.0\refint\Server.dll
 D:\repos\crypto-yard\main-app\Server\obj\Debug\net8.0\Server.pdb
 D:\repos\crypto-yard\main-app\Server\obj\Debug\net8.0\Server.genruntimeconfig.cache
 D:\repos\crypto-yard\main-app\Server\obj\Debug\net8.0\ref\Server.dll
-D:\repos\crypto-yard\main-app\Server\obj\Debug\net8.0\Server.csproj.Up2Date
+D:\repos\crypto-yard\main-app\server\obj\Debug\net8.0\Server.csproj.Up2Date
