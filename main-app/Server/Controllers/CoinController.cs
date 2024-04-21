@@ -53,7 +53,7 @@ namespace Server.Controllers
                         double price = coin.Price;
                         CoinDL.UpdatePrices(new Coin(name, price));
                     }
-                    return StatusCode(200, "Sucess");
+                    return Ok(new { message = "Success" });
                 }
             }
             catch (HttpRequestException ex)

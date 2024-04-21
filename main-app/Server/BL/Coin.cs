@@ -22,7 +22,7 @@
             Symbol = symbol;
             Name = name;
         }
-        public Coin(string symbol, string name, string description, float price, string overview)
+        public Coin(string symbol, string name, string description, double price, string overview)
         {
             Symbol = symbol;
             Name = name;

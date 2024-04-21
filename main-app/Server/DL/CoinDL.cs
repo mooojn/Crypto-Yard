@@ -22,7 +22,7 @@ namespace Server.DL
 
                 float amount = Convert.ToSingle(reader["Amount"]);
 
-                coins.Add(new Coin(sym, name, desc, amount, overview));
+                coins.Add(new Coin(sym, name, desc, Math.Round(amount, 2), overview));
             }
             Database.CloseConnection();
             return coins;
@@ -43,7 +43,7 @@ namespace Server.DL
 
                 float amount = Convert.ToSingle(reader["Amount"]);
 
-                coin = new Coin(sym, name, desc, amount, overview);
+                coin = new Coin(sym, name, desc, Math.Round(amount, 2), overview);
             }
             Database.CloseConnection();
             return coin;
