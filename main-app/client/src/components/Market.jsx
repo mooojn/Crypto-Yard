@@ -97,12 +97,11 @@ function market() {
                 const USDT = data[3];   
                 const DOGE = data[4];
                 
-
-                setBtc({ Name: BTC.Name, Symbol: BTC.Symbol, Price: BTC.Amount });
-                setEth({ Name: ETH.Name, Symbol: ETH.Symbol, Price: ETH.Amount });
-                setXrp({ Name: XRP.Name, Symbol: XRP.Symbol, Price: XRP.Amount });
-                setUsdt({ Name: USDT.Name, Symbol: USDT.Symbol, Price: USDT.Amount });
-                setDoge({ Name: DOGE.Name, Symbol: DOGE.Symbol, Price: DOGE.Amount });
+                setBtc({ Name: BTC.Name, Symbol: BTC.Symbol, Price: BTC.Price });
+                setEth({ Name: ETH.Name, Symbol: ETH.Symbol, Price: ETH.Price });
+                setXrp({ Name: XRP.Name, Symbol: XRP.Symbol, Price: XRP.Price });
+                setUsdt({ Name: USDT.Name, Symbol: USDT.Symbol, Price: USDT.Price });
+                setDoge({ Name: DOGE.Name, Symbol: DOGE.Symbol, Price: DOGE.Price });
             })
             .catch(error => console.error('Error fetching data:', error));
     }, []);
