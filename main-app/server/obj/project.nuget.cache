@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "sBM+BoQZsqgdvhm1TUsD1Ijid6tAyXZk0hzrtZslZCrusN5/8R/l9MmvzUqeuk04L9zxXc2XaFdWO8sR+JUbrA==",
+=======
+  "dgSpecHash": "e1gamEVanYsltqXX+q1ZBfChqD9ZhkLc18pl5ByQPiY7clqT7JFyI8tRSJiYti+0hmNe3AW05hozjwJ13bU/7g==",
+>>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "D:\\Asad work\\semester 2\\PROJECTS\\DBfinal\\Crypto-Yard\\main-app\\server\\WebApplication1.csproj",
   "expectedPackageFiles": [

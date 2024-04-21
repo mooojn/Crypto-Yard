@@ -17,13 +17,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="AzureBankDLL">
-      <HintPath>..\OOP-Project\AzureBankDLL\bin\Debug\AzureBankDLL.dll</HintPath>
-    </Reference>
-    <Reference Include="CryptoYard">
-      <HintPath>C:\Users\moon\Desktop\CryptoYard\bin\Debug\CryptoYard.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
