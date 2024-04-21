@@ -4567,19 +4567,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\moon\\.nuget\\packages\\": {}
+    "C:\\Users\\usama\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repos\\crypto-yard\\main-app\\server\\WebApplication1.csproj",
+      "projectUniqueName": "D:\\Asad work\\semester 2\\PROJECTS\\DBfinal\\Crypto-Yard\\main-app\\server\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "D:\\repos\\crypto-yard\\main-app\\server\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\moon\\.nuget\\packages\\",
-      "outputPath": "D:\\repos\\crypto-yard\\main-app\\server\\obj\\",
+      "projectPath": "D:\\Asad work\\semester 2\\PROJECTS\\DBfinal\\Crypto-Yard\\main-app\\server\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\usama\\.nuget\\packages\\",
+      "outputPath": "D:\\Asad work\\semester 2\\PROJECTS\\DBfinal\\Crypto-Yard\\main-app\\server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\moon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\usama\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4587,6 +4587,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4647,7 +4648,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
