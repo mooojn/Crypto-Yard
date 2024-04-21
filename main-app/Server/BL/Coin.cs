@@ -5,6 +5,7 @@
         public int Id { get; set; }
         public string Name {get; set;}
         public string Description {get; set;}
+        public string Overview { get; set;}
         public double Price {get; set;}
         public string Symbol {get; set;}
         public Coin()
@@ -20,14 +21,14 @@
         {
             Symbol = symbol;
             Name = name;
-            Description = description;
         }
-        public Coin(string symbol, string name, string description, float price)
+        public Coin(string symbol, string name, string description, float price, string overview)
         {
             Symbol = symbol;
             Name = name;
             Description = description;
             Price = price;
+            Overview = overview;
         }
         public Coin(int id, string name, string description, double amount, string symbol)
         {
