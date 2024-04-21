@@ -19,6 +19,7 @@ import a19 from "./assets/USDT.png"
 import a20 from "./assets/Doge.png"
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 import Preloader from './small_components/PreLoader'
@@ -80,11 +81,11 @@ function market() {
 
 
     // backend data
-    const [btc, setBtc] = useState({ Name: '', Symbol: '', Price:'' });
-    const [eth, setEth] = useState({ Name: '', Symbol: '', Price:'' });
-    const [xrp, setXrp] = useState({ Name: '', Symbol: '', Price:'' });
-    const [usdt, setUsdt] = useState({ Name: '', Symbol: '', Price:'' });
-    const [doge, setDoge] = useState({ Name: '', Symbol: '', Price:'' });
+    const [btc, setBtc] = useState({ Name: '', Symbol: '', Price: '' });
+    const [eth, setEth] = useState({ Name: '', Symbol: '', Price: '' });
+    const [xrp, setXrp] = useState({ Name: '', Symbol: '', Price: '' });
+    const [usdt, setUsdt] = useState({ Name: '', Symbol: '', Price: '' });
+    const [doge, setDoge] = useState({ Name: '', Symbol: '', Price: '' });
 
     useEffect(() => {
         fetch('http://localhost:5056/api/coinInfo')
@@ -94,9 +95,9 @@ function market() {
                 const BTC = data[0];
                 const ETH = data[1];
                 const XRP = data[2];
-                const USDT = data[3];   
+                const USDT = data[3];
                 const DOGE = data[4];
-                
+
                 setBtc({ Name: BTC.Name, Symbol: BTC.Symbol, Price: BTC.Price });
                 setEth({ Name: ETH.Name, Symbol: ETH.Symbol, Price: ETH.Price });
                 setXrp({ Name: XRP.Name, Symbol: XRP.Symbol, Price: XRP.Price });
@@ -246,7 +247,9 @@ function market() {
                         <div className="coinprice9">$<span className="price9">{btc.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">20</span>%</div>
                         <div className="action9">
-                            <div className="details9">Details</div>
+                        <Link to={`/market-detail?variableName=${btc.Name}`}>
+                                <div className="details9">Details</div>
+                            </Link>
                             <div className="trades9">Trades</div>
                         </div>
                     </div>
@@ -261,7 +264,9 @@ function market() {
                         <div className="coinprice9">$<span className="price9">{eth.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">2</span>%</div>
                         <div className="action9">
-                            <div className="details9">Details</div>
+                        <Link to={`/market-detail?variableName=${eth.Name}`}>
+                                <div className="details9">Details</div>
+                            </Link>
                             <div className="trades9">Trades</div>
                         </div>
                     </div>
@@ -276,7 +281,9 @@ function market() {
                         <div className="coinprice9">$<span className="price9">{xrp.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">10</span>%</div>
                         <div className="action9">
-                            <div className="details9">Details</div>
+                        <Link to={`/market-detail?variableName=${xrp.Name}`}>
+                                <div className="details9">Details</div>
+                            </Link>
                             <div className="trades9">Trades</div>
                         </div>
                     </div>
@@ -291,7 +298,9 @@ function market() {
                         <div className="coinprice9">$<span className="price9">{usdt.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">20</span>%</div>
                         <div className="action9">
-                            <div className="details9">Details</div>
+                        <Link to={`/market-detail?variableName=${usdt.Name}`}>
+                                <div className="details9">Details</div>
+                            </Link>
                             <div className="trades9">Trades</div>
                         </div>
                     </div>
@@ -306,7 +315,10 @@ function market() {
                         <div className="coinprice9">$<span className="price9">{doge.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">4</span>%</div>
                         <div className="action9">
-                            <div className="details9">Details</div>
+                            <Link to={`/market-detail?variableName=${doge.Name}`}>
+                                <div className="details9">Details</div>
+                            </Link>
+
                             <div className="trades9">Trades</div>
                         </div>
                     </div>
