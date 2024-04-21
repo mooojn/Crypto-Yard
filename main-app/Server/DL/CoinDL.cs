@@ -17,13 +17,36 @@ namespace Server.DL
             {
                 string sym = reader["Symbol"].ToString();
                 string name = reader["Name"].ToString();
-                string desc = reader["Coin_Details"].ToString();
+                string desc = reader["Coin_Description"].ToString();
+                string overview = reader["Coin_Details"].ToString();
+
                 float amount = Convert.ToSingle(reader["Amount"]);
 
-                coins.Add(new Coin(sym, name, desc, amount));
+                coins.Add(new Coin(sym, name, desc, amount, overview));
             }
             Database.CloseConnection();
             return coins;
+        }
+        public static Coin ReadAll(string Name)
+        {
+            Coin coin = new Coin();
+            Database.OpenConnection();
+            string query = $"SELECT * FROM Coins WHERE Name = '{Name}'";
+            SqlCommand cmd = new SqlCommand(query, Database.GetConnection());
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string sym = reader["Symbol"].ToString();
+                string name = reader["Name"].ToString();
+                string desc = reader["Coin_Description"].ToString();
+                string overview = reader["Coin_Details"].ToString();
+
+                float amount = Convert.ToSingle(reader["Amount"]);
+
+                coin = new Coin(sym, name, desc, amount, overview);
+            }
+            Database.CloseConnection();
+            return coin;
         }
         public static void UpdatePrices(Coin coin)
         {
