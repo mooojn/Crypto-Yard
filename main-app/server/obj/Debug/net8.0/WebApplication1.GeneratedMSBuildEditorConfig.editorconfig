@@ -9,27 +9,11 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebApplication1
 build_property.RootNamespace = WebApplication1
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 build_property.ProjectDir = d:\repos\crypto-yard\main-app\server\
-=======
-build_property.ProjectDir = D:\Asad work\semester 2\PROJECTS\DBfinal\Crypto-Yard\main-app\server\
->>>>>>> Stashed changes
-=======
-build_property.ProjectDir = D:\repos\crypto-yard\main-app\server\
->>>>>>> Stashed changes
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 build_property.MSBuildProjectDirectory = d:\repos\crypto-yard\main-app\server
-=======
-build_property.MSBuildProjectDirectory = D:\Asad work\semester 2\PROJECTS\DBfinal\Crypto-Yard\main-app\server
->>>>>>> Stashed changes
-=======
-build_property.MSBuildProjectDirectory = D:\repos\crypto-yard\main-app\server
->>>>>>> Stashed changes
 build_property._RazorSourceGeneratorDebug = 

@@ -280,7 +280,6 @@ D:\repos\crypto-yard\main-app\server\obj\Debug\net8.0\ref\WebApplication1.dll
 <<<<<<< Updated upstream
 D:\repos\crypto-yard\main-app\server\bin\Debug\net8.0\CryptoYard.dll
 D:\repos\crypto-yard\main-app\server\bin\Debug\net8.0\CryptoYard.pdb
-<<<<<<< Updated upstream
 D:\repos\crypto-yard\main-app\server\obj\Debug\net8.0\WebApplication1.csproj.CopyComplete
 D:\repos\crypto-yard\main-app\server\bin\Debug\net8.0\package-lock.json
 D:\repos\crypto-yard\main-app\server\bin\Debug\net8.0\package.json
@@ -425,7 +424,4 @@ D:\Asad work\semester 2\PROJECTS\DBfinal\Crypto-Yard\main-app\server\obj\Debug\n
 D:\Asad work\semester 2\PROJECTS\DBfinal\Crypto-Yard\main-app\server\obj\Debug\net8.0\ref\WebApplication1.dll
 D:\Asad work\semester 2\PROJECTS\DBfinal\Crypto-Yard\main-app\server\obj\Debug\net8.0\WebAppli.7D14BD69.Up2Date
 D:\Asad work\semester 2\PROJECTS\DBfinal\Crypto-Yard\main-app\server\obj\Debug\net8.0\WebApplication1.csproj.CopyComplete
->>>>>>> Stashed changes
-=======
-D:\repos\crypto-yard\main-app\server\obj\Debug\net8.0\WebAppli.7D14BD69.Up2Date
 >>>>>>> Stashed changes
