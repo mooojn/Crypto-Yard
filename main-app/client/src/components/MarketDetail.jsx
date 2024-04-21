@@ -35,7 +35,6 @@ function MarketDetail() {
             })
             .catch(error => console.error('Error fetching data:', error));
 
-            
         if (coinName == "Ripple"){
             document.querySelector('.coinlogo7 img').src = xrpImg;
         }else if (coinName == "Ethereum"){
@@ -47,8 +46,6 @@ function MarketDetail() {
         }else if (coinName == "Dogecoin"){
             document.querySelector('.coinlogo7 img').src = dogeImg;
         }
-
-
     }, [])
 
     return (
