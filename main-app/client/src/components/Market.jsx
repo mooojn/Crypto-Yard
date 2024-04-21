@@ -26,12 +26,21 @@ import Preloader from './small_components/PreLoader'
 import Header from './small_components/Header'
 import Swiper from 'swiper'; // Assuming Swiper is installed
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 import "./styles/Market.css"
 
 function market() {
-
+    // backend data
+    const [btc, setBtc] = useState({ Name: '', Symbol: '', Price: '' });
+    const [eth, setEth] = useState({ Name: '', Symbol: '', Price: '' });
+    const [xrp, setXrp] = useState({ Name: '', Symbol: '', Price: '' });
+    const [usdt, setUsdt] = useState({ Name: '', Symbol: '', Price: '' });
+    const [doge, setDoge] = useState({ Name: '', Symbol: '', Price: '' });
+    
     useEffect(() => {
         // Function to initialize Swiper
         const initializeSwiper = () => {
@@ -80,33 +89,41 @@ function market() {
     }, []);
 
 
-    // backend data
-    const [btc, setBtc] = useState({ Name: '', Symbol: '', Price: '' });
-    const [eth, setEth] = useState({ Name: '', Symbol: '', Price: '' });
-    const [xrp, setXrp] = useState({ Name: '', Symbol: '', Price: '' });
-    const [usdt, setUsdt] = useState({ Name: '', Symbol: '', Price: '' });
-    const [doge, setDoge] = useState({ Name: '', Symbol: '', Price: '' });
 
     useEffect(() => {
         fetch('http://localhost:5056/api/coinInfo')
-            .then(response => response.json())
-            .then(data => {
-                // Extracting the first item from the data array
-                const BTC = data[0];
-                const ETH = data[1];
-                const XRP = data[2];
-                const USDT = data[3];
-                const DOGE = data[4];
-
-                setBtc({ Name: BTC.Name, Symbol: BTC.Symbol, Price: BTC.Price });
-                setEth({ Name: ETH.Name, Symbol: ETH.Symbol, Price: ETH.Price });
-                setXrp({ Name: XRP.Name, Symbol: XRP.Symbol, Price: XRP.Price });
-                setUsdt({ Name: USDT.Name, Symbol: USDT.Symbol, Price: USDT.Price });
-                setDoge({ Name: DOGE.Name, Symbol: DOGE.Symbol, Price: DOGE.Price });
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    }, []);
-
+          .then(response => response.json())
+          .then(data => {
+            const BTC = data[0];
+            const ETH = data[1];
+            const XRP = data[2];
+            const USDT = data[3];
+            const DOGE = data[4];
+      
+            setBtc({ Name: BTC.Name, Symbol: BTC.Symbol, Price: BTC.Price });
+            setEth({ Name: ETH.Name, Symbol: ETH.Symbol, Price: ETH.Price });
+            setXrp({ Name: XRP.Name, Symbol: XRP.Symbol, Price: XRP.Price });
+            setUsdt({ Name: USDT.Name, Symbol: USDT.Symbol, Price: USDT.Price });
+            setDoge({ Name: DOGE.Name, Symbol: DOGE.Symbol, Price: DOGE.Price });
+          })
+          .catch(error => console.error('Error fetching data from coinInfo:', error));
+      
+        fetch('http://localhost:5056/api/scrape')
+          .then(resp => {
+            if (!resp.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return resp.json();
+          })
+          .then(data => {
+            console.log('prices fetched from scraper');
+          })
+          .catch(error => {
+            toast.warning('Scraping script not working. Correct prices will not be loaded');
+            console.error('Error fetching data from scrape:', error);
+          });
+      }, []);
+      
     // main app
     return (
 
@@ -115,6 +132,7 @@ function market() {
 
                 <Preloader />
                 <Header />
+                <ToastContainer />
                 <div className="overviewhead9">Market Overview</div>
 
                 <div className="swiper-container">
@@ -247,7 +265,7 @@ function market() {
                         <div className="coinprice9">$<span className="price9">{btc.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">20</span>%</div>
                         <div className="action9">
-                        <Link to={`/market-detail?variableName=${btc.Name}`}>
+                            <Link to={`/market-detail?variableName=${btc.Name}`}>
                                 <div className="details9">Details</div>
                             </Link>
                             <div className="trades9">Trades</div>
@@ -264,7 +282,7 @@ function market() {
                         <div className="coinprice9">$<span className="price9">{eth.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">2</span>%</div>
                         <div className="action9">
-                        <Link to={`/market-detail?variableName=${eth.Name}`}>
+                            <Link to={`/market-detail?variableName=${eth.Name}`}>
                                 <div className="details9">Details</div>
                             </Link>
                             <div className="trades9">Trades</div>
@@ -281,7 +299,7 @@ function market() {
                         <div className="coinprice9">$<span className="price9">{xrp.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">10</span>%</div>
                         <div className="action9">
-                        <Link to={`/market-detail?variableName=${xrp.Name}`}>
+                            <Link to={`/market-detail?variableName=${xrp.Name}`}>
                                 <div className="details9">Details</div>
                             </Link>
                             <div className="trades9">Trades</div>
@@ -298,7 +316,7 @@ function market() {
                         <div className="coinprice9">$<span className="price9">{usdt.Price}</span></div>
                         <div className="coinpercentage9"><span className="percentage9">20</span>%</div>
                         <div className="action9">
-                        <Link to={`/market-detail?variableName=${usdt.Name}`}>
+                            <Link to={`/market-detail?variableName=${usdt.Name}`}>
                                 <div className="details9">Details</div>
                             </Link>
                             <div className="trades9">Trades</div>
