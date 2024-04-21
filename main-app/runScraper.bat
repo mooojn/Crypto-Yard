@@ -1,4 +1,4 @@
 @echo off
-cd /d "scraping"  
+cd /d "scrap"  
 node crypto_scrap
 pause
