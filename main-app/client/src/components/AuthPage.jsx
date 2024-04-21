@@ -163,7 +163,6 @@ function AuthPage() {
             <div className="registration form">
               <header>Signup</header>
               <form onSubmit={handleSignup}>
-                <ToastContainer />
                 <input
                   type="text"
                   placeholder="Enter your name"
