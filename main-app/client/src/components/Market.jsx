@@ -87,7 +87,7 @@ function market() {
     const [doge, setDoge] = useState({ Name: '', Symbol: '', Price:'' });
 
     useEffect(() => {
-        fetch('http://localhost:5182/api/coinInfo')
+        fetch('http://localhost:5056/api/coinInfo')
             .then(response => response.json())
             .then(data => {
                 // Extracting the first item from the data array

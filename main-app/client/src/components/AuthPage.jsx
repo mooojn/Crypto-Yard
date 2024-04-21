@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function AuthPage() {
   const navigate = useNavigate();
-  const API_URL = "http://localhost:5182/api"
+  const API_URL = "http://localhost:5056/api"
 
 
   const [isLoginFormVisible, setLoginFormVisible] = useState(true);
