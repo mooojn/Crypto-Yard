@@ -17,9 +17,13 @@ namespace Server.Controllers
         [Route("coinInfo")]
         public string GetCoin()
         {
-            // Your existing code to retrieve coin information
-            // Assuming it returns a JSON string
             return JsonConvert.SerializeObject(CoinDL.ReadAll());
+        }
+        [HttpGet]
+        [Route("specificCoinInfo")]
+        public string GetCoinInfo(string Name)
+        {
+            return JsonConvert.SerializeObject(CoinDL.ReadAll(Name));
         }
 
         [HttpGet]
