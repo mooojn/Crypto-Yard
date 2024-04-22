@@ -6,23 +6,26 @@ import './styles/AuthPage.css';
 import Header from './small_components/Header';
 import axios from 'axios';
 
+
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 function AuthPage() {
+  
   const navigate = useNavigate();
   const API_URL = "http://localhost:5056/api"
-
-
+  
+  
   const [isLoginFormVisible, setLoginFormVisible] = useState(true);
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-
+  
   const [signUpName, setSignupname] = useState('');
   const [signUpPassword, setSignUpPassword] = useState('');
   const [cnic, setcnic] = useState('');
-
+  
   const handleLogin = (e) => {
 
     e.preventDefault();
@@ -39,9 +42,8 @@ function AuthPage() {
     })
       .then(response => {
         if (response.data) {
-          toast.success('Authentication successful');
-          // navigate('/home')
-
+          // toast.success('Authentication successful');
+          navigate(`/assets?name=${name}`); // Use 'userName': name syntax
         } else {
           toast.error("Incorrect username or password");
         }
@@ -134,10 +136,9 @@ function AuthPage() {
             <div className="login form">
               <header>Login</header>
               <form onSubmit={handleLogin}>
-                <ToastContainer />
                 <input
                   type="text"
-                  placeholder="Enter your name"
+                  placeholder="Enter your username"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -147,7 +148,7 @@ function AuthPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                {/* <a href="#">Forgot password?</a> */}
+                <ToastContainer />
                 <input type="submit" className="button" value="Login" />
               </form>
               <div className="signup">
@@ -165,7 +166,7 @@ function AuthPage() {
               <form onSubmit={handleSignup}>
                 <input
                   type="text"
-                  placeholder="Enter your name"
+                  placeholder="Enter your username"
                   value={signUpName}
                   onChange={(e) => setSignupname(e.target.value)}
                 />
@@ -181,6 +182,7 @@ function AuthPage() {
                   value={signUpPassword}
                   onChange={(e) => setSignUpPassword(e.target.value)}
                 />
+                <ToastContainer />
                 <input type="submit" className="button" value="Signup" />
               </form>
               <div className="signup">
