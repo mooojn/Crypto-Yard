@@ -103,7 +103,7 @@ function Asset() {
                             <div className="assesttext8">
                                 <div className="overall8">
                                     <div className="overalltext8">Total Assests</div>
-                                    <div className="overallvalue8"><span className="value8">{amount+loan+trading}</span> USDT</div>
+                                    <div className="overallvalue8"><span className="value8">{(amount+loan+trading).toFixed(2)}</span> USDT</div>
                                 </div>
                                 <div className="headerss8">
                                     <div className="ASSESTS8">Account</div>
