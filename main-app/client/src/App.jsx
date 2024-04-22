@@ -13,6 +13,7 @@ import ErrorPage from './components/ErrorPage';
 import AuthPage from './components/AuthPage';
 
 
+
 // import Testing from './components/Test';
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
@@ -20,6 +21,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 
 function App() {
+
   return (
 
     <BrowserRouter>
@@ -32,9 +34,9 @@ function App() {
         <Route path="/fast-trade" element={<FastTrade />} />
         <Route path="/create-offer" element={<CreateOffer />} />
         <Route path="/market-detail" element={<MarketDetail />} />
-        <Route path="/assets" element={<Asset />} />
         <Route path="/market" element={<Market />} />
-        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/auth" element={<AuthPage/>} />
+        <Route path="/assets" element={<Asset/>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>

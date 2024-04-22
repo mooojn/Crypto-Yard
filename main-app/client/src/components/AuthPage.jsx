@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import './styles/AuthPage.css';
 import Header from './small_components/Header';
@@ -13,19 +13,23 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 function AuthPage() {
-  
+
   const navigate = useNavigate();
   const API_URL = "http://localhost:5056/api"
-  
-  
+
+
   const [isLoginFormVisible, setLoginFormVisible] = useState(true);
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-  
+
   const [signUpName, setSignupname] = useState('');
   const [signUpPassword, setSignUpPassword] = useState('');
   const [cnic, setcnic] = useState('');
-  
+
+
+
+
+
   const handleLogin = (e) => {
 
     e.preventDefault();
@@ -42,8 +46,7 @@ function AuthPage() {
     })
       .then(response => {
         if (response.data) {
-          // toast.success('Authentication successful');
-          navigate(`/assets?name=${name}`); // Use 'userName': name syntax
+          navigate(`/assets`); 
         } else {
           toast.error("Incorrect username or password");
         }
@@ -55,15 +58,16 @@ function AuthPage() {
   };
 
 
+
   const handleSignup = (e) => {
     e.preventDefault();
-    
+
     // validation
     const cnicRegex = /^\d{5}-\d{7}-\d{1}$/;
     const nameRegex = /^.{3,}$/; // Regex for at least 3 characters
     const passRegex = /^.{6,}$/; // Regex for at least 6 characters
 
-     if (signUpName == "" || signUpPassword == "" || cnic == "") {
+    if (signUpName == "" || signUpPassword == "" || cnic == "") {
       toast.warning("Please fill all the fields");
       return;
     }
@@ -79,7 +83,7 @@ function AuthPage() {
       toast.warning("Password must have at least 6 characters");
       return;
     }
-    
+
     // Make the HTTP GET request to your ASP.NET Web API endpoint
     axios.get(API_URL + '/signUp', {
       params: {
@@ -107,7 +111,7 @@ function AuthPage() {
   const handleCNICInputChange = (e) => {
     let input = e.target.value.replace(/\D/g, '').substring(0, 13); // Remove non-numeric characters and limit to 13 digits
     let formattedInput = '';
-    
+
     // Add hyphen after every 5th character and 7th character
     for (let i = 0; i < input.length; i++) {
       if (i === 5 || i === 12) {
@@ -115,7 +119,7 @@ function AuthPage() {
       }
       formattedInput += input[i];
     }
-    
+
     setcnic(formattedInput);
   };
   const toggleForm = () => {
@@ -125,78 +129,78 @@ function AuthPage() {
   return (
     <>
 
-      <Header />
-      <body className='body13'>
+      <Header/>
 
+        <body className='body13'>
 
-        <div className="container">
+          <div className="container">
 
-          <input type="checkbox" id="check" />
-          {isLoginFormVisible ? (
-            <div className="login form">
-              <header>Login</header>
-              <form onSubmit={handleLogin}>
-                <input
-                  type="text"
-                  placeholder="Enter your username"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-                <input
-                  type="password"
-                  placeholder="Enter your password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <ToastContainer />
-                <input type="submit" className="button" value="Login" />
-              </form>
-              <div className="signup">
-                <span className="signup">
-                  Don't have an account?{' '}
-                  <label htmlFor="check" onClick={toggleForm}>
-                    Signup
-                  </label>
-                </span>
-              </div>
-            </div>
-          ) : (
-            <div className="registration form">
-              <header>Signup</header>
-              <form onSubmit={handleSignup}>
-                <input
-                  type="text"
-                  placeholder="Enter your username"
-                  value={signUpName}
-                  onChange={(e) => setSignupname(e.target.value)}
-                />
-                <input
-                  type="text"
-                  placeholder="Enter your CNIC"
-                  value={cnic}
-                  onChange={handleCNICInputChange}
+            <input type="checkbox" id="check" />
+            {isLoginFormVisible ? (
+              <div className="login form">
+                <header>Login</header>
+                <form onSubmit={handleLogin}>
+                  <input
+                    type="text"
+                    placeholder="Enter your username"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
-                <input
-                  type="password"
-                  placeholder="Create a password"
-                  value={signUpPassword}
-                  onChange={(e) => setSignUpPassword(e.target.value)}
-                />
-                <ToastContainer />
-                <input type="submit" className="button" value="Signup" />
-              </form>
-              <div className="signup">
-                <span className="signup">
-                  Already have an account?{' '}
-                  <label htmlFor="check" onClick={toggleForm}>
-                    Login
-                  </label>
-                </span>
+                  <input
+                    type="password"
+                    placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <ToastContainer />
+                  <input type="submit" className="button" value="Login" />
+                </form>
+                <div className="signup">
+                  <span className="signup">
+                    Don't have an account?{' '}
+                    <label htmlFor="check" onClick={toggleForm}>
+                      Signup
+                    </label>
+                  </span>
+                </div>
               </div>
-            </div>
-          )}
-        </div>
-      </body>
+            ) : (
+              <div className="registration form">
+                <header>Signup</header>
+                <form onSubmit={handleSignup}>
+                  <input
+                    type="text"
+                    placeholder="Enter your username"
+                    value={signUpName}
+                    onChange={(e) => setSignupname(e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Enter your CNIC"
+                    value={cnic}
+                    onChange={handleCNICInputChange}
+                  />
+                  <input
+                    type="password"
+                    placeholder="Create a password"
+                    value={signUpPassword}
+                    onChange={(e) => setSignUpPassword(e.target.value)}
+                  />
+                  <ToastContainer />
+                  <input type="submit" className="button" value="Signup" />
+                </form>
+                <div className="signup">
+                  <span className="signup">
+                    Already have an account?{' '}
+                    <label htmlFor="check" onClick={toggleForm}>
+                      Login
+                    </label>
+                  </span>
+                </div>
+              </div>
+            )}
+          </div>
+        </body>
     </>
   );
 }
