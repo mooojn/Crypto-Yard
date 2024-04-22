@@ -19,6 +19,7 @@ namespace Server.Controllers
     [ApiController]
     public class UserController
     {
+        public static string UserName = "";     // Store the username of the user who is currently logged in
         [HttpGet]
         [Route("test")]
         public string GetUsers()
@@ -34,7 +35,10 @@ namespace Server.Controllers
         [Route("login")]
         public bool SignIn(string Name, string Password)
         {
-            return UserDL.ValidateLogin(new User(Name, Password));
+            bool flag = UserDL.ValidateLogin(new User(Name, Password));
+            if (flag)
+                UserName = Name;
+            return flag;
         }
         
         [HttpGet]
@@ -45,6 +49,14 @@ namespace Server.Controllers
             if (UserDL.FindUser(Name) != null)
                 return false;
             DL.UserDL.AddUser(u);
+            UtilDL.CreateWallet(u.Name);      // Create a wallet for the user
+            return true;
+        }
+        [HttpGet]
+        [Route("logout")]
+        public bool SignOut()
+        {
+            UserName = "";
             return true;
         }
     }

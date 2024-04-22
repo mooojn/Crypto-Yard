@@ -11,9 +11,13 @@ namespace Server.Controllers
 
         [HttpGet]
         [Route("assetWorth")]
-        public double GetAssetsWorth(string name)
+        public List<double> GetAssetsWorth()
         {
-            return AssetDL.GetAssetWorth(name);
+            return AssetDL.GetAssetWorth(UserController.UserName);
         }
+        //public List<double> GetAssetsWorth(string name)
+        //{
+        //    return AssetDL.GetAssetWorth(name);
+        //}
     }
 }
