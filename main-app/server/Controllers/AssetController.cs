@@ -15,6 +15,13 @@ namespace Server.Controllers
         {
             return AssetDL.GetAssetWorth(UserController.UserName);
         }
+        [HttpGet]
+        [Route("buyDollar")]
+        public bool BuyDollar(double amount)
+        {
+            AssetDL.BuyDollars(amount, UserController.UserName);
+            return true;
+        }
         //public List<double> GetAssetsWorth(string name)
         //{
         //    return AssetDL.GetAssetWorth(name);

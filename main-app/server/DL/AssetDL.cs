@@ -1,5 +1,6 @@
 using Microsoft.Data.SqlClient;
 using Server.BL;
+using System.Collections.Generic;
 
 namespace Server.DL
 {
@@ -19,6 +20,14 @@ namespace Server.DL
             }
             Database.CloseConnection();
             return amount;
+        }
+        public static void BuyDollars(double amount, string userName)
+        {
+            Database.OpenConnection();
+            string query = $"insert into Assets values(4, {amount}, 'Main', (Select Id from Wallet where UserId = (select UserID from Users where UserName = '{userName}')))";
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
+            command.ExecuteNonQuery();
+            Database.CloseConnection();
         }
     }
 }
