@@ -6,10 +6,47 @@ import img1 from './assets/img-1.png';
 
 import Preloader from './small_components/PreLoader';
 import Header from './small_components/Header';
+import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 import './styles/FastTrade.css';
 function FastTrade() {
+    const [amount, setAmount] = useState(0);
+    const API_URL = "http://localhost:5056/api"
+
+    const buyDollar= (e) => {
+        if (amount < 1){
+            toast.warning("Please enter a valid amount");
+            return;
+        }else if (amount > 10000){
+            toast.warning("Amount should be less than $10k");
+            return;
+        }
+        fetch(API_URL + `/buyDollar?amount=${amount}`)
+        .then(resp => resp.json())
+        .then(data => {
+          if (data) { 
+            toast.success("Transaction Successful");
+          }else{
+            toast.error("Transaction Failed");
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          toast.error("Transaction Failed");
+        });
+    }
+
+    const handleAmountChange = (event) => {
+        const newAmount = event.target.value;
+        const regex = /^[0-9]+$/;
+        if (regex?.test(newAmount) === false) {
+          return;
+        }
+    
+        setAmount(newAmount);
+      };
     return (
         <body>
             <Preloader />
@@ -46,7 +83,7 @@ function FastTrade() {
                             </div>
                             <div className="input5-sep">
                                 <span className="custom5-placeholder">USDT</span>
-                                <input className="inputss5" placeholder="Price" type="number" name="" id="priceInput" maxLength="10" />
+                                <input className="inputss5" placeholder="Price" type="number" name="" id="priceInput" maxLength="10" onChange={handleAmountChange}/>
                                 <div className="customarrows5">
                                     <i className="fa-solid fa-caret-up"></i>
                                     <i className="fa-solid fa-caret-down"></i>
@@ -72,9 +109,10 @@ function FastTrade() {
                                 <input className="inputss5" placeholder="Jazz Cash" type="number" name="" id="" maxLength="10" readOnly />
                             </div>
                             <div><p id="test5">1 <span style={{ color: '#04bb56' }}>USDT</span> = 1.05 <span style={{ color: '#04bb56' }}>USD</span></p></div>
-                            <div id="confirm" className="confirm5">
-                                Buy BTC
+                            <div id="confirm" className="confirm5" onClick={buyDollar}>
+                                Buy USDT
                             </div>
+                            <ToastContainer />
                         </div>
                     </div>
                 </div>
