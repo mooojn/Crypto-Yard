@@ -64,3 +64,21 @@
   
   }
   
+  .button2 {
+    display: flex;
+    font-size: large;
+    padding: 10px 15px;
+    border-radius: 12px;
+    color: white;
+    border: 1px solid #fff;
+    transition: 0.5s;
+    font-stretch: 90%;
+  }
+  
+  .button2:hover {
+    background: red;
+    border-color: #000;
+    cursor: pointer;
+  
+  }
+  

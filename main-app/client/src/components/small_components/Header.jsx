@@ -1,14 +1,33 @@
 
 
-import React from 'react'
+import React, { useState } from 'react';
+
 import logoText from '../assets/logo_text.png';
 
 import './styles/Header.css'
 
 
 const Header = () => {
-  return (
 
+  const API_URL = "http://localhost:5056/api"
+  
+  const handleLogout = (e) => {
+    fetch(API_URL + '/logout')
+      .then(resp => resp.json())
+      .then(data => {
+        if (data) { // Assuming the server returns some data indicating successful logout
+          // Redirect to the login page
+          window.location.href = '/auth';
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Handle any errors that occur during the logout process
+      });
+  };
+  
+
+  return (
     <div className="bosy">
       <header>
         <div className="logotext">
@@ -25,9 +44,8 @@ const Header = () => {
           </nav>
         </div>
         <div className="third_part">
-          <a href="/auth">
-            <div className="button">Sign up/Login</div>
-          </a>
+          <a href="/auth"><div className="button">Sign up/Login</div></a>
+          <div className="button2" onClick={handleLogout}> Logout</div>
           <div className="loggedin"></div>
         </div>
       </header>
