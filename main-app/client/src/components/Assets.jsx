@@ -8,6 +8,7 @@ import Preloader from './small_components/PreLoader'
 import Header from './small_components/Header'
 
 
+
 import './styles/Assets.css'
 
 
@@ -17,32 +18,37 @@ import React, { useState, useEffect } from 'react';
 
 
 function Asset() {
-
-    const name = new URLSearchParams(window.location.search).get('name');
     const API_URL = "http://localhost:5056/api";
     const [amount, setAmount] = useState(0);
-    const [loan, setLoan] = useState(1);
-    const [trading, setTrading] = useState(2);
+    const [loan, setLoan] = useState(0);
+    const [trading, setTrading] = useState(0);
 
     useEffect(() => {
-        fetch(`${API_URL}/assetWorth?name=${name}`)
+        fetch(`${API_URL}/assetWorth`)
         .then(resp => resp.json())
         .then(data => {
-            if(data){
-                setAmount(data);
-            } else {
-                alert('bi');
-            }
+            if(data.length === 0){
+                console.log('No data found');
+                return;
+            } if(data[0]){
+                setAmount(data[0]);
+            } if(data[1]){
+                setTrading(data[1]);
+            } if(data[2]){
+                setLoan(data[2]);
+            } 
         }).catch(err => {
             alert('err');
         });
-    }, [name]);
+    }, []);
 
     return (
         <>
+            <Header />
+            
             <div className="body8">
                 <Preloader />
-                <Header />
+                
                 <div className="main8">
                     <div className="sidebar8">
                         <nav className="nav8">
@@ -69,7 +75,8 @@ function Asset() {
                                 </a>
                                 <a href="" className="siderbarA8" style={{ marginTop: '180px' }}>
                                     <hr style={{ textDecoration: 'none', color: 'white', marginBottom: '20px' }} />
-                                    <li className="sidelist8"><i className="fa-solid fa-hand-holding-dollar"></i><span
+                                    
+                                        <li className="sidelist8"><i className="fa-solid fa-hand-holding-dollar"></i><span
                                         className="sidebartext8">Deposit</span></li>
                                 </a>
                                 <a href="" className="siderbarA8">
@@ -87,7 +94,7 @@ function Asset() {
                         <div className="headbar8">
                             <div className="ASSESTS8">Assests Overview</div>
                             <div className="buttons8">
-                                <div className="depo8">Deposit</div>
+                            <a href="/fast-trade"><div className="depo8">Deposit</div></a>
                                 <div className="buycryp8">Buy Crypto</div>
                                 <div className="Withdraw8">Withdraw</div>
                             </div>
