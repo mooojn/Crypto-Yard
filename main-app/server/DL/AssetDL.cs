@@ -29,5 +29,27 @@ namespace Server.DL
             command.ExecuteNonQuery();
             Database.CloseConnection();
         }
+        public static void SellDollars(double amount, int walletId)
+        {
+            Database.OpenConnection();
+            string query = $"update Assets set Amount = Amount-{amount} where WalletId = {walletId}";
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
+            command.ExecuteNonQuery();
+            Database.CloseConnection();
+        }
+        public static bool CashExist(double amount, int walletId)
+        {
+            Database.OpenConnection();
+            string query = $"select Amount from Assets where CoinID = 4 and WalletId = {walletId}";
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
+            SqlDataReader reader = command.ExecuteReader();
+            double currentAmount = 0;
+            while (reader.Read())
+            {
+                currentAmount += Convert.ToDouble(reader["Amount"]);
+            }
+            Database.CloseConnection();
+            return currentAmount >= amount;
+        }
     }
 }

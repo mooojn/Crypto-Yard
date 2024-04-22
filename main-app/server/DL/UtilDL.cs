@@ -5,6 +5,20 @@ namespace Server.DL
 {
     public class UtilDL
     {
+        public static int GetWalletIdFor(string name)
+        {
+            int id = 0;
+            Database.OpenConnection();
+            string query = $"Select Id from Wallet where UserId = (select UserID from Users where UserName = '{name}')";
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                id = Convert.ToInt32(reader["Id"]);
+            }
+            Database.CloseConnection();
+            return id;
+        }
         public static void CreateWallet(string name)
         {
             Database.OpenConnection();
