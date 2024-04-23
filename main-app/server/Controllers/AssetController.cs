@@ -20,6 +20,8 @@ namespace Server.Controllers
         public bool BuyDollar(double amount)
         {
             int walletId = UtilDL.GetWalletIdFor(UserController.UserName);
+            if (walletId == 0)
+                return false;
             if (UtilDL.IsMainWalletExist(walletId))
                 AssetDL.BuyDollars(amount, walletId);  
             else
@@ -31,6 +33,8 @@ namespace Server.Controllers
         public bool SellDollar(double amount)
         {
             int walletId = UtilDL.GetWalletIdFor(UserController.UserName);
+            if (walletId == 0)
+                return false;
             if (!AssetDL.CashExist(amount, walletId))
                 return false;
             AssetDL.SellDollars(amount, walletId);
