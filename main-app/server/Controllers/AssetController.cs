@@ -19,7 +19,11 @@ namespace Server.Controllers
         [Route("buyDollar")]
         public bool BuyDollar(double amount)
         {
-            AssetDL.BuyDollars(amount, UserController.UserName);
+            int walletId = UtilDL.GetWalletIdFor(UserController.UserName);
+            if (UtilDL.IsMainWalletExist(walletId))
+                AssetDL.BuyDollars(amount, walletId);  
+            else
+                AssetDL.BuyDollarsNew(amount, walletId);  // first time
             return true;
         }
         [HttpGet]
