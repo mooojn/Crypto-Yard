@@ -40,7 +40,7 @@ function market() {
     const [xrp, setXrp] = useState({ Name: '', Symbol: '', Price: '' });
     const [usdt, setUsdt] = useState({ Name: '', Symbol: '', Price: '' });
     const [doge, setDoge] = useState({ Name: '', Symbol: '', Price: '' });
-    
+
     useEffect(() => {
         // Function to initialize Swiper
         const initializeSwiper = () => {
@@ -92,38 +92,38 @@ function market() {
 
     useEffect(() => {
         fetch('http://localhost:5056/api/coinInfo')
-          .then(response => response.json())
-          .then(data => {
-            const BTC = data[0];
-            const ETH = data[1];
-            const XRP = data[2];
-            const USDT = data[3];
-            const DOGE = data[4];
-      
-            setBtc({ Name: BTC.Name, Symbol: BTC.Symbol, Price: BTC.Price });
-            setEth({ Name: ETH.Name, Symbol: ETH.Symbol, Price: ETH.Price });
-            setXrp({ Name: XRP.Name, Symbol: XRP.Symbol, Price: XRP.Price });
-            setUsdt({ Name: USDT.Name, Symbol: USDT.Symbol, Price: USDT.Price });
-            setDoge({ Name: DOGE.Name, Symbol: DOGE.Symbol, Price: DOGE.Price });
-          })
-          .catch(error => console.error('Error fetching data from coinInfo:', error));
-      
+            .then(response => response.json())
+            .then(data => {
+                const BTC = data[0];
+                const ETH = data[1];
+                const XRP = data[2];
+                const USDT = data[3];
+                const DOGE = data[4];
+
+                setBtc({ Name: BTC.Name, Symbol: BTC.Symbol, Price: BTC.Price });
+                setEth({ Name: ETH.Name, Symbol: ETH.Symbol, Price: ETH.Price });
+                setXrp({ Name: XRP.Name, Symbol: XRP.Symbol, Price: XRP.Price });
+                setUsdt({ Name: USDT.Name, Symbol: USDT.Symbol, Price: USDT.Price });
+                setDoge({ Name: DOGE.Name, Symbol: DOGE.Symbol, Price: DOGE.Price });
+            })
+            .catch(error => console.error('Error fetching data from coinInfo:', error));
+
         fetch('http://localhost:5056/api/scrape')
-          .then(resp => {
-            if (!resp.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return resp.json();
-          })
-          .then(data => {
-            console.log('prices fetched from scraper');
-          })
-          .catch(error => {
-            toast.warning('Scraping script not working. Correct prices will not be loaded');
-            console.error('Error fetching data from scrape:', error);
-          });
-      }, []);
-      
+            .then(resp => {
+                if (!resp.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return resp.json();
+            })
+            .then(data => {
+                console.log('prices fetched from scraper');
+            })
+            .catch(error => {
+                toast.warning('Scraping script not working. Correct prices will not be loaded');
+                console.error('Error fetching data from scrape:', error);
+            });
+    }, []);
+
     // main app
     return (
 
@@ -268,7 +268,9 @@ function market() {
                             <Link to={`/market-detail?variableName=${btc.Name}`}>
                                 <div className="details9">Details</div>
                             </Link>
-                            <div className="trades9">Trades</div>
+                            <Link to={`/trading?variableName=${btc.Name}`}>
+                                <div className="trades9">Trades</div>
+                            </Link>
                         </div>
                     </div>
                     <div className="individualcoin9">
@@ -285,7 +287,9 @@ function market() {
                             <Link to={`/market-detail?variableName=${eth.Name}`}>
                                 <div className="details9">Details</div>
                             </Link>
-                            <div className="trades9">Trades</div>
+                            <Link to={`/trading?variableName=${eth.Name}`}>
+                                <div className="trades9">Trades</div>
+                            </Link>
                         </div>
                     </div>
                     <div className="individualcoin9">
@@ -302,7 +306,9 @@ function market() {
                             <Link to={`/market-detail?variableName=${xrp.Name}`}>
                                 <div className="details9">Details</div>
                             </Link>
-                            <div className="trades9">Trades</div>
+                            <Link to={`/trading?variableName=${xrp.Name}`}>
+                                <div className="trades9">Trades</div>
+                            </Link>
                         </div>
                     </div>
                     <div className="individualcoin9">
@@ -319,7 +325,9 @@ function market() {
                             <Link to={`/market-detail?variableName=${usdt.Name}`}>
                                 <div className="details9">Details</div>
                             </Link>
-                            <div className="trades9">Trades</div>
+                            <Link to={`/trading?variableName=${usdt.Name}`}>
+                                <div className="trades9">Trades</div>
+                            </Link>
                         </div>
                     </div>
                     <div className="individualcoin9">
@@ -336,8 +344,9 @@ function market() {
                             <Link to={`/market-detail?variableName=${doge.Name}`}>
                                 <div className="details9">Details</div>
                             </Link>
-
-                            <div className="trades9">Trades</div>
+                            <Link to={`/trading?variableName=${doge.Name}`}>
+                                <div className="trades9">Trades</div>
+                            </Link>
                         </div>
                     </div>
                 </div>
