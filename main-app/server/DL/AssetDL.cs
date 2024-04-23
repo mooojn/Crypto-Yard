@@ -21,10 +21,18 @@ namespace Server.DL
             Database.CloseConnection();
             return amount;
         }
-        public static void BuyDollars(double amount, string userName)
+        public static void BuyDollars(double amount, int walletId)
         {
             Database.OpenConnection();
-            string query = $"insert into Assets values(4, {amount}, 'Main', (Select Id from Wallet where UserId = (select UserID from Users where UserName = '{userName}')))";
+            string query = $"Update Assets set Amount += {amount} where walletid = {walletId} AND Assests_Status = 'Main'";
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
+            command.ExecuteNonQuery();
+            Database.CloseConnection();
+        }
+        public static void BuyDollarsNew(double amount, int walletId)
+        {
+            Database.OpenConnection();
+            string query = $"insert into Assets values(4, {amount}, 'Main', {walletId})";
             SqlCommand command = new SqlCommand(query, Database.GetConnection());
             command.ExecuteNonQuery();
             Database.CloseConnection();
@@ -32,7 +40,7 @@ namespace Server.DL
         public static void SellDollars(double amount, int walletId)
         {
             Database.OpenConnection();
-            string query = $"update Assets set Amount = Amount-{amount} where WalletId = {walletId}";
+            string query = $"update Assets set Amount = Amount-{amount} where WalletId = {walletId} AND Assests_Status = 'Main'";
             SqlCommand command = new SqlCommand(query, Database.GetConnection());
             command.ExecuteNonQuery();
             Database.CloseConnection();
@@ -40,13 +48,13 @@ namespace Server.DL
         public static bool CashExist(double amount, int walletId)
         {
             Database.OpenConnection();
-            string query = $"select Amount from Assets where CoinID = 4 and WalletId = {walletId}";
+            string query = $"select Amount from Assets where CoinID = 4 and WalletId = {walletId} AND Assests_Status = 'Main'";
             SqlCommand command = new SqlCommand(query, Database.GetConnection());
             SqlDataReader reader = command.ExecuteReader();
             double currentAmount = 0;
-            while (reader.Read())
+            if (reader.Read())
             {
-                currentAmount += Convert.ToDouble(reader["Amount"]);
+                currentAmount = Convert.ToDouble(reader["Amount"]);
             }
             Database.CloseConnection();
             return currentAmount >= amount;
