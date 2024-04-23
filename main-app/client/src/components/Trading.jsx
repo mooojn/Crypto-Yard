@@ -326,6 +326,7 @@ function Trading() {
     // dynamic page data
     const urlParams = new URLSearchParams(window.location.search);
     const coinName = urlParams.get('variableName');
+    const [worth, setWorth] = useState(0)
     useEffect(() => {
 
         fetch(API_URL + `/specificCoinInfo?Name=${coinName}`)
@@ -335,7 +336,6 @@ function Trading() {
                 setCoinData({ Name: data.Name, Symbol: data.Symbol, Price: data.Price, Description: data.Description, Overview: data.Overview });
             })
             .catch(error => console.error('Error fetching data:', error));
-
 
         // img setup
         if (coinName == "Ripple") {
@@ -350,6 +350,15 @@ function Trading() {
             document.querySelector('.coinlogo4 img').src = dogeImg;
         }
     }, [])
+    useEffect(() => {
+        fetch(API_URL + `/mainWorth`)
+        .then(response => response.json())
+        .then(data => {
+            setWorth(data);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    
+    },[])
 
     return (
         <>
@@ -440,7 +449,7 @@ function Trading() {
                         <div className="buysellsection4">
                             <div className="avail4">
                                 <div>Available</div>
-                                <div><span>0.00</span><span id="currency" style={{ color: '#888' }}>USDT</span></div>
+                                <div><span>{worth}</span><span id="currency" style={{ color: '#888' }}>USDT</span></div>
                             </div>
                             <div className="input4-sep">
                                 <span className="custom4-placeholder">USDT</span>
