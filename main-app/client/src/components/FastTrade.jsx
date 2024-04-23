@@ -11,13 +11,19 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
 import './styles/FastTrade.css';
+import { alertTitleClasses } from '@mui/material';
 
 
 
 function FastTrade() {
     const API_URL = "http://localhost:5056/api"
     const [amount, setAmount] = useState(0);
+
+
+
+
     const sellDollar = (e) => {
+        const amount = document.getElementById("priceInput").value;
         if (amount < 1) {
             toast.warning("Please enter a valid amount");
             return;
@@ -39,7 +45,8 @@ function FastTrade() {
                 toast.error("Transaction Failed... error occurred");
             });
     }
-    const buyDollar = (e) => {
+    const buyDollar = (e) => {        
+        const amount = document.getElementById("priceInput").value;
         if (amount < 1) {
             toast.warning("Please enter a valid amount");
             return;
@@ -61,26 +68,21 @@ function FastTrade() {
                 toast.error("Please Login to continue... error occurred");
             });
     }
+
     // validate amount input
     const handleAmountChange = (event) => {
-        const newAmount = event.target.value;
-        const regex = /^[0-9]+$/;
-        if (regex?.test(newAmount) === false) {
-            return;
-        }
-        setAmount(newAmount);
+        setAmount(event.target.value);
     };
     const handleBuyClick = () => {
 
         document.getElementById("currency").innerHTML = 'Pay With';
         document.getElementById("buyButton").style.backgroundColor = '#04bb56';
         document.getElementById("sellButton").style.backgroundColor = '';
-        document.getElementById("confirm").innerHTML = 'Buy BTC';
-        document.getElementById("confirm").style.backgroundColor = '#04bb56';
-        document.getElementById("confirm").style.backgroundColor = '#04bb56';
+        document.getElementById("confirmBTN").innerHTML = 'Buy BTC';
+        document.getElementById("confirmBTN").style.backgroundColor = '#04bb56';
         document.getElementById("headong").innerHTML = 'Buy Crypto Instantly';
         document.getElementById("buy").innerHTML = 'Buy';
-        document.getElementById("confirm").onclick = buyDollar;
+        document.getElementById("confirmBTN").onclick = buyDollar; // Change from -= to =
     };
 
     const handleSellClick = () => {
@@ -88,17 +90,15 @@ function FastTrade() {
         document.getElementById("currency").innerHTML = 'Get Paid';
         document.getElementById("buyButton").style.backgroundColor = '#141414';
         document.getElementById("sellButton").style.backgroundColor = 'red';
-        document.getElementById("confirm").innerHTML = 'Sell BTC';
-        document.getElementById("confirm").style.backgroundColor = 'red';
-        document.getElementById("confirm").style.backgroundColor = 'red';
+        document.getElementById("confirmBTN").innerHTML = 'Sell BTC';
+        document.getElementById("confirmBTN").style.backgroundColor = 'red';
         document.getElementById("headong").innerHTML = 'Sell Crypto Instantly';
         document.getElementById("buy").innerHTML = 'Sell';
-        document.getElementById("confirm").onclick = sellDollar;
+        document.getElementById("confirmBTN").onclick = sellDollar; // Change from -= to =
     };
-    // init
-    useEffect(() => {
-        document.getElementById("confirm").onclick = buyDollar
-    }, [])
+    useEffect(()=>{
+        handleBuyClick();
+    },[])
     return (
         <body>
             <Preloader />
@@ -111,7 +111,7 @@ function FastTrade() {
             </div>
             <div className="main5">
                 <div className="textside5">
-                    <div id="headong" className="fasthead5">Buy Crytpo Instantly</div>
+                    <div id="headong" className="fasthead5">Buy Crypto Instantly</div>
                     <div className="p5"><span id="buy">Buy</span> Bitcoin and other 4 currenices on CryptoYard with the help of Jazzcash payment transfer</div>
                     <div className="acceptedmethods5">
                         Accepted payment methods:
@@ -168,7 +168,7 @@ function FastTrade() {
                             <input className="inputss5" placeholder="Jazz Cash" type="number" name="" id="" maxLength="10" readOnly />
                         </div>
                         <div><p id="test5">1 <span style={{ color: '#04bb56' }}>USDT</span> = 1.05 <span style={{ color: '#04bb56' }}>USD</span></p></div>
-                        <div id="confirm" className="confirm5">
+                        <div id="confirmBTN" className="confirm5" onClick>
                             Buy USDT
                         </div>
                         <ToastContainer />
