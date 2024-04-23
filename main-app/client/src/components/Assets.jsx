@@ -31,11 +31,11 @@ function Asset() {
                 console.log('No data found');
                 return;
             } if(data[0]){
-                setAmount(data[0]);
+                setAmount(data[0]);     // 0 for main
             } if(data[1]){
-                setTrading(data[1]);
+                setTrading(data[1]);    // 1 for trading
             } if(data[2]){
-                setLoan(data[2]);
+                setLoan(data[2]);       // 2 for loan
             } 
         }).catch(err => {
             alert('err');
