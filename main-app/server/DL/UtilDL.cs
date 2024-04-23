@@ -5,6 +5,20 @@ namespace Server.DL
 {
     public class UtilDL
     {
+        public static bool IsMainWalletExist(int walletId)
+        {
+            bool flag = false;
+            Database.OpenConnection();
+            string query = $"select * from Assets where WalletId = {walletId} AND Assests_Status = 'Main'";
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                flag = true;
+            }
+            Database.CloseConnection();
+            return flag;
+        }
         public static int GetWalletIdFor(string name)
         {
             int id = 0;
