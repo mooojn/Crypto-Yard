@@ -337,9 +337,6 @@ function Trading() {
             })
             .catch(error => console.error('Error fetching data:', error));
 
-
-            
-
         // img setup
         if (coinName == "Ripple") {
             document.querySelector('.coinlogo4 img').src = xrpImg;
@@ -355,13 +352,12 @@ function Trading() {
     }, [])
     useEffect(() => {
         fetch(API_URL + `/assetWorthOfType?Type=Main`)
-        .then(response => response.json())
-        .then(data => {
-            setWorth(data);
-        })
-        .catch(error => console.error('Error fetching data:', error));
-    
-    },[])
+            .then(response => response.json())
+            .then(data => {
+                setWorth(data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }, [])
 
     return (
         <>
@@ -383,7 +379,7 @@ function Trading() {
                             <h1>Price: $ <span id="testingPHASE">{coinData.Price}</span></h1>
                         </div>
                         <div className="marketcap4">
-                            <div><p id="test4">Market Cap $ <span>{coinData.Price*10000000}</span></p></div>
+                            <div><p id="test4">Market Cap $ <span>{coinData.Price * 10000000}</span></p></div>
                         </div>
                     </div>
                     <div className="icons4">
