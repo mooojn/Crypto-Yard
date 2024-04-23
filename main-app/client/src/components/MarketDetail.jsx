@@ -21,13 +21,14 @@ import './styles/MarketDetail.css'
 
 function MarketDetail() {
 
+    const API_URL = `http://localhost:5056/api`;
     const [coinData, setCoinData] = useState({ Name: '', Symbol: '', Price: '', Description: '', Overview: '' });
+    
     useEffect(() => {
-        // Get the query parameters from the URL
         const urlParams = new URLSearchParams(window.location.search);
-        // Get the value of the variable
         const coinName = urlParams.get('variableName');
-        fetch(`http://localhost:5056/api/specificCoinInfo?Name=${coinName}`)
+
+        fetch(API_URL +`/specificCoinInfo?Name=${coinName}`)
         .then(response => response.json())
             .then(data => {
                 // Extracting the first item from the data array
