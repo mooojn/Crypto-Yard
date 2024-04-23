@@ -12,7 +12,12 @@ namespace Server.Controllers
         [Route("assetWorth")]
         public List<double> GetAssetsWorth()
         {
-            return AssetDL.GetAssetWorth(UserController.UserName);
+            int walletId = UtilDL.GetWalletIdFor(UserController.UserName);
+            List<double> amount = new List<double>();
+            amount.Add(AssetDL.GetAssetWorthOfType("Main", walletId));
+            amount.Add(AssetDL.GetAssetWorthOfType("Trading", walletId));
+            amount.Add(AssetDL.GetAssetWorthOfType("Loan", walletId));
+            return amount;
         }
         [HttpGet]
         [Route("assetWorthOfType")]
