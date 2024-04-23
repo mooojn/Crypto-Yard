@@ -1,5 +1,6 @@
 using Microsoft.Data.SqlClient;
 using Server.BL;
+using Server.Controllers;
 using System.Collections.Generic;
 
 namespace Server.DL
@@ -28,6 +29,21 @@ namespace Server.DL
             SqlCommand command = new SqlCommand(query, Database.GetConnection());
             command.ExecuteNonQuery();
             Database.CloseConnection();
+        }
+        public static double GetAssetWorthOfType(string Type, int walletId)
+        {
+            Database.OpenConnection();
+            double amount = 0;
+            string query = $"select c.Amount*a.Amount as TotalAmount from Coins as c Join Assets as a on c.ID = a.CoinID " +
+            $"Where WalletId = {walletId} AND Assests_Status = '{Type}'";
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                amount = Math.Round(Convert.ToDouble(reader["TotalAmount"]), 2);
+            }
+            Database.CloseConnection();
+            return amount;
         }
         public static void BuyDollarsNew(double amount, int walletId)
         {
