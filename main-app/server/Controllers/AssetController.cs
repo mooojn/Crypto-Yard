@@ -8,12 +8,18 @@ namespace Server.Controllers
     [ApiController]
     public class AssetController
     {
-
         [HttpGet]
         [Route("assetWorth")]
         public List<double> GetAssetsWorth()
         {
             return AssetDL.GetAssetWorth(UserController.UserName);
+        }
+        [HttpGet]
+        [Route("assetWorthOfType")]
+        public double GetAssetsWorthOfType(string Type)
+        {
+            int walletId = UtilDL.GetWalletIdFor(UserController.UserName);
+            return AssetDL.GetAssetWorthOfType(Type, walletId);
         }
         [HttpGet]
         [Route("buyDollar")]
@@ -40,9 +46,7 @@ namespace Server.Controllers
             AssetDL.SellDollars(amount, walletId);
             return true;
         }
-        //public List<double> GetAssetsWorth(string name)
-        //{
-        //    return AssetDL.GetAssetWorth(name);
-        //}
+
+        
     }
 }
