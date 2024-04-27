@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoYard 🚀: Unleash the Future of Finance! 🌐</title>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/2882665ba0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bosy {
+            /* background: #3d3030; */
+            background: #000;
+        }
+
+        /* Pre loader */
+        #preloader {
+            /* background-image: url('bg.jpg'); */
+            background-attachment: fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 999999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes logo {
+            0% {
+                transform: scale(0);
+            }
+
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: scale(1);
+            }
+
+            10% {
+                transform: scale(0.4);
+            }
+
+            30% {
+                transform: scale(1.1);
+            }
+
+            40% {
+                transform: scale(0.98);
+            }
+
+            60% {
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.98);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .logo,
+        .logo_text,
+        .text {
+            width: fit-content;
+            height: fit-content;
+            animation: logo 1.5s ease-in-out;
+        }
+
+        .uptext {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text {
+            display: flex;
+            margin-top: 20px;
+            font-style: italic;
+            font-weight: bold;
+            font-size: xxx-large;
+            margin-bottom: 50px;
+            color: #04d963;
+        }
+
+        .loader {
+            opacity: 0;
+            display: flex;
+            border: 16px solid #000;
+            border-right: 16px solid #04d963;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            transform: scale(0.4);
+            animation: spin 2s linear infinite 0.5s;
+        }
+
+        @keyframes spin {
+            0% {
+                opacity: 100;
+
+                transform: rotate(0deg);
+            }
+
+            100% {
+                opacity: 100;
+                transform: rotate(360deg);
+            }
+        }
+
+        .fade-out {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        @keyframes moveup {
+            0% {
+                opacity: 0;
+                transform: translateY(2%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                margin-top: 0px;
+            }
+
+            50% {
+                margin-top: 8px;
+            }
+
+            100% {
+                margin-top: 0px;
+            }
+        }
+
+        /* header */
+        header {
+            display: flex;
+            flex-direction: row;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .logotext {
+            display: flex;
+            margin-left: 20px;
+        }
+
+        .header_nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .navbar_header {
+                color: white;
+            }
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+        }
+
+        li {
+            font-size: large;
+            display: flex;
+            text-decoration: none;
+            margin: 0px 20px;
+        }
+
+        .third_part {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0px 20px;
+        }
+
+        .button {
+            display: flex;
+            font-size: large;
+            padding: 10px 15px;
+            border-radius: 12px;
+            color: white;
+            border: 1px solid #fff;
+            transition: 0.5s;
+            font-stretch: 90%;
+        }
+
+        .button:hover {
+            background: #04bb56;
+            border-color: #000;
+            cursor: pointer;
+
+        }
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            background-color: rgb(40, 40, 40);
+        }
+        a{
+            text-decoration: none;
+        }
+        .sidebarA {
+            font-size: large;
+            display: flex;
+            flex-direction: row;
+            text-decoration: none;
+            margin: 0px 20px;
+            list-style: none;
+            margin: 30px 0px;
+            height: 50px;
+        }
+        .sidebartext{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            display: flex;
+            margin-left: 20px;
+            color: #fff;
+        }
+        i{
+            font-size: 20px;
+            color: #c3c3c3;
+        }
+        .submain{
+            display: flex;
+            flex-direction: column;
+            width: 85%;
+        }
+        .sidebar{
+            display: flex;
+            flex-direction: column;
+            width: 13%;
+            overflow: hidden;
+            background-color: #191919;
+            align-items: start;
+            justify-content: start;
+            height: 800px;
+            padding-bottom: 30px;
+            color: white;
+            padding-right: 20px;
+            border-right: 1px solid #8c8c8c;
+        }
+        .sidelist{
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            padding: 20px 25px;
+            border-radius:0px 30px 30px 0px;
+            margin: 3px 0px;
+            transition: 0.5s;
+        }
+        .sidelist:hover{
+            background: #04bb56;
+            cursor: pointer;
+        }
+        .nav{
+            display: flex;
+            flex-direction: column;
+            padding-top: 50px;
+        }
+        .ul{
+            display: flex;
+            flex-direction: column;
+        }
+        .headbar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 100px;
+            padding: 0px 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #8c8c8c;
+        }
+        .ASSESTS{
+            display: flex;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0px 30px;
+        }
+        .depo, .buycryp, .Withdraw{
+            display: flex;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid #fff;
+            transition: 0.5s;
+            font-stretch: 90%;
+            color: white;
+            margin: 0px 10px;
+        }
+        .depo{
+            background: #00b752;
+            border-color: #00bf56; 
+        }
+        .depo:hover, .buycryp:hover, .Withdraw:hover{
+            background: #019041;       
+            border-color: #029a47; 
+            cursor: pointer;
+        }
+        .wholebody{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+        .assesttext{
+            display: flex ;
+            flex-direction: column;
+            padding: 20px 30px;
+            border-right: 1px solid #8c8c8c;
+            width: 70%;
+        }
+        .overall{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(209, 208, 208);
+            padding: 20px 0px;
+        }
+        .overallvalue{
+            display: flex;
+            font-size: 40px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #04bb56;
+        }
+        .value{
+            color: white;
+            margin: 0px 3px;
+        }
+        .grpah-histories{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            padding: 30px;
+        }
+        .mains{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28%;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            box-shadow: 0px 0px 10px 0px #000;
+            height: fit-content;
+            background: #1b1b1b;
+            border-radius: 20px;
+            padding: 30px 10px;
+        }
+        .assestaccount{
+            display: flex;
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 1px solid #8c8c8c;
+        }
+        .assestamount{
+            display: flex;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #04bb56;
+        }
+        .transfer{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .assestline{
+            display: flex;
+            font-size: 15px;
+            color: #bcbbbb;
+            margin-top: 20px;
+        }
+        .coinsheader{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background: #01853c;
+        border-radius: 10px 10px 0px 0px;
+        height: 70px;
+        justify-content: space-around;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 0px 5%;
+        margin-top: 50px;
+    }
+    .Products{
+        display: flex;
+        width: 30%;
+        justify-content: start;
+    }
+    .Price{
+        display: flex;
+        width: 20%;
+        justify-content: end;
+    
+    }
+    .Change{
+        display: flex;
+        width: 20%;
+        justify-content: end;
+    }
+    .coins{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+    }
+    .individualcoin{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 0px;
+        border-bottom: 1px solid #6a6a6a;
+        color: #fff;
+        background: #171717;
+    }
+    .coinname{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 30%;
+    }
+    .iconcoin{
+        display: flex;
+        margin: 0px 10px;
+        height: 50px;
+    }
+    .symbol{
+        display: flex;
+        font-size: 20px;
+        font-weight: 550;
+        margin: 0px 5px;
+    }
+    .coin{
+        display: flex;
+        font-size: 16px;
+        margin: 0px 5px;
+        color: gray;
+    }
+    .coinprice{
+        display: flex;
+        font-size: 20px;
+        font-weight: 550;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0px 5px;
+        width: 20%;
+        justify-content: end;
+    }
+    .coinpercentage{
+        display: flex;
+        font-size: 20px;
+        font-weight: 550;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0px 5px;
+        width: 20%;
+        justify-content: end;
+    }
+    .action{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: end;
+        padding: 0px 20px;
+        width: 30%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 17px;
+        font-weight: bold;
+        color: #00ab4d;
+    }
+    .details{
+        display: flex;
+        padding: 0px 15px;
+        border-right:1px solid #cbcbcb;
+    }
+    .trades{
+        padding: 0px 15px;
+        display: flex;
+    }
+.headerss{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(223, 223, 223);
+}
+.Loans{
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(219, 219, 219);
+    background-color: #3f3f3f;
+    padding: 12px 25px;
+    box-shadow: 0px 0px 10px 0px #1d1d1d;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.Loans:hover{
+    background: #00ab4d;
+    cursor: pointer;
+
+}
+.graph{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+.GRAPHHEAD{
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+.change{
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: #00ab4d;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #8c8c8c;
+}
+.tip{
+    display: flex;
+    font-size: 18px;
+    color: #00c458;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 18px 0px;
+    line-height: 1.3;
+}
+.histories{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    box-shadow: 0px 0px 10px 0px #000;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.more{
+    display: flex;
+    font-size: 18px;
+    color: #00ab4d;
+    margin-top: 10px;
+    transition: 0.5s;
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #8c8c8c;
+}
+.head{
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.transaction{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: 10px 0px;
+    padding: 20px 0px;
+    transition: 0.5s;
+}
+.transaction:hover{
+    background: #222222;
+    cursor: pointer;
+}
+.upperrow{
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.lowerrow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #b2b2b2;
+}
+.type{
+    font-weight: bold;
+}
+    </style>
+</head>
+
+<body>
+    <!-- Pre loader -->
+    <div id="preloader">
+        <div class="uptext">
+            <div class="logo"><img src="images/logo_only.png" alt=""></div>
+            <div class="logo_text"><img src="images/logo_text.png" alt=""></div>
+        </div>
+        <div class="loading">
+            <div class="text">
+                Loading
+            </div>
+            <div class="loader"></div>
+        </div>
+    </div>
+    <div class="bosy">
+
+        <header>
+            <div class="logotext">
+                <img src="images/logo_text.png" alt="" height="70px">
+            </div>
+            <div class="header_nav">
+                <nav class="navbar_header">
+                    <ul>
+                        <li>Buy Crypto</li>
+                        <li>Market</li>
+                        <li>Trade</li>
+                        <li>Assests</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="third_part">
+                <div class="button">Sign up/Login</div>
+                <div class="loggedin"></div>
+            </div>
+        </header>
+        <div class="main">
+            <div class="sidebar">
+                <nav class="nav">
+                    <ul class="ul">
+                        <a href="" class="siderbarA">
+                            <li class="sidelist"><i class="fa fa-pie-chart" aria-hidden="true"></i><span
+                                    class="sidebartext">Overview</span></li>
+                        </a>
+                        <a href="" class="siderbarA">
+                            <li class="sidelist"><i class="fa-solid fa-wallet"></i><span class="sidebartext">Main</span>
+                            </li>
+                        </a>
+                        <a href="" class="siderbarA">
+                            <li class="sidelist"><i class="fa-brands fa-trade-federation"></i><span
+                                    class="sidebartext">Trading</span></li>
+                        </a>
+                        <a href="" class="siderbarA">
+                            <li class="sidelist"><i class="fa-solid fa-shop"></i><span
+                                    class="sidebartext">Market</span></li>
+                        </a>
+                        <a href="" class="siderbarA">
+                            <li class="sidelist"><i class="fa-solid fa-money-bill-transfer"></i><span
+                                    class="sidebartext">P2P</span></li>
+                        </a>
+                        <a href="" class="siderbarA" style="margin-top: 180px;">
+                            <hr style="text-decoration: none; color: white; margin-bottom: 20px;">
+                            <li class="sidelist"><i class="fa-solid fa-hand-holding-dollar"></i><span
+                                    class="sidebartext">Deposit</span></li>
+                        </a>
+                        <a href="" class="siderbarA">
+                            <li class="sidelist"><i class="fa-solid fa-arrow-up-from-bracket"></i><span
+                                    class="sidebartext">Withdraw</span></li>
+                        </a>
+                        <a href="" class="siderbarA">
+                            <li class="sidelist"><i class="fa-regular fa-clipboard"></i><span
+                                    class="sidebartext">Histories</span></li>
+                        </a>
+                    </ul>
+                </nav>
+            </div>
+            <div class="submain">
+                <div class="headbar">
+                    <div class="ASSESTS">Assests Overview</div>
+                    <div class="buttons">
+                        <div class="depo">Deposit</div>
+                        <div class="buycryp">Buy Crypto</div>
+                        <div class="Withdraw">Withdraw</div>
+                    </div>
+                </div>
+                <div class="wholebody">
+                    <div class="assesttext">
+                        <div class="overall">
+                            <div class="overalltext">Total Assests</div>
+                            <div class="overallvalue"><span class="value">0.00000000</span> BTC</div>
+                        </div>
+                        <div class="headerss">
+                            <div class="ASSESTS">Account</div>
+                            <div class="ASSESTS" style="color: #00ab4d;">Assests</div>
+                            <div class="Loans"><i class="fa-solid fa-gear" style="margin-right: 10px;"></i>Manage Loans</div>
+                        </div>
+                        <div class="transfer">
+                           <div class="mains">
+                            <div class="assestaccount">Main Assests</div>
+                            <div class="assestamount"><div class="Cvalue"><span class="value">0.00000000</span> BTC</div></div>
+                            <div class="assestline">Available funds. Ready to go!</div>
+                           </div>
+                           <div class="mains">
+                            <div class="assestaccount">Trading Assests</div>
+                            <div class="assestamount"><div class="Cvalue"><span class="value">0.00000000</span> BTC</div></div>
+                            <div class="assestline">Holded Amount of certain coin</div>
+                           </div>
+                           <div class="mains">
+                            <div class="assestaccount">Loan Assests</div>
+                            <div class="assestamount"><div class="Cvalue"><span class="value">0.00000000</span> BTC</div></div>
+                            <div class="assestline">Tip: Return Loans before time ends!</div>
+                           </div>
+                        </div>
+                        <div class="coinsholded">
+                            <div class="coinsheader">
+                                <div class="Products">Products</div>
+                                <div class="Price">Price</div>
+                                <div class="Change">Change</div>
+                                <div class="action" style="color: #fff; font-size: 20px;">Holds</div>
+                            </div>
+                            <div class="coins">
+                                <div class="individualcoin">
+                                    <div class="coinname">
+                                        <div class="iconcoin"><img src="images/bitcoin1.png" alt=""></div>
+                                        <div class="names">
+                                            <div class="symbol">BTC</div>
+                                            <div class="coin">Bitcoin</div>
+                                        </div>
+                                    </div>
+                                    <div class="coinprice">$<span class="price">200</span></div>
+                                    <div class="coinpercentage"><span class="percentage">20</span>%</div>
+                                    <div class="action">
+                                    0.0424324
+                                    </div>
+                                </div>
+                                <div class="individualcoin">
+                                    <div class="coinname">
+                                        <div class="iconcoin"><img src="images/eth.png" alt=""></div>
+                                        <div class="names">
+                                            <div class="symbol">ETH</div>
+                                            <div class="coin">Ethereum</div>
+                                        </div>
+                                    </div>
+                                    <div class="coinprice">$<span class="price">254500</span></div>
+                                    <div class="coinpercentage"><span class="percentage">2</span>%</div>
+                                    <div class="action">
+                                        0.6454353
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grpah-histories">
+                        <div class="graph">
+                            <div class="GRAPHHEAD">Assests Movements</div>
+                            <div class="change"><span>0.00</span>%</div>
+                            <br>
+                            <br>
+                            <canvas id="myChart" width="100" height="70"></canvas>
+                        </div>
+                        <div class="tip">
+                            <p>USDT<span style="color: #fff;"> has been the most traded currency since last 7 days</span></p>
+                        </div>
+                        <div class="histories">
+                            <div class="head">Recent Transaction</div>
+                            <div class="more">More<i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></div>
+                            <div class="transaction">
+
+                                <div class="upperrow">
+                                    <div class="type">Deposit</div>
+                                    <div class="amount">0.0434343<span style="margin-left:3px; color: #00c458;">BTC</span></div>
+                                </div>
+                                <div class="lowerrow">
+                                    <div class="date">23/1/2024</div>
+                                    <div class="status">Completed</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--               scripts    -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+            //  Pre loader 
+            window.addEventListener("load", function () {
+                var preloader = document.getElementById("preloader");
+                preloader.classList.add("fade-out");
+                setTimeout(function () {
+                    preloader.style.display = "none";
+                }, 1000);
+            });
+
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                autoplay: {
+                    delay: 5000,
+                },
+                loop: true,
+            });
+
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+    var initialData = [50]; // Initial data
+
+    // Define the initial data
+    var data = {
+        labels: ['Value 1', 'Value 2'], // Update labels accordingly
+        datasets: [{
+            label: 'Dataset 1',
+            data: initialData.slice(), // Copy of initialData array
+            borderColor: '#04bb56',
+            borderWidth: 2,
+            fill: true,
+            backgroundColor: 'rgba(4, 187, 86, 0.2)', // Add a fill color
+            pointRadius: 0, // Hides data points
+            tension: 0.4, // Adjust tension for smoothness
+        }]
+    };
+
+    var options = {
+        scales: {
+            x: {
+                display: false, // Hides x-axis
+            },
+            y: {
+                display: false, // Hides y-axis
+            }
+        },
+        plugins: {
+            legend: {
+                display: false, // Hides legend
+            }
+        }
+    };
+
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: options
+    });
+    myChart.ctx.shadowColor = '#04bb56';
+        myChart.ctx.shadowBlur = 10;
+    // Function to update the chart
+    function updateChart() {
+        // Generate a random value (replace this with your logic to get new values)
+        var newValue = Math.floor(Math.random() * 100);
+
+        // Add the new value to the dataset
+        myChart.data.datasets[0].data.push(newValue);
+
+        // Add a new label for the new value
+        myChart.data.labels.push('');
+
+        // Maintain a maximum of 6 values
+        if (myChart.data.datasets[0].data.length > 10) {
+            myChart.data.datasets[0].data.shift();
+            myChart.data.labels.shift();
+        }
+
+        // Update the chart
+        myChart.update();
+    }
+
+    // Automatically update the chart every second
+    setInterval(updateChart, 1000);
+
+        </script>
+</body>
+
+</html>

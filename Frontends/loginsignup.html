@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+            background: url(images/loginbg.jpg);
+            background-position: center;
+        }
+.container{
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    background: url(loginbg.jpg);
+    background-position: bottom;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px 10px #1d5e14;
+}
+.image{
+    display: flex;
+    width: 50%;
+    background: url(images/imagebg.jpg);
+    z-index: 10;
+    height: 100%;
+    background-position: center;
+    flex-direction: column;
+    background-size: cover;
+    border-radius: 8px 0px 0px 6px;
+}
+.images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    background: #000;
+    margin: 10px;
+    border-radius: 20px;
+}
+.footer{
+    display: flex;
+    color: white;
+    align-items: last baseline;
+    padding-bottom: 50px;
+    justify-content: end;
+    width: 90%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.form{
+    display: flex;
+    width: 50%;
+}
+.table{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 100px;
+    height: fit-content;
+    background: #fff;
+    padding-bottom: 100px;
+    border-radius: 20px;
+}
+.header{
+    border-radius: 18px 18px 0px 0px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+}
+.dots{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    margin: 10px;
+}
+.text{
+    display: flex;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    width: 100%;
+    margin: 20px 0px;
+    justify-content: center;
+    font-weight: bold;
+}
+.symbol{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    width: 100%;
+    margin: 5px 0px;
+    font-weight: bold;
+}
+.coins{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+.shortform{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    width: 100%;
+    margin: 5px 0px;
+    font-weight: bold;
+}
+.coin{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid grey;
+}
+.form{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    width: 50%;
+}
+.pages {
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+            padding: 10px 20px;
+            width: 100%;
+        }
+        .container{
+            
+            display: flex;
+  border-radius: 7px;
+}
+.login,.registration{
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  color: #1c8049;
+  justify-content: center;
+}
+.container .registration{
+  display: none;
+}
+#check:checked ~ .registration{
+  display: block;
+}
+#check:checked ~ .login{
+  display: none;
+}
+#check{
+  display: none;
+}
+.container .form{
+  padding: 2rem;
+}
+.form header{
+  font-size: 3rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+ .form input{
+   height: 50px;
+   width: 100%;
+   padding: 0 15px;
+   font-size: 17px;
+   margin-bottom: 1.3rem;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   outline: none;
+ }
+ .form input:focus{
+   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+ }
+.form a{
+  font-size: 16px;
+  text-decoration: none;
+}
+.form a:hover{
+  text-decoration: underline;
+}
+.form input.button{
+  color: #fff;
+            width: fit-content;
+            padding: 15px 30px;
+            width: 100%;
+            font-size: x-large;
+            border-radius: 10px;
+            background:rgb(3, 133, 3);
+            
+            border: none;
+            display: flex;
+            justify-content: center;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 1.7rem;
+            cursor: pointer;
+            font-size: 1.2rem;
+            
+        }
+        .form input.button:hover{
+            background:rgb(3, 171, 3);
+            cursor: pointer;
+}
+.signup{
+  font-size: 17px;
+  text-align: center;
+}
+.signup label{
+  cursor: pointer;
+}
+.signup label:hover{
+  text-decoration: underline;
+}
+.one{
+  background: #ddd;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.progressbar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 80px 20px;
+}
+.bar{
+  height: 2px;
+  display: flex;
+  width: 100px;
+  background: #ddd;
+}
+.otp-screen {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .otp-input {
+            display: flex;
+            margin: 10px;
+            padding: 10px;
+            font-size: 1.2rem;
+        }
+
+        .verify-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: x-large;
+            border-radius: 10px;
+            background: rgb(3, 133, 3);
+            border: none;
+            display: flex;
+            justify-content: center;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <div class="images">
+                <img src="images/logo.png" alt="" height="100px">
+            </div>
+            <div class="table">
+                <div class="header">
+                    <div class="dots" style="background-color: red;"></div>
+                    <div class="dots" style="background-color: yellow;"></div>
+                    <div class="dots" style="background-color: green;"></div>
+                </div>
+                <div class="text">Buy & Sell Crypto</div>
+                <div class="coins">
+                    <div class="coin">
+                        <div class="symbol">
+                            <img src="images/bitcoin1.png" alt="" height="40px" style="margin: 0px 10px;">
+                            Bitcoin
+                        </div>
+                        <div class="shortform">BTC</div>
+                    </div>
+                    <div class="coin">
+                        <div class="symbol">
+                            <img src="images/litecoin.png" alt="" height="40px" style="margin: 0px 10px;">
+                            Litecoin
+                        </div>
+                        <div class="shortform">LTC</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">Trusted by 10+ Million Users</div>
+        </div>
+        <div class="form">
+            <div class="pages">
+
+                    <input type="checkbox" id="check">
+                    <div class="login form">
+                      <header style="width: 100%; margin-bottom: 50px; font-family: Arial, Helvetica, sans-serif; font-size: xxx-large;">Login</header>
+                      <form action="#">
+                        <input type="text" placeholder="Enter your email">
+                        <input type="password" placeholder="Enter your password">
+                        <a href="#">Forgot password?</a>
+                        <input type="button" class="button" value="Login">
+                      </form>
+                      <div class="signup">
+                        <span class="signup" style="width: 100%;">Don't have an account?
+                         <label for="check">Signup</label>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="registration form">
+                      <header class="login" style="width: 100%; margin-bottom: 100px; font-family: Arial, Helvetica, sans-serif; font-size: xxx-large;">Create new Account</header>
+                      <div class="progressbar">
+                        <div class="1 one">1</div>
+                        <div class="bar"></div>
+                        <div class="2 one">2</div>
+                      </div>
+                      <form action="#">
+                        <input id="name" type="text" placeholder="Enter Username">
+                        <input type="text" id="email" placeholder="Enter your email">
+                        <input type="password" placeholder="Create a password">
+                        
+                        <input id="sendEmailButton" type="button" class="button" value="Signup" onclick="showOtpScreen()">
+                      </form>
+                      <div class="signup">
+                        <span  style="width: 100%;">Already have an account?<label for="check" style="margin-left: 2px;">Login</label>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="otp-screen">
+                      <h2 style="width: 100%; justify-content: center; margin-bottom: 50px; font-family: Arial, Helvetica, sans-serif; font-size: xxx-large; color:#137306;">Verify OTP</h2>
+                      <input type="text" class="otp-input" maxlength="6">
+                      <button class="verify-button" >Verify</button>
+                  </div>
+  
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        let generatedNumericOTP; // Declare the variable in a wider scope
+    
+        function showOtpScreen() {
+            // Hide registration form
+            document.querySelector('.registration').style.display = 'none';
+    
+            // Show OTP screen
+            document.querySelector('.otp-screen').style.display = 'flex';
+    
+            // Generate and assign the numeric OTP
+            generatedNumericOTP = generateRandomNumericOTP();
+        }
+    
+        function generateRandomNumericOTP() {
+            const otpLength = 6;
+            let otp = '';
+    
+            for (let i = 0; i < otpLength; i++) {
+                otp += Math.floor(Math.random() * 10);
+            }
+    
+            return otp;
+        }
+    
+        function verifyOtp() {
+            // Perform OTP verification here (you would need server-side code)
+            // If OTP is verified, you can proceed with account creation or other actions
+    
+            // For this example, let's just hide the OTP screen
+            document.querySelector('.otp-screen').style.display = 'none';
+        }
+    
+        (function () {
+            emailjs.init("OfmlMCjmuKg7pjl35");
+    
+            // Example: Send email when a button is clicked
+            document.getElementById("sendEmailButton").addEventListener("click", function () {
+                sendEmail();
+            });
+    
+            function sendEmail() {
+                emailjs.send("xdgaming", "template_n0ejzqc", {
+                    name: document.getElementById("name").value,
+                    User: document.getElementById("name").value,
+                    message: generatedNumericOTP,
+                    reciptent: document.getElementById("email").value
+                })
+                .then(function(response) {
+                    console.log("Email sent successfully:", response);
+                }, function(error) {
+                    console.log("Error sending email:", error);
+                });
+            }
+        })();
+    </script>
+    
+</body>
+</html>
