@@ -56,5 +56,19 @@ namespace Server.DL
             cmd.ExecuteNonQuery();
             Database.CloseConnection();
         }
+        public static int GetCoinId(string coinName)
+        {
+            Database.OpenConnection();
+            string query = $"Select ID from Coins where Name = '{coinName}'";
+            SqlCommand cmd = new SqlCommand(query, Database.GetConnection());
+            SqlDataReader reader = cmd.ExecuteReader();
+            int id = 0;
+            if (reader.Read())
+            {
+                id = Convert.ToInt32(reader["ID"]);
+            }
+            Database.CloseConnection();
+            return id;
+        }
     }
 }

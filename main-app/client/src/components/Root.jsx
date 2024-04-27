@@ -26,35 +26,6 @@ import './styles/Root.css'
 
 function Root() {
 
-    useEffect(() => {
-        // Create a new link element
-        const link = document.createElement('link');
-
-        // Set its attributes
-        link.rel = 'stylesheet';
-        link.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
-
-        // Append the link to the document's head
-        document.head.appendChild(link);
-
-        const swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            autoplay: {
-                delay: 5000,
-            },
-            loop: true,
-        });
-
-        return () => {
-            // Cleanup Swiper instance when the component unmounts
-            swiper.destroy();
-
-            // Remove the link from the document's head when component unmounts
-            document.head.removeChild(link);
-        };
-    }, []);
-
     return (
         <>
             <Header />
@@ -97,9 +68,6 @@ function Root() {
                             </div>
                         </div>
                     </div>
-
-
-
                     <div className="servicesbg1">
                         <div className="servicesfront1">
                             <div className="serviceshead1">
@@ -153,9 +121,6 @@ function Root() {
                             </div>
                         </div>
                     </div>
-
-
-
                     <div className="serviceshead1" style={{ marginTop: '200px' }}>
                         <div className="bars1"></div>
                         <div className="servicestext1"> How It Work </div>
@@ -228,35 +193,6 @@ function Root() {
                             </div>
                         </div>
                     </div>
-
-
-
-                    <div className="serviceshead1">
-                        <div className="bars1"></div>
-                        <div className="servicestext1">What Our Clients Say </div>
-                        <div className="bars1"></div>
-                    </div>
-
-                    <div className="swiper-container">
-                        <div className="swiper-wrapper">
-                            <div className="swiper-slide">
-                                <img src={img3} alt="" />
-                                <div className="clientname1">John Doe</div>
-                                <div className="comment1">I've been using this website for a few months now, and it has completely transformed my online experience. Highly recommend! </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <img src={img1} alt="" />
-                                <div className="clientname1">Jane Smith</div>
-                                <div className="comment1">The website's functionality is top-notch! Everything is intuitive and efficient. Great job to the development team!</div>
-                            </div>
-                            <div className="swiper-slide">
-                                <img src={img2} alt="" />
-                                <div className="clientname1">Alex Johnson</div>
-                                <div className="comment1">As a regular visitor, I appreciate the consistent updates and fresh content on this site. It's evident that the team behind it is dedicated to providing value to users.</div>
-                            </div>
-                        </div>
-                    </div>
-
                     <Footer />
                 </body>
         </>

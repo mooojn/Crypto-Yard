@@ -38,11 +38,12 @@ namespace Server.DL
             $"Where WalletId = {walletId} AND Assests_Status = '{Type}'";
             SqlCommand command = new SqlCommand(query, Database.GetConnection());
             SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
+            while (reader.Read())
             {
-                amount = Math.Round(Convert.ToDouble(reader["TotalAmount"]), 2);
+                amount += Convert.ToDouble(reader["TotalAmount"]);
             }
             Database.CloseConnection();
+            amount = Math.Round(amount, 2);
             return amount;
         }
         public static void BuyDollarsNew(double amount, int walletId)
@@ -74,6 +75,22 @@ namespace Server.DL
             }
             Database.CloseConnection();
             return currentAmount >= amount;
+        }
+        public static void BuyCoin(int id, double amount, int walletId)
+        {
+            Database.OpenConnection();
+            string query = $"Insert into Assets values ({id}, {amount},'Trading', {walletId})";
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
+            command.ExecuteNonQuery();
+            Database.CloseConnection();
+        }
+        public static void UpdateMainWorth(int id, double amount)
+        {
+            Database.OpenConnection();
+            string query = $"Update Assets set Amount = Amount - {amount} where walletId = {id} AND Assests_Status = 'Main'";
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
+            command.ExecuteNonQuery();
+            Database.CloseConnection();
         }
     }
 }

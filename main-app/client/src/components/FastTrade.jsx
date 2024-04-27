@@ -4,6 +4,9 @@ import jazzCashPng from './assets/Jazzcash.png';
 import jazzPng from './assets/jazz.jpeg';
 import img1 from './assets/img-1.png';
 
+import sound from './assets/fastTradeFX.mp3'
+import errFX from './assets/errorFX.mp3'
+
 import Preloader from './small_components/PreLoader';
 import Header from './small_components/Header';
 import React, { useEffect, useRef, useState } from 'react';
@@ -20,14 +23,17 @@ function FastTrade() {
     const [amount, setAmount] = useState(0);
 
 
-
+    const audio = new Audio(sound);
+    const errAudio = new Audio(errFX);
 
     const sellDollar = (e) => {
         const amount = document.getElementById("priceInput").value;
         if (amount < 1) {
+            errAudio.play();
             toast.warning("Please enter a valid amount");
             return;
         } else if (amount > 10000) {
+            errAudio.play();
             toast.warning("Amount should be less than $10k");
             return;
         }
@@ -35,8 +41,10 @@ function FastTrade() {
             .then(resp => resp.json())
             .then(data => {
                 if (data) {
+                    audio.play();
                     toast.success("Transaction Successful");
                 } else {
+                    errAudio.play();
                     toast.error("Transaction Failed");
                 }
             })
@@ -48,9 +56,11 @@ function FastTrade() {
     const buyDollar = (e) => {        
         const amount = document.getElementById("priceInput").value;
         if (amount < 1) {
+            errAudio.play();
             toast.warning("Please enter a valid amount");
             return;
         } else if (amount > 10000) {
+            errAudio.play();
             toast.warning("Amount should be less than $10k");
             return;
         }
@@ -58,8 +68,10 @@ function FastTrade() {
             .then(resp => resp.json())
             .then(data => {
                 if (data) {
+                    audio.play();
                     toast.success("Transaction Successful");
                 } else {
+                    errAudio.play();
                     toast.error("Transaction Failed");
                 }
             })
@@ -78,7 +90,7 @@ function FastTrade() {
         document.getElementById("currency").innerHTML = 'Pay With';
         document.getElementById("buyButton").style.backgroundColor = '#04bb56';
         document.getElementById("sellButton").style.backgroundColor = '';
-        document.getElementById("confirmBTN").innerHTML = 'Buy BTC';
+        document.getElementById("confirmBTN").innerHTML = 'Buy USDT';
         document.getElementById("confirmBTN").style.backgroundColor = '#04bb56';
         document.getElementById("headong").innerHTML = 'Buy Crypto Instantly';
         document.getElementById("buy").innerHTML = 'Buy';
@@ -90,7 +102,7 @@ function FastTrade() {
         document.getElementById("currency").innerHTML = 'Get Paid';
         document.getElementById("buyButton").style.backgroundColor = '#141414';
         document.getElementById("sellButton").style.backgroundColor = 'red';
-        document.getElementById("confirmBTN").innerHTML = 'Sell BTC';
+        document.getElementById("confirmBTN").innerHTML = 'Sell USDT';
         document.getElementById("confirmBTN").style.backgroundColor = 'red';
         document.getElementById("headong").innerHTML = 'Sell Crypto Instantly';
         document.getElementById("buy").innerHTML = 'Sell';

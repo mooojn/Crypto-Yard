@@ -13,6 +13,10 @@ import dogeImg from './assets/Doge.png'
 
 import './styles/Trading.css'
 import Header from './small_components/Header';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import moneyBuySound from './assets/moneyBuyFX.mp3';
+import errFX from './assets/mainErrFX.mp3';
 
 
 
@@ -338,6 +342,11 @@ function Trading() {
             .catch(error => console.error('Error fetching data:', error));
 
         // img setup
+        
+        // if (coinName == null){
+        //     document.querySelector('.coinlogo4 img').src = btcImg;
+        //     setCoinData({ Name: "Bitcoin", Symbol: "BTC", Price: "xxx", Description: "xxx", Overview: "xxx" });
+        // }
         if (coinName == "Ripple") {
             document.querySelector('.coinlogo4 img').src = xrpImg;
         } else if (coinName == "Ethereum") {
@@ -349,8 +358,8 @@ function Trading() {
         } else if (coinName == "Dogecoin") {
             document.querySelector('.coinlogo4 img').src = dogeImg;
         }
-    }, [])
-    useEffect(() => {
+
+        
         fetch(API_URL + `/assetWorthOfType?Type=Main`)
             .then(response => response.json())
             .then(data => {
@@ -358,6 +367,46 @@ function Trading() {
             })
             .catch(error => console.error('Error fetching data:', error));
     }, [])
+    
+    
+    // useEffect(() => {
+    // }, [])
+
+
+    
+    const audio = new Audio(moneyBuySound); 
+    const errAudio = new Audio(errFX);
+
+    const buyCoin = (e) => {
+        const amnt = document.getElementById('priceInput').value;
+        if (amnt > worth){
+            errAudio.play();
+            toast.warning("Insufficient Balance");
+            return;
+        }else if (amnt <= 0){
+            errAudio.play();
+            toast.warning("Invalid Amount");
+            return;
+        }
+        fetch(API_URL + `/buyCoin?coinName=${coinData.Name}&coinPrice=${coinData.Price}&amount=${amnt}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    toast.success("Transaction Successful");
+                    audio.play();
+                    fetch(API_URL + `/assetWorthOfType?Type=Main`)
+                        .then(response => response.json())
+                        .then(data => {
+                            setWorth(data);
+                        })
+                        .catch(error => console.error('Error fetching data:', error));
+                } else {
+                    errAudio.play();
+                    toast.error("Transaction Failed");
+                }
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
 
     return (
         <>
@@ -459,7 +508,7 @@ function Trading() {
                                 </div>
                             </div>
                             <div className="input4-sep">
-                                <span className="custom4-placeholder">BTC</span>
+                                <span className="custom4-placeholder">{coinData.Symbol}</span>
                                 <input className="inputss4" placeholder="Quantity" type="number" name="" id="" maxlength="10" />
                                 <div className="customarrows4">
                                     <i className="fa-solid fa-caret-up" ></i>
@@ -473,17 +522,16 @@ function Trading() {
                                 <div>100%</div>
                             </div>
                             <div className="input4-sep">
-                                <span className="custom4-placeholder">BTC</span>
+                                <span className="custom4-placeholder">{coinData.Symbol}</span>
                                 <input className="inputss4" placeholder="Volume" type="number" name="" id="" maxlength="10" />
                                 <div className="customarrows4">
                                     <i className="fa-solid fa-caret-up" ></i>
                                     <i className="fa-solid fa-caret-down" ></i>
                                 </div>
                             </div>
-                            <p>Confirm</p>
-                            <div id="confirm" className="confirm4">
-                                Buy BTC
-                            </div>
+                            {/* <p>Confirm</p> */}
+                            <div id="confirm" className="confirm4" onClick={buyCoin}>Buy {coinData.Symbol}</div>
+                            <ToastContainer/>
                         </div>
                     </div>
                 </div>

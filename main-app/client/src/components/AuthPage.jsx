@@ -17,7 +17,6 @@ function AuthPage() {
   const navigate = useNavigate();
   const API_URL = "http://localhost:5056/api"
 
-
   const [isLoginFormVisible, setLoginFormVisible] = useState(true);
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
@@ -25,10 +24,6 @@ function AuthPage() {
   const [signUpName, setSignupname] = useState('');
   const [signUpPassword, setSignUpPassword] = useState('');
   const [cnic, setcnic] = useState('');
-
-
-
-
 
   const handleLogin = (e) => {
 
@@ -127,14 +122,12 @@ function AuthPage() {
   };
 
   return (
+
     <>
 
       <Header/>
-
         <body className='body13'>
-
           <div className="container">
-
             <input type="checkbox" id="check" />
             {isLoginFormVisible ? (
               <div className="login form">

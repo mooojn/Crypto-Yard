@@ -38,7 +38,7 @@ const Header = () => {
             <ul>
               <li><a href="/fast-trade">Buy Crypto</a></li>
               <li><a href="/market">Market</a></li>
-              <li><a href="/trading">Trade</a></li>
+              <li><a href="/trading?variableName=Bitcoin">Trade</a></li>
               <li><a href="/assets">Assets</a></li>
             </ul>
           </nav>

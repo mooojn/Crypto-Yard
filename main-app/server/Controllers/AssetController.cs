@@ -51,7 +51,20 @@ namespace Server.Controllers
             AssetDL.SellDollars(amount, walletId);
             return true;
         }
+        [HttpGet]
+        [Route("buyCoin")]
+        public bool BuyCoin(string coinName, double coinPrice, double amount)
+        {
+            int coinId = CoinDL.GetCoinId(coinName);
+            double coinAmount = amount / coinPrice;
+            int walletId = UtilDL.GetWalletIdFor(UserController.UserName);
+            
+            AssetDL.BuyCoin(coinId, coinAmount, walletId);
+            AssetDL.UpdateMainWorth(walletId, amount);
 
-        
+            return true;
+        }
+
+
     }
 }
