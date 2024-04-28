@@ -398,7 +398,7 @@ function Trading() {
     return (
         <>
             <body>
-                <Preloader />
+                {/* <Preloader /> */}
                 <Header />
                 <div className="detailshead4">
                     <div className="halfheader4">
