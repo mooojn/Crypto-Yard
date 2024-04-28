@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Server.BL;
 using Server.DL;
+using Newtonsoft.Json;
+
 
 namespace Server.Controllers
 {
@@ -64,7 +66,26 @@ namespace Server.Controllers
 
             return true;
         }
-
+        [HttpGet]
+        [Route("getHistory")]
+        public string GetLatestTransaction()
+        {
+            int walletId = UtilDL.GetWalletIdFor(UserController.UserName);
+            if (walletId == 0)
+                return "";
+            History history = AssetDL.GetLatestTransaction(walletId);
+            return JsonConvert.SerializeObject(history);
+        }
+        [HttpGet]
+        [Route("setHistory")]
+        public bool StoreLatestTransaction(int amount, string type)
+        {
+            int walletId = UtilDL.GetWalletIdFor(UserController.UserName);
+            if (walletId == 0)
+                return false;
+            AssetDL.StoreLatestTransaction(walletId, amount, type);
+            return true;
+        }
 
     }
 }
