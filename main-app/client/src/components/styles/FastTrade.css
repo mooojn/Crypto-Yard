@@ -98,7 +98,8 @@
         border-radius: 25px;
         height: 100%;
         width: 50%;
-        transition: 0.5s5;
+        transition: 0.5;
+        cursor: pointer;
         
     }
     .buy5{
