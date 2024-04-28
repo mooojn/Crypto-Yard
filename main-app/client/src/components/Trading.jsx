@@ -453,8 +453,8 @@ function Trading() {
                 <div className="main4">
                     <div className="chartside4">
                         <div className="charthead4">
-                            <div className="charts4">Chart</div>
-                            <div className="market4">Go to Market</div>
+                            <div style={{cursor:'pointer'}}className="charts4">Chart</div>
+                            <a href="/market" style={{cursor:'pointer'}}> <div className="market4">Go to Market</div></a>
                         </div>
                         <div className="stats4">
                             <div className="values4">O <span className="prices4">53,599</span></div>
@@ -466,20 +466,19 @@ function Trading() {
                     </div>
                     <div className="tradeside4">
                         <div className="charthead4" style={{ borderBottom: '0.2px', solid: '#4b4b4b' }}>
-                            <div className="charts4">Spot</div>
-                            <div className="market4">Go to Peer 2 peer</div>
+                            <div className="charts4" style={{cursor:'pointer'}}>Spot</div>
                         </div>
                         <div className="buysell4">
                             <div id="buyButton" className="buy4">
-                                <div>Buy</div>
+                                <div style={{cursor:'pointer'}}>Buy</div>
                             </div>
                             <div id="sellButton" className="sell4">
-                                <div>Sell</div>
+                                {/* <div>Sell</div> */}
                             </div>
                         </div>
                         <div className="charthead4" style={{ borderBottom: '0.2px', solid: '#4b4b4b' }}>
-                            <div className="charts4" style={{ border: 'none' }}>Limit</div>
-                            <div className="market4">Future Coming Soon</div>
+                            <div className="charts4" style={{ border: 'none', cursor:'pointer' }}>Limit</div>
+                            <div className="market4" style={{cursor:'pointer'}}>Future Coming Soon</div>
                         </div>
                         <div className="buysellsection4">
                             <div className="avail4">
@@ -496,13 +495,13 @@ function Trading() {
                             </div>
                             <div className="input4-sep">
                                 <span className="custom4-placeholder">{coinData.Symbol}</span>
-                                <input className="inputss4" placeholder="Quantity" type="number" name="" id="" maxlength="10" />
+                                <input className="inputss4" placeholder="Quantity" type="number" name="" id="" maxlength="10" readOnly/>
                                 <div className="customarrows4">
                                     <i className="fa-solid fa-caret-up" ></i>
                                     <i className="fa-solid fa-caret-down" ></i>
                                 </div>
                             </div>
-                            <div className="amountpercent4">
+                            <div style={{cursor:'pointer'}}className="amountpercent4">
                                 <div>25%</div>
                                 <div>50%</div>
                                 <div>75%</div>
@@ -510,7 +509,7 @@ function Trading() {
                             </div>
                             <div className="input4-sep">
                                 <span className="custom4-placeholder">{coinData.Symbol}</span>
-                                <input className="inputss4" placeholder="Volume" type="number" name="" id="" maxlength="10" />
+                                <input className="inputss4" placeholder="Volume" type="text" name="" id="" maxlength="10" readOnly />
                                 <div className="customarrows4">
                                     <i className="fa-solid fa-caret-up" ></i>
                                     <i className="fa-solid fa-caret-down" ></i>
