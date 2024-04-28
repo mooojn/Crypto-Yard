@@ -41,53 +41,6 @@ function market() {
     const [usdt, setUsdt] = useState({ Name: '', Symbol: '', Price: '' });
     const [doge, setDoge] = useState({ Name: '', Symbol: '', Price: '' });
 
-    useEffect(() => {
-        // Function to initialize Swiper
-        const initializeSwiper = () => {
-            new Swiper('.swiper-container', {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                autoplay: {
-                    delay: 5000,
-                },
-                loop: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                breakpoints: {
-                    768: {
-                        slidesPerView: 1,
-                        spaceBetween: 10,
-                    },
-                    1024: {
-                        slidesPerView: 2,
-                        spaceBetween: 40,
-                    },
-                    2000: {
-                        slidesPerView: 3,
-                        spaceBetween: 60,
-                    },
-                },
-            });
-        };
-
-        // Initialize Swiper when the component mounts
-        initializeSwiper();
-
-        // Clean up Swiper instance when the component unmounts
-        return () => {
-            const swiperInstance = document.querySelector('.swiper-container').swiper;
-            if (swiperInstance) {
-                swiperInstance.destroy(true, true);
-            }
-        };
-    }, []);
-
 
 
     useEffect(() => {
@@ -130,10 +83,10 @@ function market() {
         <>
             <body>
 
-                <Preloader />
+                {/* <Preloader /> */}
                 <Header />
                 <ToastContainer />
-                <div className="overviewhead9">Market Overview</div>
+                {/* <div className="overviewhead9">Market Overview</div>
 
                 <div className="swiper-container">
                     <div className="swiper-wrapper">
@@ -243,7 +196,7 @@ function market() {
 
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="overviewhead9">CrytpoYard Market Watch</div>
                 <div className="explain9">Find promising coins and great opportunities!</div>
                 <div className="coinsheader9">
@@ -262,14 +215,14 @@ function market() {
                                 <div className="coin9">{btc.Name}</div>
                             </div>
                         </div>
-                        <div className="coinprice9">$<span className="price9">{btc.Price}</span></div>
-                        <div className="coinpercentage9"><span className="percentage9">20</span>%</div>
+                        <div className="coinprice9"><span className="price9">${btc.Price}</span></div>
+                        <div className="coinpercentage9"><span className="percentage9">20%</span></div>
                         <div className="action9">
                             <Link to={`/market-detail?variableName=${btc.Name}`}>
-                                <div className="details9">Details</div>
+                                <div className="details9">Detail</div>
                             </Link>
                             <Link to={`/trading?variableName=${btc.Name}`}>
-                                <div className="trades9">Trades</div>
+                                <div className="trades9">Trade</div>
                             </Link>
                         </div>
                     </div>
@@ -281,14 +234,14 @@ function market() {
                                 <div className="coin9">{eth.Name}</div>
                             </div>
                         </div>
-                        <div className="coinprice9">$<span className="price9">{eth.Price}</span></div>
-                        <div className="coinpercentage9"><span className="percentage9">2</span>%</div>
+                        <div className="coinprice9"><span className="price9">${eth.Price}</span></div>
+                        <div className="coinpercentage9"><span className="percentage9">2%</span></div>
                         <div className="action9">
                             <Link to={`/market-detail?variableName=${eth.Name}`}>
-                                <div className="details9">Details</div>
+                                <div className="details9">Detail</div>
                             </Link>
                             <Link to={`/trading?variableName=${eth.Name}`}>
-                                <div className="trades9">Trades</div>
+                                <div className="trades9">Trade</div>
                             </Link>
                         </div>
                     </div>
@@ -300,33 +253,14 @@ function market() {
                                 <div className="coin9">{xrp.Name}</div>
                             </div>
                         </div>
-                        <div className="coinprice9">$<span className="price9">{xrp.Price}</span></div>
-                        <div className="coinpercentage9"><span className="percentage9">10</span>%</div>
+                        <div className="coinprice9"><span className="price9">${xrp.Price}</span></div>
+                        <div className="coinpercentage9"><span className="percentage9">10%</span></div>
                         <div className="action9">
                             <Link to={`/market-detail?variableName=${xrp.Name}`}>
-                                <div className="details9">Details</div>
+                                <div className="details9">Detail</div>
                             </Link>
                             <Link to={`/trading?variableName=${xrp.Name}`}>
-                                <div className="trades9">Trades</div>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="individualcoin9">
-                        <div className="coinname9">
-                            <div className="iconcoin9"><img src={a19} alt="" /></div>
-                            <div className="names9">
-                                <div className="symbol9">{usdt.Symbol}</div>
-                                <div className="coin9">{usdt.Name}</div>
-                            </div>
-                        </div>
-                        <div className="coinprice9">$<span className="price9">{usdt.Price}</span></div>
-                        <div className="coinpercentage9"><span className="percentage9">20</span>%</div>
-                        <div className="action9">
-                            <Link to={`/market-detail?variableName=${usdt.Name}`}>
-                                <div className="details9">Details</div>
-                            </Link>
-                            <Link to={`/trading?variableName=${usdt.Name}`}>
-                                <div className="trades9">Trades</div>
+                                <div className="trades9">Trade</div>
                             </Link>
                         </div>
                     </div>
@@ -338,14 +272,33 @@ function market() {
                                 <div className="coin9">{doge.Name}</div>
                             </div>
                         </div>
-                        <div className="coinprice9">$<span className="price9">{doge.Price}</span></div>
-                        <div className="coinpercentage9"><span className="percentage9">4</span>%</div>
+                        <div className="coinprice9"><span className="price9">${doge.Price}</span></div>
+                        <div className="coinpercentage9"><span className="percentage9">4%</span></div>
                         <div className="action9">
                             <Link to={`/market-detail?variableName=${doge.Name}`}>
-                                <div className="details9">Details</div>
+                                <div className="details9">Detail</div>
                             </Link>
                             <Link to={`/trading?variableName=${doge.Name}`}>
-                                <div className="trades9">Trades</div>
+                                <div className="trades9">Trade</div>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="individualcoin9">
+                        <div className="coinname9">
+                            <div className="iconcoin9"><img src={a19} alt="" /></div>
+                            <div className="names9">
+                                <div className="symbol9">{usdt.Symbol}</div>
+                                <div className="coin9">{usdt.Name}</div>
+                            </div>
+                        </div>
+                        <div className="coinprice9"><span className="price9">${usdt.Price}</span></div>
+                        <div className="coinpercentage9"><span className="percentage9">20%</span></div>
+                        <div className="action9">
+                            <Link to={`/market-detail?variableName=${usdt.Name}`}>
+                                <div className="details9">Detail</div>
+                            </Link>
+                            <Link to={`/trading?variableName=${usdt.Name}`}>
+                                <div className="trades9">Trade</div>
                             </Link>
                         </div>
                     </div>

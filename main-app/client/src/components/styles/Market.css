@@ -199,10 +199,14 @@
         display: flex;
         padding: 0px 15px;
         border-right:1px solid #cbcbcb;
-    }
+    }    
     .trades9{
         padding: 0px 15px;
         display: flex;
+        transition: all ease-in-out 0.1s;
+    }
+    .trades9:hover{
+        color: red;
     }
     .coinsheader9{
         display: flex;
@@ -249,6 +253,6 @@
         color: white;
         transition: all ease-in-out 0.3s9;
     }
-    a:hover{
+    /* a:hover{
         color: #04bb56;
-    }
+    } */
