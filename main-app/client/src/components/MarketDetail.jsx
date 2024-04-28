@@ -52,7 +52,7 @@ function MarketDetail() {
     return (
         <>
             <body>
-                <Preloader />
+                {/* <Preloader /> */}
                 <Header />
 
                 <div className="main7">
@@ -68,10 +68,9 @@ function MarketDetail() {
                             <div className="price7">
                                 <p>$<span style={{ color: '#fff' }}>{coinData.Price}</span></p>
                             </div>
-                            <div className="change7">Change:<p><span className="changeprice7">5</span>%</p>
+                            <div className="change7">Change: 2%<p><span className="changeprice7"></span></p>
                             </div>
                         </div>
-                        <canvas id="myChart" style={{ height: '70', width: '100' }}></canvas>
                         <div className="overview7">
                             <div className="heed7">
                                 Overview
@@ -111,102 +110,6 @@ function MarketDetail() {
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-                {/* <!--               scripts    -->
-            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-            <script>
-                //  Pre loader 
-                window.addEventListener("load", function () {
-                    var preloader = document.getElementById("preloader");
-                    preloader.classList.add("fade-out");
-                    setTimeout(function () {
-                        preloader.style.display = "none";
-                    }, 1000);
-                });
-
-                var swiper = new Swiper('.swiper-container', {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    autoplay: {
-                        delay: 5000,
-                    },
-                    loop: true,
-                });
-
-
-                var ctx = document.getElementById('myChart').getContext('2d');
-                var initialData = [50]; // Initial data
-
-                // Define the initial data
-                var data = {
-                    labels: ['Value 1', 'Value 2', 'Value 3'], // Update labels accordingly
-                    datasets: [{
-                        label: 'Dataset 1',
-                        data: initialData.slice(), // Copy of initialData array
-                        borderColor: '#04bb56',
-                        borderWidth: 2,
-                        // fill: true,
-                        backgroundColor: 'rgba(4, 187, 86, 0.2)', // Add a fill color
-                        pointRadius: 0, // Hides data points
-                        tension: 0.4, // Adjust tension for smoothness
-                    }]
-                };
-
-                var options = {
-                    scales: {
-                        x: {
-                            display: true, // Hides x-axis
-                        },
-                        y: {
-                            display: true, // Hides y-axis
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false, // Hides legend
-                        }
-                    }
-                };
-
-                var myChart = new Chart(ctx, {
-                    type: 'line',
-                    data: data,
-                    options: options
-                });
-                myChart.ctx.shadowColor = '#04bb56';
-                myChart.ctx.shadowBlur = 10;
-                // Function to update the chart
-                function updateChart() {
-                    // Generate a random value (replace this with your logic to get new values)
-                    var newValue = Math.floor(Math.random() * 100);
-
-                    // Add the new value to the dataset
-                    myChart.data.datasets[0].data.push(newValue);
-
-                    // Add a new label for the new value
-                    myChart.data.labels.push('');
-
-                    // Maintain a maximum of 6 values
-                    if (myChart.data.datasets[0].data.length > 50) {
-                        myChart.data.datasets[0].data.shift();
-                        myChart.data.labels.shift();
-                    }
-
-                    // Update the chart
-                    myChart.update();
-                }
-
-                // Automatically update the chart every second
-                setInterval(updateChart, 1000);
-
-            </script> */}
             </body>
         </>
     );
