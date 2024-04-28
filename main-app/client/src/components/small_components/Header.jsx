@@ -31,7 +31,7 @@ const Header = () => {
     <div className="bosy">
       <header>
         <div className="logotext">
-          <a href="/home"><img src={logoText} alt="h" style={{ maxHeight: '70px' }} /></a>
+          <a href="/home"><img src={logoText} alt="h" style={{ maxHeight: '70px' }} className='logo69'/></a>
         </div>
         <div className="header_nav">
           <nav className="navbar_header">
@@ -44,7 +44,7 @@ const Header = () => {
           </nav>
         </div>
         <div className="third_part">
-          <a href="/auth"><div className="button">Sign up/Login</div></a>
+          <a href="/auth"><div className="button" id='main-btnlogin' >Sign up/Login</div></a>
           <div className="button2" onClick={handleLogout}> Logout</div>
           <div className="loggedin"></div>
         </div>
