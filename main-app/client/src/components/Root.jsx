@@ -39,7 +39,7 @@ function Root() {
                             <div className="text_two1">Your gateway to the world of cryptocurrency - stay informed, trade smarter</div>
                             <div className="text_three1">
                                 <div className="getstarted1">Get Started</div>
-                                <div className="class1">Market1</div>
+                                <div className="class1">Market</div>
                             </div>
                         </div>
                         <div className="main_images1">

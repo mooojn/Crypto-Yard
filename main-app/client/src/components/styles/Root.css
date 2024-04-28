@@ -42,7 +42,7 @@ body {
     padding: 15px 28px;
     border: 1px solid white;
     border-radius: 10px;
-    transition: 0.5s1;
+    transition: 0.5s;
   
   }
   
@@ -60,7 +60,7 @@ body {
     margin: 10px 10px;
     padding: 15px 28px;
     border-radius: 10px;
-    transition: 0.5s1;
+    transition: 0.5s;
   
   }
   
@@ -97,19 +97,20 @@ body {
   
   .images11 {
     left: -100px;
+    margin-top: 70px;
     display: flex;
     position: absolute;
   }
   
   .images21 {
     position: absolute;
-    margin-top: 0px;
+    margin-top: 70px;
     margin-left: 230px;
   
   }
   
   .images31 {
-    margin-top: 150px;
+    margin-top: 220px;
     margin-left: 60px;
     position: absolute;
   
@@ -122,29 +123,29 @@ body {
     z-index: 10;
   }
   
-  .step11 {
+  .step1 {
     opacity: 0;
-    animation: moveup 0.8s1 ease-in-out 0s forwards;
+    animation: moveup 0.8s ease-in-out 0s forwards;
   }
   
-  .step21 {
+  .step2 {
     opacity: 0;
-    animation: moveup 0.8s1 ease-in-out 0.7s1 forwards;
+    animation: moveup 0.8s ease-in-out 0.7s forwards;
   }
   
-  .step31 {
+  .step3 {
     opacity: 0;
-    animation: moveup 0.8s1 ease-in-out 1s forwards;
+    animation: moveup 0.8s ease-in-out 1s forwards;
   }
   
-  .step41 {
+  .step4 {
     opacity: 0;
-    animation: moveup 0.8s1 ease-in-out 1.5s1 forwards;
+    animation: moveup 0.8s ease-in-out 1.5s forwards;
   }
   
   .bitcoins11 {
     filter: drop-shadow(0 0 10px #04bb56);
-    animation: float 1.5s1 ease-in-out infinite;
+    animation: float 1.5s ease-in-out infinite;
     position: absolute;
     transform: rotateZ(-45deg);
     top: -30px;
@@ -154,17 +155,41 @@ body {
   
   .bitcoins21 {
     filter: drop-shadow(0 0 10px #04bb56);
-    animation: float 1.5s1 ease-in-out infinite 0.2s1;
+    animation: float 1.5s ease-in-out infinite 0.2s;
     position: absolute;
     top: -110px;
     left: -10px;
     transform: rotateZ(-25deg);
     z-index: 20;
   }
-  
+  @keyframes moveup {
+    0% {
+        opacity: 0;
+        transform: translateY(2%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+  @keyframes float {
+    0% {
+        margin-top: 0px;
+    }
+
+    50% {
+        margin-top: 8px;
+    }
+
+    100% {
+        margin-top: 0px;
+    }
+}
   .bitcoins31 {
     filter: drop-shadow(0 0 10px #04bb56);
-    animation: float 1.5s1 ease-in-out infinite 0.4s1;
+    animation: float 1.5s ease-in-out infinite 0.4s;
     top: -50px;
     left: 40px;
     position: absolute;
@@ -232,12 +257,12 @@ body {
     height: 5px;
     margin-top: 50px;
     margin-left: -30px;
-    background-color: rgba(#04bb56, .351);
+    background-color: rgba(#04bb56, .35);
     border-radius: 100%;
-    filter: blur(2.5px1);
+    filter: blur(2.5px);
     transform: perspective(100px) rotateX(-30deg);
     transform-style: preserve-3d;
-    animation: holographic 1.5s1 infinite alternate;
+    animation: holographic 1.5s infinite alternate;
     backface-visibility: hidden;
   }
   
@@ -255,7 +280,7 @@ body {
   
   .servicesbg1 {
   
-    background: url(images/Coinsbg.png1);
+    background: url(../assets/Coinsbg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -310,7 +335,7 @@ body {
   
   .serviceexplain1 {
     font-size: 20px;
-    line-height: 1.51;
+    line-height: 1.5;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: #dadada;
@@ -327,7 +352,7 @@ body {
     border-radius: 5px;
     background: #686868;
     color: #fff;
-    transition: 0.5s1;
+    transition: 0.5s;
   }
   
   .readmore1:hover {
@@ -347,7 +372,7 @@ body {
   }
   
   .hovr1 {
-    transition: 0.5s1;
+    transition: 0.5s;
     height: 230px;
   }
   
@@ -366,7 +391,7 @@ body {
   }
   
   .facts1 {
-    background: url('images/features-bg.png1');
+    background: url('../assets/features-bg.png');
     background-size: cover;
     color: #fff;
     display: flex;
@@ -433,7 +458,7 @@ body {
   
   .hidden_text1 {
     font-size: 20px;
-    line-height: 1.31;
+    line-height: 1.3;
   }
   
   .swiper1-container {
@@ -465,7 +490,7 @@ body {
   .comment1 {
     display: flex;
     font-size: 20px;
-    line-height: 1.51;
+    line-height: 1.5;
     text-align: center;
     width: 50%;
   }
