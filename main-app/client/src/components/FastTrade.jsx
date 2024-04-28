@@ -25,7 +25,9 @@ function FastTrade() {
 
     const audio = new Audio(sound);
     const errAudio = new Audio(errFX);
-
+    const [ flag, setFlag ] = useState(false);
+    const [ typeOfTrans, setTypeOfTrans ] = useState('');
+    var d = false;
     const sellDollar = (e) => {
         const amount = document.getElementById("priceInput").value;
         if (amount < 1) {
@@ -43,6 +45,22 @@ function FastTrade() {
                 if (data) {
                     audio.play();
                     toast.success("Transaction Successful");
+                    setFlag(true);
+                    setTypeOfTrans("Withdraw");
+    
+                    // Create an async function to handle the setHistory fetch call
+                    const setHistory = async () => {
+                        try {
+                            const historyResponse = await fetch(API_URL + `/setHistory?amount=${amount}&type=${typeOfTrans}`);
+                            const historyData = await historyResponse.json();
+                            console.log(historyData);
+                        } catch (error) {
+                            console.error('Error:', error);
+                        }
+                    }
+    
+                    // Call the async function
+                    setHistory();
                 } else {
                     errAudio.play();
                     toast.error("Transaction Failed");
@@ -53,7 +71,8 @@ function FastTrade() {
                 toast.error("Transaction Failed... error occurred");
             });
     }
-    const buyDollar = (e) => {        
+    
+    const buyDollar = async (e) => {
         const amount = document.getElementById("priceInput").value;
         if (amount < 1) {
             errAudio.play();
@@ -64,23 +83,27 @@ function FastTrade() {
             toast.warning("Amount should be less than $10k");
             return;
         }
-        fetch(API_URL + `/buyDollar?amount=${amount}`)
-            .then(resp => resp.json())
-            .then(data => {
-                if (data) {
-                    audio.play();
-                    toast.success("Transaction Successful");
-                } else {
-                    errAudio.play();
-                    toast.error("Transaction Failed");
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                toast.error("Please Login to continue... error occurred");
-            });
+        try {
+            const response = await fetch(API_URL + `/buyDollar?amount=${amount}`);
+            const data = await response.json();
+            if (data) {
+                audio.play();
+                toast.success("Transaction Successful");
+                setTypeOfTrans("Deposit");
+    
+                // Execute setHistory fetch call here
+                const historyResponse = await fetch(API_URL + `/setHistory?amount=${amount}&type=${typeOfTrans}`);
+                const historyData = await historyResponse.json();
+                console.log(historyData);
+            } else {
+                errAudio.play();
+                toast.error("Transaction Failed");
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            toast.error("Please Login to continue... error occurred");
+        }
     }
-
     // validate amount input
     const handleAmountChange = (event) => {
         setAmount(event.target.value);
@@ -108,18 +131,16 @@ function FastTrade() {
         document.getElementById("buy").innerHTML = 'Sell';
         document.getElementById("confirmBTN").onclick = sellDollar; // Change from -= to =
     };
-    useEffect(()=>{
+    useEffect(() => {
         handleBuyClick();
-    },[])
+    }, [])
     return (
         <body>
-            <Preloader />
+            {/* <Preloader /> */}
             <Header />
 
             <div className="link5">
                 <div className="fasttade5">Fast Trade</div>
-                <a href="/p2p"><div className="p2p5">P2P</div></a>
-                <a href="/create-offer"> <div className="p2p5">Create Offer</div></a>
             </div>
             <div className="main5">
                 <div className="textside5">
