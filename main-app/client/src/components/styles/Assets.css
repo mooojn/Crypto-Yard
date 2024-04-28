@@ -1,4 +1,4 @@
-body {
+.body8 {
     margin: 0;
     padding: 0;
     background-color: #000;
@@ -7,6 +7,7 @@ body {
 .main8 {
     display: flex;
     flex-direction: row;
+    height: 100vh;
     width: 100%;
     background-color: rgb(40, 40, 40);
 }
@@ -21,13 +22,14 @@ a{
     margin: 0px 20px;
     list-style: none;
     margin: 30px 0px;
-    height: 50px;
+    width: 100%;
+    height: fit-content;
 }
 .sidebartext8{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     display: flex;
-    margin-left: 20px;
+    margin-left: 0px;
     color: #fff;
 }
 i{
@@ -47,20 +49,21 @@ i{
     background-color: #191919;
     align-items: start;
     justify-content: start;
-    height: 800px;
+    height: 910px;
+    position: sticky;
     padding-bottom: 30px;
     color: white;
-    padding-right: 20px;
+    padding-right: 50px;
     border-right: 1px solid #8c8c8c;
 }
 .sidelist8{
     display: flex;
     flex-direction: row;
     justify-content: start;
-    padding: 20px 25px;
+    padding: 20px 50px;
     border-radius:0px 30px 30px 0px;
     margin: 3px 0px;
-    transition: 0.5s8;
+    transition: 0.5s;
 }
 .sidelist8:hover{
     background: #04bb56;
@@ -70,10 +73,14 @@ i{
     display: flex;
     flex-direction: column;
     padding-top: 50px;
+    width: 100%;
 }
 .ul8{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 .headbar8{
     display: flex;
@@ -90,6 +97,7 @@ i{
 .ASSESTS8{
     display: flex;
     font-size: 30px;
+    margin: 20px 0px;
     font-weight: bold;
 }
 .buttons8{
@@ -128,6 +136,7 @@ i{
     padding: 20px 30px;
     border-right: 1px solid #8c8c8c;
     width: 70%;
+    height: 810px;
 }
 .overall8{
     display: flex;
