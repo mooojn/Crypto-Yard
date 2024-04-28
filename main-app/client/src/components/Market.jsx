@@ -216,7 +216,7 @@ function market() {
                             </div>
                         </div>
                         <div className="coinprice9"><span className="price9">${btc.Price}</span></div>
-                        <div className="coinpercentage9"><span className="percentage9">20%</span></div>
+                        <div className="coinpercentage9"><span className="percentage9">{(btc.Price/5500).toFixed(2)}%</span></div>
                         <div className="action9">
                             <Link to={`/market-detail?variableName=${btc.Name}`}>
                                 <div className="details9">Detail</div>
@@ -235,7 +235,7 @@ function market() {
                             </div>
                         </div>
                         <div className="coinprice9"><span className="price9">${eth.Price}</span></div>
-                        <div className="coinpercentage9"><span className="percentage9">2%</span></div>
+                        <div className="coinpercentage9"><span className="percentage9">{(eth.Price/400).toFixed(2)}%</span></div>
                         <div className="action9">
                             <Link to={`/market-detail?variableName=${eth.Name}`}>
                                 <div className="details9">Detail</div>
@@ -254,7 +254,7 @@ function market() {
                             </div>
                         </div>
                         <div className="coinprice9"><span className="price9">${xrp.Price}</span></div>
-                        <div className="coinpercentage9"><span className="percentage9">10%</span></div>
+                        <div className="coinpercentage9"><span className="percentage9">{(xrp.Price*15).toFixed(2)}%</span></div>
                         <div className="action9">
                             <Link to={`/market-detail?variableName=${xrp.Name}`}>
                                 <div className="details9">Detail</div>
@@ -273,7 +273,7 @@ function market() {
                             </div>
                         </div>
                         <div className="coinprice9"><span className="price9">${doge.Price}</span></div>
-                        <div className="coinpercentage9"><span className="percentage9">4%</span></div>
+                        <div className="coinpercentage9"><span className="percentage9">{(doge.Price*45).toFixed(2)}%</span></div>
                         <div className="action9">
                             <Link to={`/market-detail?variableName=${doge.Name}`}>
                                 <div className="details9">Detail</div>
@@ -292,7 +292,7 @@ function market() {
                             </div>
                         </div>
                         <div className="coinprice9"><span className="price9">${usdt.Price}</span></div>
-                        <div className="coinpercentage9"><span className="percentage9">20%</span></div>
+                        <div className="coinpercentage9"><span className="percentage9">{(usdt.Price*0).toFixed(2)}%</span></div>
                         <div className="action9">
                             <Link to={`/market-detail?variableName=${usdt.Name}`}>
                                 <div className="details9">Detail</div>
