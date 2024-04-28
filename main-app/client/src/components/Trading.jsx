@@ -332,48 +332,35 @@ function Trading() {
     const coinName = urlParams.get('variableName');
     const [worth, setWorth] = useState(0)
     useEffect(() => {
-
         fetch(API_URL + `/specificCoinInfo?Name=${coinName}`)
             .then(response => response.json())
             .then(data => {
                 // Extracting the first item from the data array
                 setCoinData({ Name: data.Name, Symbol: data.Symbol, Price: data.Price, Description: data.Description, Overview: data.Overview });
             })
-            .catch(error => console.error('Error fetching data:', error));
-
-        // img setup
-        
-        // if (coinName == null){
-        //     document.querySelector('.coinlogo4 img').src = btcImg;
-        //     setCoinData({ Name: "Bitcoin", Symbol: "BTC", Price: "xxx", Description: "xxx", Overview: "xxx" });
-        // }
-        if (coinName == "Ripple") {
-            document.querySelector('.coinlogo4 img').src = xrpImg;
-        } else if (coinName == "Ethereum") {
-            document.querySelector('.coinlogo4 img').src = ethImg;
-        } else if (coinName == "Bitcoin") {
-            document.querySelector('.coinlogo4 img').src = btcImg;
-        } else if (coinName == "Tether") {
-            document.querySelector('.coinlogo4 img').src = usdtImg;
-        } else if (coinName == "Dogecoin") {
-            document.querySelector('.coinlogo4 img').src = dogeImg;
-        }
-
-        
-        fetch(API_URL + `/assetWorthOfType?Type=Main`)
+            .then(() => {
+                // img setup
+                if (coinName == "Ripple") {
+                    document.querySelector('.coinlogo4 img').src = xrpImg;
+                } else if (coinName == "Ethereum") {
+                    document.querySelector('.coinlogo4 img').src = ethImg;
+                } else if (coinName == "Bitcoin") {
+                    document.querySelector('.coinlogo4 img').src = btcImg;
+                } else if (coinName == "Tether") {
+                    document.querySelector('.coinlogo4 img').src = usdtImg;
+                } else if (coinName == "Dogecoin") {
+                    document.querySelector('.coinlogo4 img').src = dogeImg;
+                }
+    
+                return fetch(API_URL + `/assetWorthOfType?Type=Main`)
+            })
             .then(response => response.json())
             .then(data => {
                 setWorth(data);
             })
             .catch(error => console.error('Error fetching data:', error));
     }, [])
-    
-    
-    // useEffect(() => {
-    // }, [])
-
-
-    
+        
     const audio = new Audio(moneyBuySound); 
     const errAudio = new Audio(errFX);
 
