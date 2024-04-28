@@ -15,6 +15,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import './styles/FastTrade.css';
 import { alertTitleClasses } from '@mui/material';
+import Footer from './small_components/Footer';
 
 
 
@@ -136,7 +137,7 @@ function FastTrade() {
     }, [])
     return (
         <body>
-            {/* <Preloader /> */}
+        {/* <Preloader /> */}
             <Header />
 
             <div className="link5">
@@ -208,6 +209,7 @@ function FastTrade() {
                     </div>
                 </div>
             </div>
+                    <Footer />
         </body>
     );
 }
