@@ -331,6 +331,7 @@ function Trading() {
     const urlParams = new URLSearchParams(window.location.search);
     const coinName = urlParams.get('variableName');
     const [worth, setWorth] = useState(0)
+    const [coinWorth, setCoinWorth] = useState(0)
     useEffect(() => {
         fetch(API_URL + `/specificCoinInfo?Name=${coinName}`)
             .then(response => response.json())
@@ -357,6 +358,12 @@ function Trading() {
             .then(response => response.json())
             .then(data => {
                 setWorth(data);
+
+                return fetch(API_URL +`/assetWorthOfType?Type=Trading`)
+            })
+            .then(resp=> resp.json())
+            .then(data=> {
+                setCoinWorth(data)
             })
             .catch(error => console.error('Error fetching data:', error));
     }, [])
@@ -394,6 +401,66 @@ function Trading() {
             })
             .catch(error => console.error('Error fetching data:', error));
     }
+    const sellCoin=(e)=>{
+        const amnt = document.getElementById('priceInput').value;
+        if (amnt > coinWorth){
+            errAudio.play();
+            toast.warning("Insufficient Balance");
+            return;
+        }else if (amnt <= 0){
+            errAudio.play();
+            toast.warning("Invalid Amount");
+            return;
+        }
+        setCoinWorth(coinWorth - amnt)    
+        document.getElementById('tssss').innerHTML = `${(coinWorth-amnt).toFixed(2)}`
+        toast.success('Transaction Successful')  
+        audio.play();      
+
+    }
+    const handleBuyClick = () => {
+        document.getElementById("buyButton").style.backgroundColor = '#04bb56';
+        document.getElementById("sellButton").style.backgroundColor = '';
+        document.getElementById("confirm").onclick = buyCoin; // Change from -= to =
+        document.getElementById('confirm').style.backgroundColor = "#04bb56";
+        document.getElementById('confirm').innerHTML = `Buy ${coinData.Symbol}`;
+        document.getElementById('tssss').innerHTML = `${worth}`;
+        document.getElementById('currency').innerHTML = 'USDT';
+
+    };
+    const handleSellClick = () => {
+        document.getElementById("buyButton").style.backgroundColor = '#141414';
+        document.getElementById("sellButton").style.backgroundColor = 'red';
+        document.getElementById("confirm").onclick = sellCoin; // Change from -= to =
+        document.getElementById('confirm').style.backgroundColor = "red";
+        document.getElementById('confirm').innerHTML = `Sell ${coinData.Symbol}`;
+        document.getElementById('tssss').innerHTML = `${coinWorth}`;
+        document.getElementById('currency').innerHTML = `${coinData.Symbol}/USDT`
+    };
+    useEffect(() => {
+        handleBuyClick();
+    }, [])
+
+    // const sell= (e)=>{
+    //     fetch(API_URL + `/sellCoin?coinName=${coinData.Name}&coinPrice=${coinData.Price}&amount=${amnt}`)
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             if (data) {
+    //                 toast.success("Transaction Successful");
+    //                 audio.play();
+    //                 fetch(API_URL + `/assetWorthOfType?Type=Main`)
+    //                     .then(response => response.json())
+    //                     .then(data => {
+    //                         setWorth(data);
+    //                     })
+    //                     .catch(error => console.error('Error fetching data:', error));
+    //             } else {
+    //                 errAudio.play();
+    //                 toast.error("Transaction Failed");
+    //             }
+    //         })
+    //         .catch(error => console.error('Error fetching data:', error));
+    // }
 
     return (
         <>
@@ -470,10 +537,10 @@ function Trading() {
                         </div>
                         <div className="buysell4">
                             <div id="buyButton" className="buy4">
-                                <div style={{cursor:'pointer'}}>Buy</div>
+                                <div style={{cursor:'pointer'}} onClick={handleBuyClick}>Buy</div>
                             </div>
                             <div id="sellButton" className="sell4">
-                                {/* <div>Sell</div> */}
+                                <div style={{cursor:'pointer'}} onClick={handleSellClick}>Sell</div>
                             </div>
                         </div>
                         <div className="charthead4" style={{ borderBottom: '0.2px', solid: '#4b4b4b' }}>
@@ -483,7 +550,7 @@ function Trading() {
                         <div className="buysellsection4">
                             <div className="avail4">
                                 <div>Available</div>
-                                <div><span>{worth}</span><span id="currency" style={{ color: '#888' }}>USDT</span></div>
+                                <div><span id='tssss'>{worth}</span><span id="currency" style={{ color: '#888' }}>USDT</span></div>
                             </div>
                             <div className="input4-sep">
                                 <span className="custom4-placeholder">USDT</span>
@@ -516,7 +583,7 @@ function Trading() {
                                 </div>
                             </div>
                             {/* <p>Confirm</p> */}
-                            <div id="confirm" className="confirm4" onClick={buyCoin}>Buy {coinData.Symbol}</div>
+                            <div id="confirm" className="confirm4">Buy {coinData.Symbol}</div>
                             <ToastContainer/>
                         </div>
                     </div>

@@ -48,7 +48,7 @@ function AuthPage() {
       })
       .catch(error => {
         console.error('Error:', error);
-        alert('Error occurred. See console for details.');
+        toast.error('Please run the Backend server and try again. See console for details.');
       });
   };
 
@@ -99,7 +99,7 @@ function AuthPage() {
       })
       .catch(error => {
         console.error('Error:', error);
-        alert('Error occurred. See console for details.');
+        toast.error('Please run the Backend server and try again. See console for details.');
       });
   };
 

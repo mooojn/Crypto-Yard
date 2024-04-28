@@ -20,7 +20,7 @@ a {
     display: flex;
     flex-direction: row;
     text-decoration: none;
-    margin: 0px 20px;
+    margin: 0px 0px;
     list-style: none;
     margin: 30px 0px;
     height: 50px;
@@ -30,7 +30,7 @@ a {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     display: flex;
-    margin-left: 20px;
+    margin-left: 0px;
     color: #fff;
 }
 
@@ -48,7 +48,7 @@ i {
 .sidebar8 {
     display: flex;
     flex-direction: column;
-    width: 13%;
+    width: 10%;
     overflow: hidden;
     background-color: #191919;
     align-items: start;
@@ -56,7 +56,7 @@ i {
     height: 800px;
     padding-bottom: 30px;
     color: white;
-    padding-right: 20px;
+    padding-right: 80px;    
     border-right: 1px solid #8c8c8c;
 }
 
@@ -64,10 +64,10 @@ i {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    padding: 20px 25px;
+    padding: 20px 50px;
     border-radius: 0px 30px 30px 0px;
     margin: 3px 0px;
-    transition: 0.5s8;
+    transition: 0.5s;
 }
 
 .sidelist8:hover {
@@ -79,10 +79,14 @@ i {
     display: flex;
     flex-direction: column;
     padding-top: 50px;
+    width: 100%;
 }
 
 .ul8 {
     display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -372,7 +376,7 @@ i {
     padding: 12px 25px;
     box-shadow: 0px 0px 10px 0px #1d1d1d;
     border-radius: 20px;
-    transition: 0.5s8;
+    transition: 0.5s;
 }
 
 .Loans8:hover {
@@ -434,7 +438,7 @@ i {
     font-size: 18px;
     color: #00ab4d;
     margin-top: 10px;
-    transition: 0.5s8;
+    transition: 0.5s;
     align-items: center;
     padding-bottom: 5px;
     border-bottom: 1px solid #8c8c8c;
@@ -453,7 +457,7 @@ i {
     justify-content: start;
     margin: 10px 0px;
     padding: 20px 0px;
-    transition: 0.5s8;
+    transition: 0.5s;
 }
 
 .transaction8:hover {
@@ -486,7 +490,7 @@ i {
 a {
     text-decoration: none;
     color: white;
-    transition: all ease-in-out 0.3s8;
+    transition: all ease-in-out 0.3s;
 }
 
 a:hover {
