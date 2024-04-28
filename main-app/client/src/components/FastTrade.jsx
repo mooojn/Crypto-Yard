@@ -156,7 +156,7 @@ function FastTrade() {
                 </div>
                 <div className="table5">
                     <div className="buysellsection5">
-                        <div className="buysell5">
+                        <div style={{cursor:'pointer'}} className="buysell5">
                             <div id="buyButton" className="buy5" onClick={handleBuyClick}>
                                 <div>Buy</div>
                             </div>

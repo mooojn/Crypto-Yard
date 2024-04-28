@@ -1,4 +1,4 @@
-.body8 {
+body {
     margin: 0;
     padding: 0;
     background-color: #000;
@@ -7,13 +7,14 @@
 .main8 {
     display: flex;
     flex-direction: row;
-    height: 100vh;
     width: 100%;
     background-color: rgb(40, 40, 40);
 }
-a{
+
+a {
     text-decoration: none;
 }
+
 .sidebarA8 {
     font-size: large;
     display: flex;
@@ -22,26 +23,29 @@ a{
     margin: 0px 20px;
     list-style: none;
     margin: 30px 0px;
-    width: 100%;
-    height: fit-content;
+    height: 50px;
 }
-.sidebartext8{
+
+.sidebartext8 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     display: flex;
-    margin-left: 0px;
+    margin-left: 20px;
     color: #fff;
 }
-i{
+
+i {
     font-size: 20px;
     color: #c3c3c3;
 }
-.submain8{
+
+.submain8 {
     display: flex;
     flex-direction: column;
     width: 85%;
 }
-.sidebar8{
+
+.sidebar8 {
     display: flex;
     flex-direction: column;
     width: 13%;
@@ -49,40 +53,40 @@ i{
     background-color: #191919;
     align-items: start;
     justify-content: start;
-    height: 910px;
-    position: sticky;
+    height: 800px;
     padding-bottom: 30px;
     color: white;
-    padding-right: 50px;
+    padding-right: 20px;
     border-right: 1px solid #8c8c8c;
 }
-.sidelist8{
+
+.sidelist8 {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    padding: 20px 50px;
-    border-radius:0px 30px 30px 0px;
+    padding: 20px 25px;
+    border-radius: 0px 30px 30px 0px;
     margin: 3px 0px;
-    transition: 0.5s;
+    transition: 0.5s8;
 }
-.sidelist8:hover{
+
+.sidelist8:hover {
     background: #04bb56;
     cursor: pointer;
 }
-.nav8{
+
+.nav8 {
     display: flex;
     flex-direction: column;
     padding-top: 50px;
-    width: 100%;
 }
-.ul8{
+
+.ul8 {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
 }
-.headbar8{
+
+.headbar8 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -94,19 +98,23 @@ i{
     align-items: center;
     border-bottom: 1px solid #8c8c8c;
 }
-.ASSESTS8{
+
+.ASSESTS8 {
     display: flex;
     font-size: 30px;
-    margin: 20px 0px;
     font-weight: bold;
 }
-.buttons8{
+
+.buttons8 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0px 30px;
 }
-.depo8, .buycryp8, .Withdraw8{
+
+.depo8,
+.buycryp8,
+.Withdraw8 {
     display: flex;
     padding: 10px 20px;
     border-radius: 20px;
@@ -116,29 +124,35 @@ i{
     color: white;
     margin: 0px 10px;
 }
-.depo8{
+
+.depo8 {
     background: #00b752;
-    border-color: #00bf56; 
+    border-color: #00bf56;
 }
-.depo8:hover, .buycryp8:hover, .Withdraw8:hover{
-    background: #019041;       
-    border-color: #029a47; 
+
+.depo8:hover,
+.buycryp8:hover,
+.Withdraw8:hover {
+    background: #019041;
+    border-color: #029a47;
     cursor: pointer;
 }
-.wholebody8{
+
+.wholebody8 {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
-.assesttext8{
-    display: flex ;
+
+.assesttext8 {
+    display: flex;
     flex-direction: column;
     padding: 20px 30px;
     border-right: 1px solid #8c8c8c;
     width: 70%;
-    height: 810px;
 }
-.overall8{
+
+.overall8 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -146,24 +160,28 @@ i{
     color: rgb(209, 208, 208);
     padding: 20px 0px;
 }
-.overallvalue8{
+
+.overallvalue8 {
     display: flex;
     font-size: 40px;
     font-weight: bold;
     margin-top: 10px;
     color: #04bb56;
 }
-.value8{
+
+.value8 {
     color: white;
     margin: 0px 3px;
 }
-.grpah8-histories{
+
+.grpah8-histories {
     display: flex;
     flex-direction: column;
     width: 30%;
     padding: 30px;
 }
-.mains8{
+
+.mains8 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -176,265 +194,301 @@ i{
     border-radius: 20px;
     padding: 30px 10px;
 }
-.assestaccount8{
+
+.assestaccount8 {
     display: flex;
     font-size: 20px;
     font-weight: bold;
     border-bottom: 1px solid #8c8c8c;
 }
-.assestamount8{
+
+.assestamount8 {
     display: flex;
     font-size: 30px;
     font-weight: bold;
     margin-top: 20px;
     color: #04bb56;
 }
-.transfer8{
+
+.transfer8 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 20px;
 }
-.assestline8{
+
+.assestline8 {
     display: flex;
     font-size: 15px;
     color: #bcbbbb;
     margin-top: 20px;
 }
-.coinsheader8{
-display: flex;
-flex-direction: row;
-align-items: center;
-background: #01853c;
-border-radius: 10px 10px 0px 0px;
-height: 70px;
-justify-content: space-around;
-color: white;
-font-family: Arial, Helvetica, sans-serif;
-font-size: 20px;
-font-weight: 600;
-padding: 0px 5%;
-margin-top: 50px;
+
+.coinsheader8 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #01853c;
+    border-radius: 10px 10px 0px 0px;
+    height: 70px;
+    justify-content: space-around;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0px 5%;
+    margin-top: 50px;
 }
-.Products8{
-display: flex;
-width: 30%;
-justify-content: start;
+
+.Products8 {
+    display: flex;
+    width: 30%;
+    justify-content: start;
 }
-.Price8{
-display: flex;
-width: 20%;
-justify-content: end;
+
+.Price8 {
+    display: flex;
+    width: 20%;
+    justify-content: end;
 
 }
-.Change8{
-display: flex;
-width: 20%;
-justify-content: end;
+
+.Change8 {
+    display: flex;
+    width: 20%;
+    justify-content: end;
 }
-.coins8{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background: #fff;
+
+.coins8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
 }
-.individualcoin8{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-between;
-width: 100%;
-padding: 10px 0px;
-border-bottom: 1px solid #6a6a6a;
-color: #fff;
-background: #171717;
+
+.individualcoin8 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom: 1px solid #6a6a6a;
+    color: #fff;
+    background: #171717;
 }
-.coinname8{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: start;
-font-family: Arial, Helvetica, sans-serif;
-width: 30%;
+
+.coinname8 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 30%;
 }
-.iconcoin8{
-display: flex;
-margin: 0px 10px;
-height: 50px;
+
+.iconcoin8 {
+    display: flex;
+    margin: 0px 10px;
+    height: 50px;
 }
-.symbol8{
-display: flex;
-font-size: 20px;
-font-weight: 550;
-margin: 0px 5px;
+
+.symbol8 {
+    display: flex;
+    font-size: 20px;
+    font-weight: 550;
+    margin: 0px 5px;
 }
-.coin8{
-display: flex;
-font-size: 16px;
-margin: 0px 5px;
-color: gray;
+
+.coin8 {
+    display: flex;
+    font-size: 16px;
+    margin: 0px 5px;
+    color: gray;
 }
-.coinprice8{
-display: flex;
-font-size: 20px;
-font-weight: 550;
-font-family: Arial, Helvetica, sans-serif;
-margin: 0px 5px;
-width: 20%;
-justify-content: end;
+
+.coinprice8 {
+    display: flex;
+    font-size: 20px;
+    font-weight: 550;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px 5px;
+    width: 20%;
+    justify-content: end;
 }
-.coinpercentage8{
-display: flex;
-font-size: 20px;
-font-weight: 550;
-font-family: Arial, Helvetica, sans-serif;
-margin: 0px 5px;
-width: 20%;
-justify-content: end;
+
+.coinpercentage8 {
+    display: flex;
+    font-size: 20px;
+    font-weight: 550;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px 5px;
+    width: 20%;
+    justify-content: end;
 }
-.action8{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: end;
-padding: 0px 20px;
-width: 30%;
-font-family: Arial, Helvetica, sans-serif;
-font-size: 17px;
-font-weight: bold;
-color: #00ab4d;
+
+.action8 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    padding: 0px 20px;
+    width: 30%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    color: #00ab4d;
 }
-.details8{
-display: flex;
-padding: 0px 15px;
-border-right:1px solid #cbcbcb;
+
+.details8 {
+    display: flex;
+    padding: 0px 15px;
+    border-right: 1px solid #cbcbcb;
 }
-.trades8{
-padding: 0px 15px;
-display: flex;
+
+.trades8 {
+    padding: 0px 15px;
+    display: flex;
 }
-.headerss8{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-padding: 20px 0px;
-width: 80%;
-font-family: Arial, Helvetica, sans-serif;
-color: rgb(223, 223, 223);
+
+.headerss8 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(223, 223, 223);
 }
-.Loans8{
-display: flex;
-font-size: 20px;
-font-weight: bold;
-color: rgb(219, 219, 219);
-background-color: #3f3f3f;
-padding: 12px 25px;
-box-shadow: 0px 0px 10px 0px #1d1d1d;
-border-radius: 20px;
-transition: 0.5s8;
+
+.Loans8 {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(219, 219, 219);
+    background-color: #3f3f3f;
+    padding: 12px 25px;
+    box-shadow: 0px 0px 10px 0px #1d1d1d;
+    border-radius: 20px;
+    transition: 0.5s8;
 }
-.Loans8:hover{
-background: #00ab4d;
-cursor: pointer;
+
+.Loans8:hover {
+    background: #00ab4d;
+    cursor: pointer;
 
 }
-.graph8{
-display: flex;
-flex-direction: column;
-padding: 20px 20px;
-margin-bottom: 20px;
-font-family: Arial, Helvetica, sans-serif;
-border-radius: 20px;
-box-shadow: 0px 0px 10px 0px #000;
+
+.graph8 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px #000;
 }
-.GRAPHHEAD8{
-display: flex;
-font-size: 20px;
-font-weight: bold;
-color: white;
-margin-bottom: 20px;
+
+.GRAPHHEAD8 {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
 }
-.change8{
-display: flex;
-font-size: 20px;
-font-weight: bold;
-color: #00ab4d;
-padding-bottom: 10px;
-border-bottom: 1px solid #8c8c8c;
+
+.change8 {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: #00ab4d;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #8c8c8c;
 }
-.tip8{
-display: flex;
-font-size: 18px;
-color: #00c458;
-font-family: Arial, Helvetica, sans-serif;
-margin: 18px 0px;
-line-height: 1.38;
+
+.tip8 {
+    display: flex;
+    font-size: 18px;
+    color: #00c458;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 18px 0px;
+    line-height: 1.38;
 }
-.histories8{
-display: flex;
-flex-direction: column;
-justify-content: start;
-box-shadow: 0px 0px 10px 0px #000;
-padding: 20px;
-font-family: Arial, Helvetica, sans-serif;
-color: white;
-border-radius: 20px;
-margin-top: 10px;
+
+.histories8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    box-shadow: 0px 0px 10px 0px #000;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border-radius: 20px;
+    margin-top: 10px;
 }
-.more8{
-display: flex;
-font-size: 18px;
-color: #00ab4d;
-margin-top: 10px;
-transition: 0.5s8;
-align-items: center;
-padding-bottom: 5px;
-border-bottom: 1px solid #8c8c8c;
+
+.more8 {
+    display: flex;
+    font-size: 18px;
+    color: #00ab4d;
+    margin-top: 10px;
+    transition: 0.5s8;
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #8c8c8c;
 }
-.head8{
-display: flex;
-font-size: 20px;
-font-weight: bold;
-color: white;
+
+.head8 {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
 }
-.transaction8{
-display: flex;
-flex-direction: column;
-justify-content: start;
-margin: 10px 0px;
-padding: 20px 0px;
-transition: 0.5s8;
+
+.transaction8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: 10px 0px;
+    padding: 20px 0px;
+    transition: 0.5s8;
 }
-.transaction8:hover{
-background: #222222;
-cursor: pointer;
+
+.transaction8:hover {
+    background: #222222;
+    cursor: pointer;
 }
-.upperrow8{
-font-size: 20px;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 8px;
+
+.upperrow8 {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
 }
-.lowerrow8{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 8px;
-color: #b2b2b2;
+
+.lowerrow8 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #b2b2b2;
 }
-.type8{
-font-weight: bold;
+
+.type8 {
+    font-weight: bold;
 }
-a{
-text-decoration: none;
-color: white;
-transition: all ease-in-out 0.3s8;
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: all ease-in-out 0.3s8;
 }
-a:hover{
-color: #04bb56;
+
+a:hover {
+    color: #04bb56;
 }
