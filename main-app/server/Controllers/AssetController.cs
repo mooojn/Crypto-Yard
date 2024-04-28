@@ -60,8 +60,23 @@ namespace Server.Controllers
             int coinId = CoinDL.GetCoinId(coinName);
             double coinAmount = amount / coinPrice;
             int walletId = UtilDL.GetWalletIdFor(UserController.UserName);
-            
+            if (walletId == 0)
+                return false;
             AssetDL.BuyCoin(coinId, coinAmount, walletId);
+            AssetDL.UpdateMainWorth(walletId, amount);
+
+            return true;
+        }
+        [HttpGet]
+        [Route("sellCoin")]
+        public bool SellCoin(string coinName, double coinPrice, double amount)
+        {
+            int coinId = CoinDL.GetCoinId(coinName);
+            double coinAmount = amount / coinPrice;
+            int walletId = UtilDL.GetWalletIdFor(UserController.UserName);
+            if (walletId == 0)
+                return false;
+            AssetDL.SellCoin(coinId, coinAmount, walletId);
             AssetDL.UpdateMainWorth(walletId, amount);
 
             return true;

@@ -84,6 +84,14 @@ namespace Server.DL
             command.ExecuteNonQuery();
             Database.CloseConnection();
         }
+        public static void SellCoin(int id, double amount, int walletId)
+        {
+            Database.OpenConnection();
+            string query = $"Update Assets set Amount = Amount - {amount} where walletId = {walletId} AND Assests_Status = 'Trading' AND CoinID = {id}";
+            SqlCommand command = new SqlCommand(query, Database.GetConnection());
+            command.ExecuteNonQuery();
+            Database.CloseConnection();
+        }
         public static void UpdateMainWorth(int id, double amount)
         {
             Database.OpenConnection();
