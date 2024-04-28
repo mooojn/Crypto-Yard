@@ -22,6 +22,9 @@ function Asset() {
     const [amount, setAmount] = useState(0);
     const [loan, setLoan] = useState(0);
     const [trading, setTrading] = useState(0);
+    const [ historyAmount, setHistoryAmount ] = useState(0);
+    const [ historyType, setHistoryType ] = useState("");
+    const [ historyDate, setHistoryDate ] = useState(0);
 
     useEffect(() => {
         fetch(`${API_URL}/assetWorth`)
@@ -37,9 +40,19 @@ function Asset() {
             } if(data[2]){
                 setLoan(data[2]);       // 2 for loan
             } 
-        }).catch(err => {
-            alert('err');
-        });
+        })
+        .then(() => {
+            return fetch(API_URL + '/getHistory')
+        })
+        .then(resp => resp.json())
+        .then(data =>{
+            setHistoryAmount(data.Amount)
+            setHistoryType(data.Type)
+            // setHistoryDate(new Date(data.date))
+        })
+        .catch(err => {
+            console.log(err.message);
+        }); 
     }, []);
 
     return (
@@ -181,13 +194,13 @@ function Asset() {
                                     <div className="head8">Recent Transaction</div>
                                     <div className="more8">More<i className="fa-solid fa-arrow-right" style={{ marginLeft: '5px' }}></i></div>
                                     <div className="transaction8">
-
+            {/* her */}
                                         <div className="upperrow8">
-                                            <div className="type8">Deposit</div>
-                                            <div className="amount8">0.0434343<span style={{ marginLeft: '3px', color: '#00c458' }}>BTC</span></div>
+                                            <div className="type8">{historyType}</div>
+                                            <div className="amount8">{historyAmount}<span style={{ marginLeft: '3px', color: '#00c458' }}>USDT</span></div>
                                         </div>
                                         <div className="lowerrow8">
-                                            <div className="date8">23/1/2024</div>
+                                            <div className="date8">April-2024</div>
                                             <div className="status8">Completed</div>
                                         </div>
                                     </div>
