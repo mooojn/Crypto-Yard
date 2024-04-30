@@ -24,7 +24,7 @@ function Asset() {
     const [trading, setTrading] = useState(0);
     const [ historyAmount, setHistoryAmount ] = useState(0);
     const [ historyType, setHistoryType ] = useState("");
-    const [ historyDate, setHistoryDate ] = useState(0);
+    // const [ historyDate, setHistoryDate ] = useState(0);
 
     useEffect(() => {
         fetch(`${API_URL}/assetWorth`)

@@ -73,7 +73,7 @@ function FastTrade() {
             });
     }
     
-    const buyDollar = async (e) => {
+    const buyDollar = (e) => {
         const amount = document.getElementById("priceInput").value;
         if (amount < 1) {
             errAudio.play();
@@ -84,26 +84,30 @@ function FastTrade() {
             toast.warning("Amount should be less than $10k");
             return;
         }
-        try {
-            const response = await fetch(API_URL + `/buyDollar?amount=${amount}`);
-            const data = await response.json();
-            if (data) {
-                audio.play();
-                toast.success("Transaction Successful");
-                setTypeOfTrans("Deposit");
+        fetch(API_URL + `/buyDollar?amount=${amount}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    audio.play();
+                    toast.success("Transaction Successful");
+                    setTypeOfTrans("Deposit");
     
-                // Execute setHistory fetch call here
-                const historyResponse = await fetch(API_URL + `/setHistory?amount=${amount}&type=${typeOfTrans}`);
-                const historyData = await historyResponse.json();
+                    // Return the second fetch call
+                    return fetch(API_URL + `/setHistory?amount=${amount}&type=${typeOfTrans}`);
+                } else {
+                    errAudio.play();
+                    toast.error("Transaction Failed");
+                    throw new Error("Transaction Failed");
+                }
+            })
+            .then(historyResponse => historyResponse.json())
+            .then(historyData => {
                 console.log(historyData);
-            } else {
-                errAudio.play();
-                toast.error("Transaction Failed");
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            toast.error("Please Login to continue... error occurred");
-        }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                toast.error("Please Login to continue... error occurred");
+            });
     }
     // validate amount input
     const handleAmountChange = (event) => {

@@ -103,7 +103,7 @@ namespace Server.DL
         public static History GetLatestTransaction(int id)
         {
             Database.OpenConnection();
-            string query = $"select top 1 * from History where walletId = 1 order by id desc";
+            string query = $"select top 1 * from History where walletId = {id} order by id desc";
             SqlCommand command = new SqlCommand(query, Database.GetConnection());
             SqlDataReader reader = command.ExecuteReader();
             History history = null;
@@ -111,8 +111,8 @@ namespace Server.DL
             {
                 double amount = Convert.ToDouble(reader["amount"]);
                 string type = Convert.ToString(reader["type"]);
-                DateTime date = Convert.ToDateTime(reader["date"]);
-                history = new History(amount, type, date);
+                // DateTime date = Convert.ToDateTime(reader["date"]);
+                history = new History(amount, type);
             }
             Database.CloseConnection();
             return history;
@@ -120,9 +120,8 @@ namespace Server.DL
         public static void StoreLatestTransaction(int id, double amount, string type)
         {
             Database.OpenConnection();
-            string query = $"insert into History values ({id}, {amount}, '{type}', @Date)";
+            string query = $"insert into History values ({id}, {amount}, '{type}', NULL)";
             SqlCommand command = new SqlCommand(query, Database.GetConnection());
-            command.Parameters.AddWithValue("@Date", DateTime.Now);
             command.ExecuteNonQuery();
             Database.CloseConnection();
         }
